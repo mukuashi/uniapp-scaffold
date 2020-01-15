@@ -1,10 +1,8 @@
-# uniapp-scaffold | 跨平台小程序脚手架
-
 ## 简介
 
 - uniapp-scaffold 是一款跨平台小程序脚手架，配备一定基础UI库和规范的插拔式应用框架。
 
-#### 特点：
+### 特点：
 
 * **全：** 一套code，实时打包输出各端小程序 + h5 + app
 * **简：** Vue写法，内置基础组件库和Vuex、Services、Utils等丰富能力
@@ -29,7 +27,7 @@
 
 ### Dev | 开发姿势
 
-1. 工具，先下载各平台开发工具（IDE），https://uniapp.dcloud.io/quickstart
+1. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
    
 2. 在Hbuilder中导入当前项目（uni-app类型），修改或更新当前配置，manifest.json和pages.json
 
@@ -48,7 +46,7 @@
 3. 高级开发技巧 https://uniapp.dcloud.io/snippet
 4. 性能优化建议 https://uniapp.dcloud.io/performance
 
-####头条
+#### 头条
 1. 视频 video 相关
  - video 组件必须有高 height，不能是 min-height，否则 iOS 下播放有声音没视频
 2. 样式相关
