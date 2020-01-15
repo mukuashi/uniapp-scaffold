@@ -1,0 +1,40 @@
+@import "../../styles/mixin";
+//
+.k-avatar {
+  background: @avatar-bg;
+  color: @avatar-color;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  .center-middle-flex;
+  .flexbox(inline-flex);
+  &-image{
+    background: transparent;
+  }
+  .avatar-size(@avatar-size-base, @avatar-font-size-base);
+  &-small {
+    .avatar-size(@avatar-size-sm, @avatar-font-size-sm);
+  }
+  &-large {
+    .avatar-size(@avatar-size-lg, @avatar-font-size-lg);
+  }
+  &-xlarge {
+    .avatar-size(@avatar-size-xl, @avatar-font-size-lg);
+  }
+  &-square {
+    border-radius: @avatar-border-radius;
+  }
+  & > image {
+    .square(100%);
+  }
+}
+// single mixin
+.avatar-size(@size, @font-size) {
+  .square(@size);  
+  border-radius: 100%;
+  font-size: @font-size;
+  & > i {
+    font-size: @font-size;
+  }
+}

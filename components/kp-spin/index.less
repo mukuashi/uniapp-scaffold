@@ -1,0 +1,73 @@
+@import "../../styles/mixin";
+//
+.k-spin{
+    color: @theme-color;
+    vertical-align: middle;
+    text-align: center;
+
+    &-dot {
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: @theme-color;
+        .square(@spin-dot-size);
+        animation: ani-spin-bounce 1s 0s ease-in-out infinite;
+    }
+
+    &-huge &-dot {
+        .square(@spin-dot-size-hg);
+    }
+
+    &-large &-dot {
+        .square(@spin-dot-size-lg);
+    }
+
+    &-small &-dot {
+        .square(@spin-dot-size-sl);
+    }
+
+    &-center {
+        .center-middle-flex;
+        min-height: 160upx;
+    }
+
+    &-fix {
+        .square(100%);
+        .custom-position(absolute,@top:0,@left:0,@zindex:@zindex-spin);
+        background-color: transparent;
+    }
+    &-inline{
+        display: inline-block;
+        min-height: inherit;
+        margin-right: 3%;
+    }
+
+    &-fix &-main {
+        .center-middle-position;
+    }
+
+    &-fix &-dot {
+        display: inline-block;
+    }
+
+    &-text,
+    &-show-text &-dot {
+        display: none;
+    }
+
+    &-show-text &-text {
+        display: block;
+        font-size: @font-size-base;
+    }
+}
+
+@keyframes ani-spin-bounce {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}

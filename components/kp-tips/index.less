@@ -1,0 +1,77 @@
+@import "../../styles/mixin";
+/*顶部消息提醒 start*/
+.k-toptips {
+  opacity: 0;
+  width: 100%;
+  padding: 16upx 30upx;
+  font-size: 30upx;
+  word-break: break-all;
+  color: @font-initialize-color;
+  .center-middle-flex;
+  .custom-position(fixed,@top:0,@left:0,@zindex:@zindex-tips);
+  transform: translateZ(0) translateY(-100%);
+  transition: all 0.3s ease-in-out;
+  background: rgba(@dark-color, .7); //默认背景色
+  &-show {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+/*顶部消息提醒 end*/
+/*toast消息提醒 start*/
+/*注意问题：
+1、fixed 元素宽度无法自适应，所以增加了子元素
+2、fixed 和 display冲突导致动画效果消失，暂时使用visibility替代
+*/
+.k-toast {
+  opacity: 0;
+  width: 80%;
+  visibility: hidden;
+  font-size: 28upx;
+  color: @font-initialize-color;
+  .center-middle-flex;
+  .custom-position(fixed,@left:50%,@zindex:@zindex-tips);
+  transition: all 0.3s ease-in-out;
+  animation: fadeInFalse 1s ease-in-out 1s 1; // 模拟延迟
+  &-show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.k-tips {
+  &-content {
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 8upx;
+    padding: 16upx 30upx;
+    background: rgba(@dark-color, .7);
+  }
+  &-primary {
+    background-color: @primary-color;
+  }
+  &-success {
+    background-color: @success-color;
+  }
+  &-warning {
+    background: @warning-color;
+  }
+  &-danger {
+    background: @error-color;
+  }
+  &-bottom {
+    bottom: 120upx;
+    transform: translateX(-50%);
+  }
+  &-center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes ffadeInFalse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .01;
+  }
+}

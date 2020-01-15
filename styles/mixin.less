@@ -1,0 +1,202 @@
+/*
+ * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * @fileoverview | less minxin 配置项目中公共处理的mixin
+ * @Author: mukuashi | mukuashi@icloud.com
+ * @version 0.1 | 2019-03-08 // Initial version.
+ * @Date: 2019-03-08 15:59:03 
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2019-07-09 17:45:53
+*/
+@import "./theme";
+//组件初始化
+.component-reset() {
+  font-family: @font-family-default;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @font-initialize-color;
+  box-sizing: @box-sizing;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.box-initialize() {
+  margin: 0;
+  padding: 0;
+}
+.ul-initialize() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+//color exchange
+.dark-fade(@value) {
+  color: fade(@dark-color,@value);
+}
+// 一行 文本自动省略号,传width为max-width
+.text-overflow (@max-width:100%) {
+	max-width: @max-width;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+// 多行
+.line-overflow (@line: 1) {
+  width: 100%;
+  overflow : hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+//定位相关
+//position
+.custom-position(@position,@top: null,@bottom: null ,@left: null, @right:null, @zindex:null) {
+  position: @position;
+  z-index: @zindex;
+  top: @top;
+  bottom: @bottom;
+  left: @left;
+  right: @right;
+}
+//水平垂直居中-1
+.center-middle-position() {
+  .custom-position(absolute,@top:50%,@left:50%);
+  transform: translate(-50%,-50%);
+}
+//水平垂直居中-2
+.center-middle-height (@height:null) {
+  height: @height;
+  line-height: @height;
+}
+//水平垂直居中-3 | 默认全部居中，支持参数自定义替换
+.center-middle-flex(@display:flex,@justify:center,@align:center) {
+  .flexbox(@display);
+  .justify-content(@justify);
+	.align-items(@align);
+}
+//clearfix清除浮动
+.clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+//size
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size,@size);
+}
+// button adjust
+.hairline() {
+  content: '';
+  .custom-position(absolute,@top: 0,@left:0);
+  .square(200%);
+  transform: scale(.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid @border-color-base;
+}
+//Flexbox SASS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// Flexbox display
+.flexbox(@value) {
+  display: @value;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none | 先去掉prefix自动补全浏览器前缀，小程序不用考虑兼容
+.flex(@values) {
+  flex: @values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction) {
+  flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap) {
+  flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+  flex-flow: @flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.order(@val) {
+  order: @val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+.flex-grow(@grow) {
+  flex-grow: @grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+.flex-shrink(@shrink) {
+  flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+.flex-basis(@width) {
+  flex-basis: @width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+.justify-content(@justify) {
+  justify-content: @justify;
+  -ms-flex-pack: @justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+.align-content(@align) {
+  align-content: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+.align-items(@align) {
+  align-items: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+.align-self(@align) {
+  align-self: @align;
+}

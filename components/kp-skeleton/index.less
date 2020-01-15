@@ -1,0 +1,90 @@
+@import "../../styles/mixin";
+@import "../../styles/animate";
+//
+.k-skeleton {
+  &-container {
+    overflow: hidden;
+    .size(100vw,100vh);
+  }
+  &-cmomon {
+    // fixed固定box确保盖住整个视窗
+    .custom-position(fixed,@zindex:@zindex-full);
+  }
+  &-animate {
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.6s ease infinite;
+  }
+  &-default {
+    padding: 25upx;
+    .tpl {
+      width: 49%;
+      height: 76upx;
+      border-radius: 10upx;
+      margin-bottom: 20upx;
+      background-image: linear-gradient(90deg, #eee 25%, #e6e6e6 37%, #eee 63%);
+      background-size: 400% 100%;
+      animation: skeleton-loading 1.6s ease infinite;
+      &-author {
+        &-avatar {
+          .square(100upx);
+          border-radius: 100%;
+        }
+        &-text {
+          width: calc(100vw - 180upx);
+        }
+      }
+      &-content {
+        float: left;
+        height: 28vh;
+        &:nth-child(odd) {
+          margin-right: 2%;
+        }
+      }
+    }
+    .nav,.author {
+      .center-middle-flex(@justify: space-between);
+    }
+    .content {
+      margin-top: .5%;
+    }
+  }
+  &-loading {
+    display: inline-block;
+    vertical-align: middle;
+    .square(50upx);
+    margin-left: -25upx;
+    margin-top: -25px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-color: #e5e5e5 #e5e5e5 #e5e5e5 @theme-color;
+    animation: skeleton-rotate 0.7s linear infinite;
+    .custom-position(fixed,@top:50%,@left:50%,@zindex:@zindex-full+1);
+    &-1 {
+      border-color: #e5e5e5 #e5e5e5 #e5e5e5 @primary-color;
+    }
+    &-2 {
+      border-color: #e5e5e5 #e5e5e5 #e5e5e5 @brand-color;
+    }
+    &-3 {
+      border-color: rgba(@dark-color, .1) rgba(@dark-color, .1) rgba(@dark-color, .1) #fff;
+    }
+    &-4 {
+      border-color: #e5e5e5 #e5e5e5 #e5e5e5 #fc872d;
+    }
+    &-5 {
+      border-color: #e5e5e5 #e5e5e5 #e5e5e5 #eb0909;
+    }
+    &-6 {
+      border-color: @primary-color transparent @primary-color transparent;
+    }
+    &-7 {
+      border-color: @theme-color transparent @theme-color transparent;
+    }
+    &-8 {
+      border-color: #fc872d transparent #fc872d transparent;
+    }
+    &-9 {
+      border-color: #eb0909 transparent #eb0909 transparent;
+    }
+  }
+}

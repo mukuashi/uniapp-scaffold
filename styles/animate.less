@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * @fileoverview | 动画库，参考 https://daneden.github.io/animate.css/.
+ * @Author: mukuashi | mukuashi@icloud.com
+ * @version 0.1 | 2019-03-04 // Initial version.
+ * @Date: 2019-03-08 14:41:58
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2019-12-06 11:58:31
+ */
+[class*=animation-] {
+  animation-duration: .6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both
+}
+.animation {
+  &-fade {
+    animation-name: fade;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+  }
+  &-slideIn-up {
+    animation-name: slideInUp;
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes skeleton-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0 50%;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "uniapp-scaffold",
+  "version": "0.0.1",
+  "description": "一个基于uni-app的跨平台小程序脚手架",
+  "scripts": {
+    "qupload": "node ./utils/qshell.js"
+  },
+  "author": "mukuashi@icloud.com",
+  "contributors": [
+    "mukuashi@icloud.com"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.0",
+    "npm": ">=4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "qiniu": "^7.2.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

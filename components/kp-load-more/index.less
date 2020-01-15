@@ -1,0 +1,35 @@
+@import "../../styles/mixin";
+//
+.k-load-more {
+  padding: 10upx 0;
+  .center-middle-flex;
+  text-align: center;
+  .logo {
+    vertical-align: sub;
+    margin-top: 50upx;
+    img {
+      .square(86upx);
+      border-radius: 50%;
+    }
+  }
+  .loading {
+    margin-right: 24upx;
+  }
+  .tips {
+    font-size: 28upx;
+    color: @text-color;
+    margin: 10upx 0;
+    text {
+      display: block;
+    }
+  }
+}
+
+@-webkit-keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
