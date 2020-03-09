@@ -1,11 +1,11 @@
 ## 简介
 
-- uniapp-scaffold 是一款跨平台小程序脚手架，配备一定基础UI库和规范的插拔式应用框架。
+- uniapp-scaffold 是一款跨平台小程序脚手架，基于Vue扩展，配备超过20+基础和业务组件的UI库，包含Request请求库、Utils、Theme主题等规范的插拔式应用框架。
 
 ### 特点：
 
 * **全：** 一套code，实时打包输出各端小程序 + h5 + app
-* **简：** Vue写法，内置基础组件库和Vuex、Services、Utils等丰富能力
+* **简：** Vue写法，内置UE组件库和Vuex、Services、Utils等丰富能力
 
 ### 调研
 
