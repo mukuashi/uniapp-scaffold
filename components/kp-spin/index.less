@@ -28,12 +28,12 @@
 
     &-center {
         .center-middle-flex;
-        min-height: 160upx;
+        height: inherit;
     }
 
     &-fix {
-        .square(100%);
-        .custom-position(absolute,@top:0,@left:0,@zindex:@zindex-spin);
+        .size(100%,100vh);
+        .custom-position(fixed,@top:0,@left:0,@zindex:@zindex-spin);
         background-color: transparent;
     }
     &-inline{

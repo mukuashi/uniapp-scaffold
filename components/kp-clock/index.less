@@ -1,0 +1,105 @@
+@import "../../styles/mixin";
+//
+.clock {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 150rpx;
+  height: 150rpx;
+  border: 2rpx solid;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 14rpx;
+  .hour {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 20rpx;
+    height: 50%;
+    margin-left: -10rpx;
+    padding-top: 4%;
+    font-weight: 400;
+    transform-origin: bottom;
+    user-select: none;
+    box-sizing: border-box;
+    > span {
+      display: block;
+      > i {
+        display: block;
+        font-style: normal;
+      }
+    }
+  }
+  // @for $i from 2 through 12 {
+  //     .hour:nth-of-type(#{$i}) {
+  //         transform: rotatez(#{$angle * ($i - 1)});
+  //         > span {
+  //             transform: rotatez(#{-$angle * ($i - 1)});
+  //         }
+  //     }
+  // }
+  &-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16rpx;
+      height: 16rpx;
+      transform: translate(-50%, -50%);
+      border: 2rpx solid #666666;
+      border-radius: 100%;
+      background-color: #ffffff;
+      z-index: 1;
+      box-sizing: border-box;
+      &:before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          content: "";
+          width: 4rpx;
+          height: 4rpx;
+          border-radius: 100%;
+          background-color: #666666;
+      }
+  }
+  &-hour,
+  &-minute,
+  &-second {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      display: block;
+      width: 2rpx;
+      height: 35%;
+      margin-left: -1rpx;
+      border-radius: 5rpx;
+      transform-origin: bottom;
+      background-color: #666666;
+  }
+  &-hour {
+      top: 30%;
+      width: 4rpx;
+      height: 20%;
+      margin-left: -2rpx;
+  }
+  &-second {
+      width: 1rpx;
+  }
+  &.is-small {
+    width: 80rpx;
+    height: 80rpx;
+    border-width: 1rpx;
+    font-size: 12rpx;
+    &-circle {
+      width: 10rpx;
+      height: 10rpx;
+      border-width: 1rpx;
+      &:before {
+        width: 2rpx;
+        height: 2rpx;
+      }
+    }
+  }
+}

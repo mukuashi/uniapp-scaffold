@@ -1,0 +1,42 @@
+
+@import "../../styles/mixin";
+@import "../../styles/animate";
+//
+.k-mask {
+  .size(100vw,100vh);
+  .custom-position(fixed,@top:0,@left:0,@zindex:@zindex-mask);
+  transition: all 0.3s;
+  &-top {
+
+  }
+  &-center {
+    .center-middle-flex;
+    flex-flow: column wrap;
+  }
+  &-bottom .close {
+    margin: 0;
+    .custom-position(absolute,@bottom:-7rem,@right:1.8rem);
+  }
+  .content {
+    width: 100%;
+    min-height: 120rpx;
+    text-align: center;
+    color: @font-initialize-color;
+    > img {
+      width: 100%;
+    }
+    &-bottom {
+      .custom-position(absolute,@bottom:0,@left:50%);
+      transform: translateX(-50%);
+    }
+  }
+  .animation {
+    animation: zoomOut .5s ease-out 1;
+  }
+  .close {
+    opacity: .8;
+    margin-top: .8rem;
+    text-align: center;
+    animation: fadeIn 1s ease-out 1;
+  }
+}

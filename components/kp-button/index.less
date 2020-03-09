@@ -59,7 +59,7 @@
 
   &::after {
     content: "";
-    border-radius: 20upx;
+    border-radius: 20rpx;
     .square(200%);
     .custom-position(absolute,@left:0,@top:0);
     transform-origin: 0 0;
@@ -74,7 +74,7 @@
   background-image: none;
   white-space: nowrap;
   user-select: none;
-  padding: 0 36upx;
+  padding: 0 36rpx;
   z-index: 1;
   .center-middle-flex;
   .button-size(@btn-font-size; @btn-height; @btn-border-radius-sl);
@@ -107,12 +107,12 @@
 
   &-large {
     .button-size(@btn-font-size-lg; @btn-height-lg; @btn-border-radius-lg);
-    padding: 0 100upx;
+    padding: 0 100rpx;
   }
 
   &-small {
     .button-size(@btn-font-size-sl; @btn-height-sl; @btn-border-radius-sl);
-    padding: 0 20upx;
+    padding: 0 20rpx;
   }
 }
 
@@ -126,7 +126,7 @@
 .button-color(@color; @background; @border) {
   color: @color;
   background-color: @background;
-  border: 1upx solid @background;
+  border: 1rpx solid @background;
   // a inside Button which only work in Chrome
   // http://stackoverflow.com/a/17253457
   > a:only-child {

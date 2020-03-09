@@ -35,7 +35,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2015-Now Asako Studio. All rights reseved.
  * @fileoverview | 下拉刷新组件，不断扩展中...
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.
@@ -56,7 +56,7 @@ export default {
 	},
 	props: {
 		top: {
-			//距离顶部距离，单位upx
+			//距离顶部距离，单位rpx
 			type: Number,
 			default: 0
 		},
@@ -71,7 +71,7 @@ export default {
 	},
 	computed: {
 		pageTop(){
-			return uni.upx2px(this.top);
+			return uni.rpx2px(this.top);
 		}
 	},
 	created(){
@@ -133,13 +133,13 @@ export default {
 			}
 			timeDiff = +new Date();
 			this.refreshing = true;
-			this.pageDeviation = uni.upx2px(90);
+			this.pageDeviation = uni.rpx2px(90);
 			this.$emit('refresh');
 		},
 		//结束下拉刷新
 		endPulldownRefresh(){
 			this.refreshing = false;
-			this.pageDeviation = uni.upx2px(0);
+			this.pageDeviation = uni.rpx2px(0);
 			//this.$emit('setEnableScroll', true);
 		},
 	}

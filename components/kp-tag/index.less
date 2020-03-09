@@ -1,0 +1,54 @@
+@import "../../styles/mixin";
+//
+.k-tag {
+	text-align: center;
+	padding: 8rpx 22rpx;
+	font-size: @font-size-base;
+	color: @font-initialize-color;
+	line-height: 1.5;
+	//
+	&-small {
+		padding: 0 10rpx;
+		font-size: 22rpx;
+		.center-middle-height(34rpx);
+	}
+	&-large {
+
+	}
+	// 形状
+	&-square {
+		border-radius: 0;
+	}
+	&-circle {
+		border-radius: 50rpx;
+	}
+	// 默认圆角
+	&-fillet {
+		border-radius: 6rpx;
+	}
+	// 透明
+	&-outline {
+		color: @primary-color;
+		border: 1px solid @primary-color;
+		background-color: transparent;
+	}
+	// 主题
+	&-primary {
+		background-color: @primary-color;
+	}
+	&-default {
+		color: rgba(@text-light-color,.9);
+		background-color: @subsidiary-color;
+	}
+	&-error {
+		background-color: @error-color;
+	}
+	&-success {
+		background-color: @success-color;
+	}
+	&-grey {
+		color: rgba(@text-light-color,.8);
+		border: 3rpx @border-style-base @border-color-base;
+		background-color: @background-init-color;
+	}
+}

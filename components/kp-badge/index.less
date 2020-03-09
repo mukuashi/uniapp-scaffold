@@ -1,0 +1,30 @@
+@import "../../styles/mixin";
+//
+.k-badge {
+	font-size: @font-size-sl;
+	line-height: 1;
+	padding: 4rpx 12rpx;
+	border-radius: 100rpx;
+	color: @font-initialize-color;
+	background-color: @theme-color;
+	display: inherit;
+	&-dot {
+		.square(16rpx);
+		border-radius: 8rpx;
+		line-height: 1;
+	}
+	&-small {
+		transform: scale(.8);
+		transform-origin: center center;
+	}
+	&-large {
+
+	}
+	// 主题
+	&-primary {
+		background-color: @primary-color;
+	}
+	&-error {
+		background-color: @error-color;
+	}
+}

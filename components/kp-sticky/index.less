@@ -1,0 +1,7 @@
+@import "../../styles/mixin";
+//
+.k-sticky-fixed {
+	width: 100%;
+	.custom-position(fixed,@zindex:@zindex-mask - 1);
+	.center-middle-flex(@justify:flex-start);
+}

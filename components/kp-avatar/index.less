@@ -1,15 +1,14 @@
 @import "../../styles/mixin";
 //
 .k-avatar {
-  background: @avatar-bg;
-  color: @avatar-color;
+  color: @font-initialize-color;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
   vertical-align: middle;
-  .center-middle-flex;
-  .flexbox(inline-flex);
-  &-image{
+  background-color: rgba(@background-light-color,.8);
+  .center-middle-flex(@display:inline-flex);
+  &-image {
     background: transparent;
   }
   .avatar-size(@avatar-size-base, @avatar-font-size-base);
@@ -19,14 +18,12 @@
   &-large {
     .avatar-size(@avatar-size-lg, @avatar-font-size-lg);
   }
-  &-xlarge {
-    .avatar-size(@avatar-size-xl, @avatar-font-size-lg);
-  }
   &-square {
-    border-radius: @avatar-border-radius;
+    border-radius: 10rpx;
   }
   & > image {
     .square(100%);
+    border-radius: inherit;
   }
 }
 // single mixin

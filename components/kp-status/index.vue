@@ -2,8 +2,8 @@
   <div v-if="show" class="k-status" :style="{ background: bgColor }">
     <slot v-if="showSlot" name="custom"/>
     <div v-else class="k-status-content">
-      <image v-if="image" :src="image">
-      <image v-else :src="types.image">
+      <image v-if="image" :src="image"></image>
+      <image v-else :src="types.image"></image>
       <span v-if="describe">{{ describe }}</span>
       <span v-else>{{types.text}}</span>
       <kp-button class="k-button-class" v-if="buttonText" @on-click="onBtn">{{buttonText}}</kp-button>
@@ -18,13 +18,13 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2015-Now Asako Studio. All rights reseved.
  * @fileoverview | 状态结果页，常用于数据、状态等结果页的落地.
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-06-03 // Initial version.
  * @Date: 2019-06-03 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-15 22:47:45
+ * @Last Modified time: 2020-02-24 21:19:31
  */
 import KpButton from "../kp-button";
 import KpIcon from "../kp-icon";

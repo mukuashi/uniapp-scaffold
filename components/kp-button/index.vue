@@ -22,7 +22,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2015-Now Asako Studio. All rights reseved.
  * @fileoverview | Button组件，支持不同主题，可扩展（添加开发者想要的props等属性）
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-15 // Initial version.

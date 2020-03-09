@@ -2,17 +2,17 @@
 //
 .interact {
   width: 100%;
-  padding: 20upx 28upx 28upx;
+  padding: 20rpx 28rpx 28rpx;
   background: @background-init-color;
   .center-middle-flex(@justify:space-between);
   &-fixed {
-    border-top: 1upx solid @text-light-color;
+    border-top: 1rpx solid @text-light-color;
     .custom-position(fixed,@bottom:0,@left:0,@zindex:@zindex-affix);
   }
   .op {
     overflow: hidden;
     vertical-align: middle;
-    .center-middle-height(48upx);
+    .center-middle-height(48rpx);
     color: @text-light-color;
     &-left {
       opacity: .5;
@@ -28,10 +28,10 @@
     }
     .item {
       display: inline-block;
-      min-width: 140upx;
+      min-width: 140rpx;
       position: relative;
       &:not(:last-of-type) {
-        padding-right: 24upx;
+        padding-right: 24rpx;
       }
     }
   }

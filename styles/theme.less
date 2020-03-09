@@ -1,34 +1,35 @@
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | 定义小程序内部统一的主题及全局变量
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.
  * @Date: 2019-07-08 14:41:58 
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-13 12:46:30
+ * @Last Modified time: 2020-02-28 01:13:35
  */
- @global-prefix: 'kp';
+ @global-prefix: 'mux'; // 全局简写
  // 组件库
 @dark-color: #000;
-@theme-color: #24C789;
+@theme-color: #623bff;
 @warning-color: #ff9900;
 @info-color: #2db7f5;
 @error-color: #ed4014;
-@subsidiary-color: #80848f;
+@subsidiary-color: #ededed;
 @disable-color: #dee2e6; 
-@brand-color: #584F60;
+@brand-color: #585860;
 @orangered-color: #FF6945;
 @primary-color: @theme-color;
-@success-color: @theme-color;
+@success-color: #19be6b;
 // font
-@font-size-base: 28upx;
-@font-size-md: 36upx;
-@font-size-lg: 64upx;
-@font-size-sl: 24upx;
+@font-size-base: 28rpx;
+@font-size-md: 36rpx;
+@font-size-lg: 48rpx;
+@font-size-sl: 24rpx;
 @font-family-default: 'Monospaced Number', 'Chinese Quote', 'Helvetica Neue For Number',
   -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
   'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @font-initialize-color: #fff;
+@font-theme-color: #fefefe;
 @title-color: #333;
 @text-color: #888;
 @text-weight-color: #666;
@@ -38,32 +39,31 @@
 // background color
 @background-init-color: #fff;
 @background-light-color: #ccc;
-@background-color-base: #F8F8F8;
-@background-color-primary: #FAFAFA;
+@background-base-color: #F8F8F8;
 //border
-@border-width-base: 1upx;
+@border-width-base: 2rpx;
 @border-style-base: solid;
 @border-color-base: rgba(@dark-color,.1);
 //
-@border-radius-base: 4upx;
+@border-radius-base: 4rpx;
 //line-height
 @line-height-base: 1.6;
 // Button
-@btn-font-size          : 28upx;
-@btn-font-size-lg       : 36upx;
-@btn-font-size-sl       : 20upx;
+@btn-font-size          : 28rpx;
+@btn-font-size-lg       : 36rpx;
+@btn-font-size-sl       : 20rpx;
 
-@btn-height             : 70upx;
-@btn-height-lg          : 90upx;
-@btn-height-sl          : 40upx;
+@btn-height             : 70rpx;
+@btn-height-lg          : 90rpx;
+@btn-height-sl          : 40rpx;
 
-@btn-border-radius      : 20upx;
-@btn-border-radius-lg   : 40upx;
-@btn-border-radius-sl   : 10upx;
+@btn-border-radius      : 20rpx;
+@btn-border-radius-lg   : 40rpx;
+@btn-border-radius-sl   : 10rpx;
 
-@btn-circle-size        : 36upx;
-@btn-circle-size-lg     : 48upx;
-@btn-circle-size-sl     : 20upx;
+@btn-circle-size        : 36rpx;
+@btn-circle-size-lg     : 48rpx;
+@btn-circle-size-sl     : 20rpx;
 
 @btn-disable-color      : @disable-color;
 @btn-default-color      : @title-color;
@@ -71,26 +71,22 @@
 
 // z-index
 @zindex-spin            : 8;
-@zindex-affix            : 10;
+@zindex-affix           : 10;
 @zindex-tips            : 1060;
-@zindex-full            : 9999;         
+@zindex-mask            : 9000;
 // Animation
 @animation-time         : .3s;
 @transition-time        : .2s;
 @ease-in-out            : ease-in-out;
 // Avatar
-@avatar-bg: @background-light-color;
-@avatar-color: @background-init-color;
+@avatar-size-base: 80rpx;
+@avatar-font-size-base: 48rpx;
+@avatar-size-lg: 110rpx;
+@avatar-font-size-lg: 60rpx;
+@avatar-size-sm: 40rpx;
 @avatar-font-size-sm: @font-size-base;
-@avatar-font-size-base: 36upx;
-@avatar-font-size-lg: 48upx;
-@avatar-size-sm: 40upx;
-@avatar-size-base: 80upx;
-@avatar-size-lg: 100upx;
-@avatar-size-xl: 120upx;
-@avatar-border-radius: @border-radius-base;
 // Spin
-@spin-dot-size: 40upx;
-@spin-dot-size-sl: 24upx;
-@spin-dot-size-lg: 64upx;
-@spin-dot-size-hg: 96upx;
+@spin-dot-size: 40rpx;
+@spin-dot-size-sl: 24rpx;
+@spin-dot-size-lg: 64rpx;
+@spin-dot-size-hg: 96rpx;

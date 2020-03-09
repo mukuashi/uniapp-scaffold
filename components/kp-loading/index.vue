@@ -15,7 +15,7 @@ export default {
 	name:'KpLoading',
 	props: {
 		top: {
-			//距离顶部距离，单位upx
+			//距离顶部距离，单位rpx
 			type: Number,
 			default: 0
 		},

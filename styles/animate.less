@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | 动画库，参考 https://daneden.github.io/animate.css/.
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-03-04 // Initial version.
  * @Date: 2019-03-08 14:41:58
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-12-06 11:58:31
+ * @Last Modified time: 2020-03-05 22:59:41
  */
 [class*=animation-] {
   animation-duration: .6s;
@@ -13,42 +13,124 @@
   animation-fill-mode: both
 }
 .animation {
-  &-fade {
-    animation-name: fade;
-    animation-duration: .8s;
-    animation-timing-function: linear;
+  &-swing {
+    transform-origin: top center;
+    animation: swing 2s ease-in-out infinite;
   }
-  &-slideIn-up {
-    animation-name: slideInUp;
+  &-heartBeat {
+    animation: heartBeat 2s ease-in-out infinite;
   }
 }
 @keyframes slideInUp {
   from {
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
     visibility: visible;
   }
-
   to {
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes skeleton-rotate {
-  0% {
-    transform: rotate(0);
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
   }
-  100% {
-    transform: rotate(360deg);
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
   }
 }
-
-@keyframes skeleton-loading {
+@keyframes heartBeat {
   0% {
-    background-position: 100% 50%;
+    transform: scale(1);
+    opacity: .3;
   }
-  
-  100% {
-    background-position: 0 50%;
+
+  14% {
+    transform: scale(1.2);
+    opacity: .5;
+  }
+
+  28% {
+    transform: scale(1);
+    opacity: .7;
+  }
+
+  42% {
+    transform: scale(1.2);
+    opacity: .9;
+  }
+
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+    opacity: .3;
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+    opacity: .5;
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+    opacity: .6;
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+    opacity: .7;
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+    opacity: .8;
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+    opacity: .9;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

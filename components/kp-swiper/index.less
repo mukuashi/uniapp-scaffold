@@ -1,0 +1,20 @@
+@import "../../styles/mixin";
+//
+.swiper {
+	position: relative;
+	overflow: hidden;
+  &-item {
+		transition: all 0.5s;
+		padding: 0 40%;
+		.custom-position(absolute,@top:0,@left:0,@right:0);
+    &-children {
+      image {
+				box-sizing: content-box;
+				border-radius: 20rpx;
+				&.active {
+					border: 2px solid @font-theme-color;
+				}
+      }
+    }
+  }
+}

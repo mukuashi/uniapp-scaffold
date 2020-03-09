@@ -16,7 +16,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2015-Now Asako Studio. All rights reseved.
  * @fileoverview | Loading More组件，支持不同自定义，遵循key-value形式
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-15 // Initial version.

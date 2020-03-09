@@ -2,30 +2,26 @@
 //
 .author {
   width: 100%;
-  padding: 28upx;
+  padding: 28rpx 0;
   overflow: hidden;
-  background: @background-init-color;
+  position: relative;
   .center-middle-flex(@justify:flex-start);
-  &-detail {
+  &-content {
     vertical-align: middle;
     display: inline-flex;
     flex-direction: column;
-    padding-left: 16upx;
-    max-width: calc(100% - 100upx);
+    padding-left: 20rpx;
+    max-width: calc(100% - 100rpx);
     .nickname {
-      display: block;
-      font-size: 28upx;
-      color: @brand-color;
+      .font-setting(30rpx,500,rgba(@title-color,.9));
       .line-overflow;
     }
     .info {
-      display: block;
-      font-size: 22upx;
-      color: @text-light-color;
+      .font-setting(@font-size-base,@color:@text-light-color);
       .line-overflow;
     }
-    .disc {
-      padding: 0 6upx;
-    }
+  }
+  &-extra {
+    .custom-position(absolute,@right:9rpx);
   }
 }

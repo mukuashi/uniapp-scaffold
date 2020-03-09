@@ -1,0 +1,24 @@
+
+@import "../../styles/mixin";
+//
+.k-navbar {
+	width: calc(100% - 160rpx);
+	.center-middle-flex;
+	.custom-position(absolute,@top:0,@left:0,@zindex:@zindex-affix);
+	&-fixed {
+		position: fixed;
+	}
+	&-transparent {
+		background-color: transparent;
+	}
+	.left {
+		.custom-position(absolute,@left:20rpx);
+		margin-top: 10rpx;
+	}
+	.right {
+		.custom-position(absolute,@right:0);
+	}
+	.title {
+		.font-setting(@font-size-md,500,@font-initialize-color);
+	}
+}

@@ -1,10 +1,15 @@
 @import "./theme";
 // https://github.com/Tencent/weui-wxss/blob/master/src/style/weui.wxss
 page {
-  height: 100%;
-  background-color: @background-color-base;
+  width: 100vw;
+  min-height: 100vh;
   font-size: @font-size-base;
   line-height: @line-height-base;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 page, view, scroll-view,text, image,swiper, navigator,button, checkbox, form, input, label, picker, picker-view, slider, textarea, image, video, audio, map, camera, cover-image, cover-view {
   box-sizing: border-box;
@@ -14,9 +19,6 @@ cover-image, cover-image:hover {
 }
 image{
   will-change: transform;
-}
-scroll-view {
-  white-space: nowrap;
 }
 button::after {
   border: none;
