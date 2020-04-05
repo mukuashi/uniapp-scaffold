@@ -10,7 +10,14 @@
       height: `${navBarHeight}px`
     }"
   >
-    <view class="left">
+    <view class="left" v-if="left">
+      <kp-icon
+        :type="pages > 1 ? 'arrow_left': 'home'"
+        :size="pages > 1 ? 60 : 46"
+        @click="handleCommonNavigate"
+      />
+    </view>
+    <view class="left" v-else>
       <slot name="left"/>
     </view>
     <view class="title" v-if="title">{{title}}</view>
@@ -28,10 +35,14 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-27 15:52:41
+ * @Last Modified time: 2020-04-02 11:15:49
  */
+import KpIcon from "@/components/kp-icon";
 export default {
   name: "KpNavbar",
+  components: {
+    KpIcon
+  },
   props: {
     //标题
     title: {
@@ -47,17 +58,43 @@ export default {
     transparent: {
       type: Boolean,
       default: true
+    },
+    // 左侧导航开关
+    left: {
+      type: [ Boolean, String ],
+      default: false
     }
   },
   data() {
     return {
+      pages: 0, //页面栈
       prefixCls: "k-navbar",
       // 导航栏高度
       navBarHeight: this.CustomBar
     };
   },
+  created() {
+    this.pages = getCurrentPages().length;
+  },
   //方法
-  methods: {}
+  methods: {
+    handleCommonNavigate() {
+      // left为自定义跳转路径时且调回非首页
+      if (typeof this.left === "string") {
+        uni.navigateTo({
+          url: this.left
+        });
+      } else {
+        if (this.pages > 1) {
+          return uni.navigateBack();
+        }
+        // 跳转到 tabBar 页面只能使用 switchTab 跳转，
+        uni.switchTab({
+          url: "/pages/home/index"
+        });
+      }
+    }
+  }
 };
 </script>
 

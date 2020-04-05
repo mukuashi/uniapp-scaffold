@@ -1,18 +1,12 @@
 @import "../../styles/mixin";
 //
 .k-actionsheet {
-  width: 100%;
   min-height: 100rpx;
-  visibility: hidden;
-  transform: translate3d(0, 100%, 0);
-  transform-origin: center;
-  transition: all 0.32s ease-in-out;
   background-color: @background-base-color;
-  .custom-position(fixed,@left:0,@bottom:0,@right:0,@zindex:@zindex-mask + 1);
   border-top-left-radius: 40rpx;
   border-top-right-radius: 40rpx;
   .tips {
-    .font-setting(27rpx,400,@text-light-color);
+    .font-setting(27rpx, 400, @text-light-color);
     padding: 40rpx 60rpx;
     border-radius: inherit;
     .center-middle-flex;
@@ -27,44 +21,29 @@
   &-box {
     padding-bottom: 18rpx;
   }
-  &-show {
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
+  &-line {
+    border: 3.2rpx solid @background-base-color;
   }
   &-btn {
-    .size(100%,115rpx);
-    .center-middle-flex;
-    font-size: 36rpx;
+    height: 120rpx;
     position: relative;
     background: @background-init-color;
+    .center-middle-flex;
+    .font-setting(36rpx, @color: @title-color);
     &-last {
       padding-bottom: env(safe-area-inset-bottom);
     }
   }
   &-divider {
     &::before {
-      content: '';
+      content: "";
       width: 100%;
-      border-top: 1rpx solid rgba(@dark-color, .15);
-      .custom-position(absolute,@top:0,@left:0);
+      border-top: 1rpx solid rgba(@dark-color, 0.15);
+      .custom-position(absolute, @top:0, @left:0);
     }
   }
   &-cancel {
     color: @text-weight-color;
     padding-bottom: env(safe-area-inset-bottom);
-  }
-  &-hover {
-    background: @background-base-color;
-  }
-  &-mask {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.32s ease-in-out;
-    background-color: rgba(@dark-color, 0.6);
-    .custom-position(fixed,@top:0,@left:0,@bottom:0,@right:0,@zindex:@zindex-mask);
-    &-show {
-      opacity: 1;
-      visibility: visible;
-    }
   }
 }

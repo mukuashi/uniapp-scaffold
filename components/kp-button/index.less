@@ -1,67 +1,48 @@
-
 @import "../../styles/mixin";
 //
 .k-btn {
   .btn;
-  .btn-default;
-
-  &-long{
+  &-long {
     width: 100%;
   }
-
-  & > .k-icon + span, & > span + .k-icon{
-    margin-left: 4px;
+  &-default {
+    .button-variant(
+      @background-init-color; @btn-default-color; @border-color-base
+    );
   }
-
-
   &-success {
-    .btn-color(@success-color);
+    .button-variant(@success-color);
   }
-
   &-primary {
-    .btn-color(@primary-color);
+    .button-variant(@primary-color);
   }
-
   &-warning {
-    .btn-color(@warning-color);
+    .button-variant(@warning-color);
   }
-
   &-error {
-    .btn-color(@error-color);
+    .button-variant(@error-color);
   }
-
   &-info {
-    .btn-color(@info-color);
+    .button-variant(@info-color);
   }
   &-square {
     border-radius: 0;
   }
   &-circle,
   &-circle-outline {
-    .btn-circle;
+    border-radius: 2 * @btn-border-radius;
   }
-
-  &&-loading {
-    pointer-events: none;
-    position: relative;
-
-    &:before {
-      display: block;
-    }
-  }
-
-  &-plain{
+  &-plain {
     background: transparent;
-    &:hover{
+    &:hover {
       background: transparent;
     }
   }
-
   &::after {
     content: "";
     border-radius: 20rpx;
     .square(200%);
-    .custom-position(absolute,@left:0,@top:0);
+    .custom-position(absolute, @left:0, @top:0);
     transform-origin: 0 0;
     transform: scale(0.5, 0.5);
   }
@@ -75,12 +56,10 @@
   white-space: nowrap;
   user-select: none;
   padding: 0 36rpx;
-  z-index: 1;
-  .center-middle-flex;
+  .center-middle-flex(@display:inline-flex);
   .button-size(@btn-font-size; @btn-height; @btn-border-radius-sl);
-  > .k-icon {
-    line-height: @line-height-base;
-    vertical-align: middle;
+  .text {
+    padding-left: 12rpx;
   }
   &,
   &:active,
@@ -94,7 +73,6 @@
 
   &:not([disabled]):active {
     outline: 0;
-    // transition: none;  // 如果不注释此行，那么active会和focus同时触发，此时focus的开始动画transition会无效
   }
 
   &.disabled,
@@ -104,43 +82,41 @@
       pointer-events: none;
     }
   }
-
   &-large {
     .button-size(@btn-font-size-lg; @btn-height-lg; @btn-border-radius-lg);
-    padding: 0 100rpx;
+    padding: 0 60rpx;
   }
-
   &-small {
     .button-size(@btn-font-size-sl; @btn-height-sl; @btn-border-radius-sl);
     padding: 0 20rpx;
   }
 }
-
 // mixin
 .button-size(@size; @height; @border-radius) {
   height: @height;
   font-size: @size;
   border-radius: @border-radius;
 }
-
-.button-color(@color; @background; @border) {
+.button-style(@background;@color; @border) {
   color: @color;
   background-color: @background;
-  border: 1rpx solid @background;
+  border: 2rpx solid @border;
+  &.k-btn-plain {
+    border-color: @color;
+  }
   // a inside Button which only work in Chrome
   // http://stackoverflow.com/a/17253457
   > a:only-child {
     color: currentColor;
     &:after {
-      content: '';
-      .custom-position(absolute,@top:0,@left:0,@bottom:0,@right:0);
+      content: "";
+      .custom-position(absolute, @top:0, @left:0, @bottom:0, @right:0);
       background: transparent;
     }
   }
 }
-
-.button-variant(@color; @background; @border) {
-  .button-color(@color; @background; @border);
+.button-variant(@background:null; @color:@font-initialize-color;@border:null) {
+  .button-style(@background; @color; @border);
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -149,27 +125,7 @@
     &:focus,
     &:active,
     &.active {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
-}
-
-// Color
-.btn-color(@color) {
-  .button-variant(@font-initialize-color; @color; @color);
-}
-
-// Circle for Icon
-.btn-circle(@btnClassName: k-btn) {
-  border-radius: @btn-circle-size;
-  &.@{btnClassName}-large {
-      border-radius: @btn-circle-size-lg;
-  }
-  &.@{btnClassName}-size{
-      border-radius: @btn-circle-size-sl;
-  }
-}
-// Default
-.btn-default() {
-  .button-variant(@btn-default-color; @btn-default-bg; @border-color-base);
 }

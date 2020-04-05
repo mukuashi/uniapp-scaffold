@@ -1,7 +1,7 @@
 <template>
   <view class="home">
     <kp-avatar :image="app.images.logo" size="large"/>
-    <h1>test</h1>
+    <h1>Home</h1>
   </view>
 </template>
 <style lang="less" scoped src="./index.less"></style>
@@ -13,7 +13,7 @@
  * @version 0.1 | 2019-07-08 // Initial version.
  * @Date:   2019-07-08 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-15 21:49:59
+ * @Last Modified time: 2020-04-05 23:24:00
  */
 import app from "@/config/data";
 import KpAvatar from "@/components/kp-avatar";
@@ -25,8 +25,7 @@ export default {
   },
   data() {
     return {
-      app,
-      index: 0
+      app
     };
   },
   onLoad() {

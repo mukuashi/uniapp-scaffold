@@ -1,20 +1,20 @@
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
+ * Copyright (c) 2015-Now Asako Studio. All rights reseved.
  * @fileoverview | 基于uni-request的二次扩展，Promise 对象实现的request使用方式，支持请求和响应拦截
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.
  * @Date:   2019-07-08 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-15 21:51:12
+ * @Last Modified time: 2020-02-29 18:33:34
 */
-import config from '../config/index'
+import globalConfig from '@/config';
 import { safeJsonStringInBrowser } from "./index";
 // 拦截器，interceptor.request或response可以单独封装http处理
 export default {
 	request(options) {
 		// 默认request配置
 		const config = {
-			baseUrl: options.baseUrl || config.apiHosts.api,
+			baseUrl: options.baseUrl || globalConfig.api,
 			header: {
 				'Content-Type': 'application/json;charset=UTF-8'
 			},
@@ -56,7 +56,7 @@ export default {
 				// data || status
 				const errToast = () => {
 					uni.showToast({
-						title: res.data && (res.data.text || res.data.message || res.data.errMsg) || '服务异常 ～',
+						title: res.data && (res.data.text || res.data.message || res.data.error || res.data.errMsg) || '服务器开小差了 ～',
 						icon: 'none'
 					})
 				}
@@ -69,7 +69,7 @@ export default {
 				if (/20\d$/.test(String(res.statusCode))) {
 					// 兼容su部分接口返回data为空的情况
 					resolve({ ...res.data, ok: true })
-				} else if (res.statusCode === 401 || (res.statusCode === 400 && res.data.errorCode === 100038)) {
+				} else if (res.statusCode === 401 || res.statusCode === 400) {
 					// 未登录情况或密码修改重定向登录
 					errToast()
 					redirectTo()

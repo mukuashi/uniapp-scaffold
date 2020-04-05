@@ -7,13 +7,15 @@
       :icon-size="iconSize"
       :shape="shape"
       :avatar-bg="avatarBg"
+      :avatar-gradient="avatarGradient"
     />
     <view class="author-content">
       <text class="nickname" v-if="title">{{title}}</text>
       <text class="info" v-if="info">{{info}}</text>
     </view>
     <view class="author-extra">
-      <slot/>
+      <kp-icon v-if="extra" :size="extraObj.size" :type="extraObj.icon" :color="extraObj.color"/>
+      <slot name="extra"/>
     </view>
   </view>
 </template>
@@ -26,17 +28,20 @@
  * @version 0.1 | 2020-02-10 // Initial version.
  * @Date: 2020-02-10 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-26 01:49:10
+ * @Last Modified time: 2020-04-02 17:05:34
  */
+import KpIcon from "../kp-icon";
 import KpAvatar from "../kp-avatar";
 export default {
   name: "KpAuthor",
   components: {
+    KpIcon,
     KpAvatar
   },
   props: {
     avatar: String,
     avatarBg: String,
+    avatarGradient: String,
     icon: String,
     iconSize: {
       type: [String, Number],
@@ -44,6 +49,11 @@ export default {
     },
     title: String,
     info: String,
+    // 右侧额外信息，默认导航小箭头形式（如想自定义图标或颜色可按照配置混入Object类型）
+    extra: {
+      type: [Boolean, String, Object],
+      default: false
+    },
     shape: {
       validator(value) {
         return ["circle", "square"].includes(value);
@@ -52,6 +62,17 @@ export default {
     },
     // 路径形式，导航页面，保留当前页面，跳转到应用内的某个页面
     navigator: String
+  },
+  computed: {
+    extraObj() {
+      const tpl = { size: 45, icon: "arrow_right", color: "#585860" };
+      if (this.extra === "miniprogram") {
+        return { ...tpl, icon: "miniprogram", color: "#6367ef" };
+      }
+      return this.extra && this.extra instanceof Object
+        ? { ...tpl, ...this.extra }
+        : tpl;
+    }
   },
   methods: {
     handleClick(e) {

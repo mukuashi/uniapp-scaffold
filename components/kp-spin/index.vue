@@ -14,7 +14,16 @@
     }"
   >
     <view :class="[`${prefixCls}-main`]" :style="{color:color}">
-      <view :class="[`${prefixCls}-dot`]" :style="{backgroundColor:color}"/>
+      <block v-if="loadImage">
+        <image
+          mode="widthFix"
+          :src="spinImage"
+          :style="{
+            width: `${loadImageSize}rpx`
+          }"
+        >
+      </block>
+      <view v-else :class="[`${prefixCls}-dot`]" :style="{backgroundColor:color}"/>
       <text :class="[`${prefixCls}-text`]">
         <slot/>
       </text>
@@ -30,7 +39,7 @@
  * @version 0.1 | 2019-03-04 // Initial version.
  * @Date: 2019-03-04 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-03-01 14:01:02
+ * @Last Modified time: 2020-04-02 21:32:43
  */
 const prefixCls = "k-spin";
 export default {
@@ -65,13 +74,29 @@ export default {
     },
     height: {
       type: [String, Number],
-      default: 360
+      default: 300
+    },
+    loadImage: [String, Boolean],
+    loadImageSize: {
+      type: [String, Number],
+      default: 160
     }
   },
   data() {
     return {
       prefixCls
     };
+  },
+  computed: {
+    spinImage() {
+      if (this.loadImage) {
+        return (
+          (typeof this.loadImage === "boolean" &&
+            "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/loading_default.svg?sign=119845efd5dde7f3874c62e5b2be11b3&t=1585118875") ||
+          (typeof this.loadImage === "string" && this.loadImage)
+        );
+      }
+    }
   },
   methods: {}
 };

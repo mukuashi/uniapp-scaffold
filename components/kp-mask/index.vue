@@ -1,30 +1,33 @@
 <template>
-  <view
-    v-if="value"
-    @touchmove.stop
-    @scroll.stop.prevent
-    @click.stop="handleClickMask"
-    :class="[ 
+  <view :class="[ 
       prefixCls,
-      `${prefixCls}-class`,
-      `${prefixCls}-${position}`,
-    ]"
-    :style="{
-      backgroundColor: `rgba(0,0,0,${opacity})`
-    }"
-  >
+      `${prefixCls}-${position}`
+    ]" v-if="value">
     <view
       :class="[
       'content', 
       `content-${position}`,
-      closeAnimate && 'animation' 
+      animationIn && `animation-in-${position}`,
+      (animationOut||animationCancel) && `animation-out-${position}`
     ]"
     >
       <slot/>
     </view>
     <view v-if="closeIconShow&&position!=='bottom'" class="close">
-      <kp-icon type="close_circle" :size="closeIconSize" @click.native="handleCloseMask"/>
+      <kp-icon type="close_circle" :size="closeIconSize" @click="handleCloseMask"/>
     </view>
+    <!-- 蒙层 -->
+    <view
+      @touchmove.stop
+      @scroll.stop
+      @tap.stop="handleClickMask"
+      :class="[ 
+        `${prefixCls}-cover`
+      ]"
+      :style="{
+        backgroundColor: `rgba(0,0,0,${opacity})`
+      }"
+    />
   </view>
 </template>
 <style lang="less" scoped src="./index.less"></style>
@@ -36,7 +39,7 @@
  * @version 0.1 | 2020-03-05 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-03-06 15:44:09
+ * @Last Modified time: 2020-03-24 13:12:52
  */
 import KpIcon from "../kp-icon";
 
@@ -54,7 +57,7 @@ export default {
     // 不透明度
     opacity: {
       type: [String, Number],
-      default: 0.7
+      default: 0.6
     },
     // slot内容位置，默认居中
     position: {
@@ -62,9 +65,9 @@ export default {
       validator(value) {
         return ["center", "top", "bottom"].includes(value);
       },
-      default: "bottom" //bottom时不显示底部关闭icon
+      default: "center" //bottom时不显示底部关闭icon
     },
-    // 锁定，背景禁止滚动且遮罩不可关闭
+    // 蒙层锁定点击遮罩不可关闭
     locked: {
       type: Boolean,
       default: false
@@ -79,15 +82,21 @@ export default {
       type: [Number, String],
       default: 70
     },
-    // 关闭是否有动画
-    closeAnimate: {
+    // 是否需要进入动画
+    animationIn: {
       type: Boolean,
       default: true
+    },
+    // 点击自定义取消是否需要退出动画
+    animationCancel: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      prefixCls: "k-mask"
+      prefixCls: "k-mask",
+      animationOut: false // 点击蒙层退出动画
     };
   },
   methods: {
@@ -100,7 +109,12 @@ export default {
     },
     // close mask
     handleCloseMask() {
-      this.$emit("close", false);
+      // 加个延时动画
+      this.animationOut = true;
+      setTimeout(() => {
+        this.animationOut = false;
+        this.$emit("close", false);
+      }, 300);
     }
   }
 };

@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
+ * @fileoverview | less minxin 配置项目中公共处理的mixin
+ * @Author: mukuashi | mukuashi@icloud.com
+ * @version 0.1 | 2019-03-08 // Initial version.
+ * @Date: 2019-03-08 15:59:03 
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2020-02-23 01:21:05
+*/
+/*
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
+ * @fileoverview | 定义小程序内部统一的主题及全局变量
+ * @Author: mukuashi | mukuashi@icloud.com
+ * @version 0.1 | 2019-07-08 // Initial version.
+ * @Date: 2019-07-08 14:41:58 
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2020-03-30 12:40:32
+ */
+.ued.data-v-672275df {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+

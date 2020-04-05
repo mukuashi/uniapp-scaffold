@@ -1,22 +1,23 @@
 <template>
-  <button 
-    hover-class="none" 
+  <button
+    hover-class="none"
     :class="[ 
       prefixCls,
+      `${prefixCls}-class`,
       `${prefixCls}-${type}`,
       `${prefixCls}-${shape}`,
       `${prefixCls}-${size}`,
       long ? `${prefixCls}-long` : '',
-      loading ? `${prefixCls}-${loading}` : '',
       plain ? `${prefixCls}-plain` : ''
     ]"
     :disabled="disabled"
     :plain="plain"
-    @click="handleButtonClick"
+    @tap="handleButtonClick"
   >
-    <kp-icon type="loading" v-if="loading" />
-    <kp-icon :type="icon" :custom="customIcon" v-if="(icon || customIcon) && !loading" />
-    <slot />
+    <kp-icon :type="icon" v-if="icon" :size="iconSize"/>
+    <view class="text">
+      <slot/>
+    </view>
   </button>
 </template>
 <style lang="less" scoped src="./index.less"></style>
@@ -28,42 +29,50 @@
  * @version 0.1 | 2019-07-15 // Initial version.
  * @Date: 2019-07-15 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-11-15 16:08:13
+ * @Last Modified time: 2020-03-26 02:38:48
  */
-import KpIcon from '../kp-icon'
-const prefixCls = 'k-btn'
+import KpIcon from "../kp-icon";
+const prefixCls = "k-btn";
 
 export default {
-  name: 'KpButton',
+  name: "KpButton",
   components: { KpIcon },
   props: {
     type: {
-      validator (value) {
-        return ['default', 'primary', 'dashed', 'text', 'info', 'success', 'warning', 'error'].includes(value)
+      validator(value) {
+        return [
+          "default",
+          "primary",
+          "dashed",
+          "text",
+          "info",
+          "success",
+          "warning",
+          "error"
+        ].includes(value);
       },
-      default: 'default'
+      default: "default"
     },
     shape: {
-      validator (value) {
-        return [ 'square', 'circle', 'circle-outline'].includes(value)
+      validator(value) {
+        return ["square", "circle", "circle-outline"].includes(value);
       },
-      default: 'square'
+      default: "square"
     },
     size: {
-      validator (value) {
-        return ['small', 'large', 'default'].includes(value)
+      validator(value) {
+        return ["small", "large", "default"].includes(value);
       },
-      default: 'default'
+      default: "default"
     },
-    loading: Boolean,
     disabled: Boolean,
     icon: {
       type: String,
-      default: ''
+      default: ""
     },
-    customIcon: {
-      type: String,
-      default: ''
+    iconSize: {
+      type: [Number, String],
+      default: 28
     },
     long: {
       type: Boolean,
@@ -80,7 +89,7 @@ export default {
   }),
   computed: {
     // 非H5端不支持 Vue官方文档：Class 与 Style 绑定 中的 classObject 和 styleObject 语法，暂时没法用。
-    classes () {
+    classes() {
       return [
         `${prefixCls}`,
         `${prefixCls}-${this.type}`,
@@ -88,19 +97,16 @@ export default {
         `${prefixCls}-${this.size}`,
         {
           [`${prefixCls}-long`]: this.long,
-          [`${prefixCls}-loading`]: this.loading,
           [`${prefixCls}-plain`]: this.plain
         }
-      ]
+      ];
     }
   },
   methods: {
-    handleButtonClick (event) {
-      this.$emit('on-click', event)
+    handleButtonClick(event) {
+      this.$emit("on-click", event);
     }
   },
-  mounted () {
-    
-  }
-}
+  mounted() {}
+};
 </script>

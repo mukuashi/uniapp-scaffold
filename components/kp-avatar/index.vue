@@ -10,11 +10,13 @@
     ]"
     :style="{
       backgroundColor: avatarBg,
+      backgroundImage: avatarGradient,
       width: avatarSize,
       height: avatarSize
     }"
+    @tap="handleBoxClick"
   >
-    <image lazy-load :src="image" :mode="mode" v-if="image" @error="handleError">
+    <image lazy-load :src="image" :mode="mode" v-if="image" @error="handleImgError">
     <kp-icon :type="icon" v-if="!image && icon" :size="iconSize"/>
     <text :class="[prefixCls + '-text']" v-else>
       <slot/>
@@ -30,12 +32,13 @@
  * @version 0.1 | 2019-07-10 // Initial version.
  * @Date: 2019-07-10 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-29 20:47:00
+ * @Last Modified time: 2020-04-05 23:25:54
  */
 import KpIcon from "../kp-icon";
-
-const prefixCls = "k-avatar";
 import { isNumber } from "@/utils";
+//
+const prefixCls = "k-avatar";
+//
 export default {
   name: "KpAvatar",
   components: {
@@ -60,6 +63,7 @@ export default {
       default: 28
     },
     avatarBg: String,
+    avatarGradient: String,
     // 更多模式参考 https://uniapp.dcloud.io/component/image
     mode: {
       type: String,
@@ -68,19 +72,19 @@ export default {
   },
   data() {
     return {
-      prefixCls,
-      scale: 1,
-      childrenWidth: 0,
-      isSlotShow: false
+      prefixCls
     };
   },
   computed: {
     avatarSize() {
-      return isNumber(Number(this.size)) ? `${Number(this.size)}rpx` : "";
+      return isNumber(Number(this.size)) && `${Number(this.size)}rpx`;
     }
   },
   methods: {
-    handleError(e) {
+    handleBoxClick(e) {
+      this.$emit("on-click", e);
+    },
+    handleImgError(e) {
       this.$emit("on-error", e);
     }
   }

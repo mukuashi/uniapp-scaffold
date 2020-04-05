@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/ued/index"
+  ],
+  "subPackages": [],
+  "window": {},
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#574E5F",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "Home",
+        "iconPath": "static/tabBar/tabbar-home-normal.png",
+        "selectedIconPath": "static/tabBar/tabbar-home-focus.png"
+      },
+      {
+        "pagePath": "pages/ued/index",
+        "text": "UED",
+        "iconPath": "static/tabBar/tabbar-me-normal.png",
+        "selectedIconPath": "static/tabBar/tabbar-me-focus.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "开启位置权限，一起来玩耍吧"
+    }
+  },
+  "usingComponents": {
+    "poster": "/wxcomponents/wxa-plugin-canvas/poster/index"
+  }
+}

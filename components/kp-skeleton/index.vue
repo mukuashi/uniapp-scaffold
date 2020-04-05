@@ -60,7 +60,7 @@
  * @version 0.2 | 2019-12-06 // circular与DOM元素适配.
  * @Date: 2019-12-02 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-12-10 14:18:59
+ * @Last Modified time: 2020-03-28 01:28:53
  */
 const prefixCls = "k-skeleton";
 
@@ -141,7 +141,6 @@ export default {
     skeletonElements: [],
     skeletonDefaultTpl: {}
   }),
-  computed: {},
   methods: {
     skeletonBgShade(value) {
       return `linear-gradient(90deg, ${value} 25%, #e6e6e6 37%, ${value} 63%)`;

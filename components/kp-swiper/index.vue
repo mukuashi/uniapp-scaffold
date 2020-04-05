@@ -37,7 +37,7 @@
  * @version 0.1 | 2020-02-18 // Initial version.
  * @Date: 2020-02-18 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-19 16:27:20
+ * @Last Modified time: 2020-03-30 14:05:52
  */
 import { debounce, deepClone } from "@/utils";
 export default {
@@ -111,7 +111,7 @@ export default {
             "%," +
             right * 2 +
             "px)",
-          zIndex: 9999 - right,
+          zIndex: 9000 - right,
           opacity: 0.8 / right
         };
       } else {
@@ -124,7 +124,7 @@ export default {
             "%," +
             e * 2 +
             "px)",
-          zIndex: 9999 - e,
+          zIndex: 9000 - e,
           opacity: 0.8 / e
         };
       }

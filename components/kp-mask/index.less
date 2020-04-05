@@ -1,42 +1,44 @@
-
 @import "../../styles/mixin";
-@import "../../styles/animate";
 //
 .k-mask {
-  .size(100vw,100vh);
-  .custom-position(fixed,@top:0,@left:0,@zindex:@zindex-mask);
-  transition: all 0.3s;
-  &-top {
-
+  position: relative;
+  &-cover {
+    transition: all 0.3s;
+    .size(100vw, 100vh);
+    .custom-position(fixed, @top:0, @left:0, @zindex: @zindex-mask);
   }
   &-center {
     .center-middle-flex;
     flex-flow: column wrap;
-  }
-  &-bottom .close {
-    margin: 0;
-    .custom-position(absolute,@bottom:-7rem,@right:1.8rem);
   }
   .content {
     width: 100%;
     min-height: 120rpx;
     text-align: center;
     color: @font-initialize-color;
+    z-index: @zindex-mask+1!important;
     > img {
       width: 100%;
     }
     &-bottom {
-      .custom-position(absolute,@bottom:0,@left:50%);
-      transform: translateX(-50%);
+      .custom-position(fixed, @bottom:0);
     }
   }
   .animation {
-    animation: zoomOut .5s ease-out 1;
+    &-in {
+      &-bottom {
+        animation: slideInUp 0.35s ease-in-out 1;
+      }
+    }
+    &-out {
+      &-bottom {
+        animation: slideOutDown 0.35s ease-out 1;
+      }
+    }
   }
   .close {
-    opacity: .8;
-    margin-top: .8rem;
+    opacity: 0.8;
+    margin-top: 0.8rem;
     text-align: center;
-    animation: fadeIn 1s ease-out 1;
   }
 }

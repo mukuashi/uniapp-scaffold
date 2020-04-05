@@ -1,50 +1,44 @@
 <template>
-  <view @touchmove.stop @scroll.prevent>
-    <view
-      :class="[
-        `${prefixCls}`,
-        `${prefixCls}-class`,
-        value && `${prefixCls}-show`
-      ]"
-    >
+  <kp-mask
+    v-model="value"
+    :locked="locked"
+    position="bottom"
+    :animation-cancel="animationCancel"
+    @close="handleClickAction('close')"
+  >
+    <view :class="[ `${prefixCls}`]">
       <view class="tips" :style="{ color: tipsColor}" v-if="tips">{{tips}}</view>
-      <view :class="[ `${prefixCls}-content`, isCancel && `${prefixCls}-box` ]">
-        <image v-if="tipsImage" :src="tipsImage" mode="widthFix" show-menu-by-longpress>
+      <view
+        :class="[ 
+          `${prefixCls}-content`, 
+          isCancel && (itemList.length ? `${prefixCls}-box` : `${prefixCls}-line`)
+        ]"
+      >
+        <image v-if="tipsImage" :src="tipsImage" mode="widthFix" webp show-menu-by-longpress>
         <block v-for="(item,index) in itemList" :key="index">
-          <view
+          <button
             :class="[
               `${prefixCls}-btn`,
               `${prefixCls}-divider`,
               `${prefixCls}-btn-last` && (!isCancel && index===itemList.length-1)
             ]"
-            :hover-class="`${prefixCls}-hover`"
-            :hover-stay-time="150"
             :data-index="index"
-            :style="{ color:item.color || '#333'}"
+            :open-type="item.opentype"
+            :style="{ color:item.color }"
             @tap="handleClickItem"
-          >{{item.text}}</view>
+          >{{item.text}}</button>
         </block>
       </view>
-      <view
+      <button
         :class="[
           `${prefixCls}-btn`,
           `${prefixCls}-cancel`
         ]"
-        :hover-class="`${prefixCls}-hover`"
-        :hover-stay-time="150"
         v-if="isCancel"
-        @tap="handleClickCancel"
-      >取消</view>
+        @tap="handleClickAction('cancel')"
+      >{{cancelText}}</button>
     </view>
-    <!-- 遮罩，后期用mask组件换掉 -->
-    <view
-      :class="[
-        `${prefixCls}-mask`,
-        value && `${prefixCls}-mask-show`
-      ]"
-      @tap="handleClickMask"
-    />
-  </view>
+  </kp-mask>
 </template>
 <style lang="less" scoped src="./index.less"></style>
 <script>
@@ -55,11 +49,14 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-29 16:35:52
+ * @Last Modified time: 2020-03-30 19:47:08
  */
+import KpMask from "../kp-mask";
 export default {
   name: "KpActionsheet",
-  components: {},
+  components: {
+    KpMask
+  },
   props: {
     // 显示操作菜单开关
     value: {
@@ -67,19 +64,14 @@ export default {
       default: false
     },
     //点击遮罩 是否可关闭
-    maskClosable: {
+    maskClosed: {
       type: Boolean,
       default: true
     },
     //菜单按钮数组，自定义文本颜色，红色参考色：#e53a37
     itemList: {
       type: Array,
-      default: () => [
-        {
-          text: "确定",
-          color: "#333"
-        }
-      ]
+      default: () => [{ text: "确定" }]
     },
     //提示文字
     tips: {
@@ -94,25 +86,42 @@ export default {
     isCancel: {
       type: Boolean,
       default: true
+    },
+    // 取消文案
+    cancelText: {
+      type: String,
+      default: "取消"
+    },
+    // 蒙层锁定点击遮罩不可关闭
+    locked: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      prefixCls: "k-actionsheet"
+      prefixCls: "k-actionsheet",
+      animationCancel: false
     };
   },
   methods: {
-    handleClickMask() {
-      if (!this.maskClosable) return;
-      this.handleClickCancel();
-    },
     handleClickItem(e) {
       if (!this.value) return;
       const data = e.currentTarget.dataset;
       this.$emit("confirm", data.index);
+      this.handleClickAction("cancel");
     },
-    handleClickCancel() {
-      this.$emit("cancel");
+    handleClickAction(type) {
+      if (type === "close") {
+        this.$emit("cancel", false);
+      }
+      if (type === "cancel") {
+        this.animationCancel = true;
+        setTimeout(() => {
+          this.animationCancel = false;
+          this.$emit("cancel", false);
+        }, 300);
+      }
     }
   }
 };
