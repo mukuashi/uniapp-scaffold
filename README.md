@@ -23,20 +23,25 @@
 
 - 浅子影报：一页日历，伴你每天好心情 🌞
 
+| Miniprogram | Home | About | Wallpaper Detail | AI日报 |
+| --- | --- | --- | --- | --- |
+| <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRGdDelZVL0l1aEYxSXdQT1JzMHV3SlVlYmlETXU5WHl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRkJSSGYrWTdyM0pwcWZvNDNkVU1uVDkwbm9SSFJYL25nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" />  | <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQmlVejBzYXRtQzFsd1QrSjRMMlB6K1JjRldScm1aWDlRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQkhaNUhYcW8vR1lKS1NFVmhiSUFxK1F4VFRRTTJGNTd3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxREVNQzZpRGg1TUxGWkhEYkZBblZ2M2VnMnFtbGNZb0dBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS3VjS3JSa1RKN1lWUHJ4dGcwTVYydjVXMEVjYm1UbFl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS0E1RGZVYkxuZWkvQjVnc2RGT2FYcG9zYnJFMDNIUUZBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> 
+
+- 浅子居家：智能生活，从家开始 🏡
+
 - 更多补充中
 
 ### Guides | 参考资料
 
 - [uni-app 文档](https://uniapp.dcloud.io)
-- [微信官方小程序文档](https://developers.weixin.qq.com/miniprogram/dev/)
-- [微信小程序 API](https://developers.weixin.qq.com/miniprogram/dev/api/)
-- [头条小程序文档](https://developer.toutiao.com/docs/framework/)
+- [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/framework)
+- [头条小程序文档](https://microapp.bytedance.com/dev/cn/mini-app/develop/framework/basic-reference/introduction)
 - [百度小程序文档](https://smartprogram.baidu.com/docs/develop/fuctionlist/list/)
-- [支付宝小程序文档](https://mini.open.alipay.com/channel/miniIndex.htm)
+- [支付宝小程序文档](https://opendocs.alipay.com/mini/developer)
 - [airbnb javascript standard](https://github.com/airbnb/javascript)
 - [Ant Design introduce](https://ant.design/docs/spec/introduce-cn)
 - [JD Front-End Coding Guidelines](https://guide.aotu.io)
-- [React 系多端统一开发解决方案](https://taro.aotu.io)
+- [Taro · React系小程序及多端统一开发解决方案](https://taro.aotu.io)
 
 ### Dev | 开发姿势
 
