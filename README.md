@@ -64,7 +64,7 @@
 3. 高级开发技巧 https://uniapp.dcloud.io/snippet
 4. 性能优化建议 https://uniapp.dcloud.io/performance
 
-#### 头条
+#### 头条版
 
 1. 视频 video 相关
 
@@ -108,7 +108,98 @@
 │ │──App.vue                 # 全局入口vue index
 ```
 
-更多补充中
+### 组件 | UI库
+
+```
+// 组件列表(基于微信视觉规范进一步封装的组件)
+
+- 基础组件
+  - kp-button
+  - kp-avatar
+  - kp-icon
+  - kp-badge
+  - kp-mask（遮罩，可自定义slot content及position）
+  - kp-tag
+  - kp-tips
+  - kp-actionsheet（浮动面板，支持更强大的配置和淡入淡出动画）
+  - kp-card
+  - kp-spin（支持svg、img、css loading）
+
+- 业务组件
+  - kp-author（一条数据/一个作者的丰富场景，头像、title、描述、额外插槽等）
+  - kp-skeleton（骨架屏）
+  - kp-status（状态结果页）
+  - kp-swiper（3D画廊幻灯片）
+  - kp-sticky（滑动固定器）
+  - kp-navbar（自定义导航栏）
+  - kp-clock（计时器）
+  - kp-interact（互动）
+  - more...
+
+// 使用方式
+import { KpAuthor } from '@/components/kp-author'
+export default {
+  name: "Demo",
+  components: {
+    KpAuthor
+  },
+  data() {
+    return {}
+  },
+  methods() {
+  
+  }
+}
+```
+
+### Services | 数据获取
+
+```
+// 使用方式
+- services层（新建yourpage.js）
+import config from "@/config";
+import http from "@/utils/request";
+const { request } = http;
+/* request层做了统一api host拼接url，若覆盖只需自定义baseUrl */
+
+// 某推荐列表
+export function getAlbumListSvc(query = {}) {
+  return request({
+    baseUrl: config.yourkey, // 自定义请求host
+    url: "/yourpath",
+    method: "get",
+    data: Object.assign(
+      {
+        page: 1,
+        size: 10
+      },
+      query
+    )
+  });
+}
+- pages业务层
+import * as Services from "@/services/home";
+export default {
+  data() {
+    return {
+      entry: []
+    }
+  },
+  onLoad(options) {
+    // 若需要参数可从options取然后传入query
+    this.getAlbumList(query = {})
+  },
+  methods() {
+    async get500pxAlbumList() {
+    let res = await Services.getAlbumListSvc();
+     this.entry = res.data;
+    }
+  }
+}
+
+```
+
+### 一点补充
 
 !> Request.js 库：基于原生 request 和 uni-request 等再封装的一款请求库，支持拦截、异步、捕捉错误等统一处理的能力，如需业务扩展可直接联系脚手架作者；
 
