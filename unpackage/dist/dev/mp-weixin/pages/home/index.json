@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "Home",
-  "usingComponents": {
-    "kp-avatar": "/components/kp-avatar/index"
-  }
-}

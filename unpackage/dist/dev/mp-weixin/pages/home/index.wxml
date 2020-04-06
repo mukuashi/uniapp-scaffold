@@ -1,1 +1,0 @@
-<view class="home data-v-fa14e96c"><kp-avatar vue-id="6b3d36ea-1" image="{{app.images.logo}}" size="large" class="data-v-fa14e96c" bind:__l="__l"></kp-avatar><view class="_h1 data-v-fa14e96c">Home</view></view>
