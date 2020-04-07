@@ -190,7 +190,7 @@ export default {
     this.getAlbumList(query = {})
   },
   methods() {
-    async get500pxAlbumList() {
+    async getAlbumList() {
     let res = await Services.getAlbumListSvc();
      this.entry = res.data;
     }
