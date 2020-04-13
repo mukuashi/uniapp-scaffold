@@ -203,9 +203,9 @@ export default {
 
 ### 一点补充
 
-!> Request.js 库：基于原生 request 和 uni-request 等再封装的一款请求库，支持拦截、异步、捕捉错误等统一处理的能力，如需业务扩展可直接联系脚手架作者；
+- Request.js 库：基于原生 request 和 uni-request 等再封装的一款请求库，支持拦截、异步、捕捉错误等统一处理的能力，如需业务扩展可直接联系脚手架作者；
 
-!> Theme Less 主题库：整个 app 的主题库，由 theme、mixin、reset 等基础配置样式组成，支持业务方自定义自己的主题库；
+- Theme Less 主题库：整个 app 的主题库，由 theme、mixin、reset 等基础配置样式组成，支持业务方自定义自己的主题库；
 
 ### 技术维护
 
