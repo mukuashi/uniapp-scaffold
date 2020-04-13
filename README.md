@@ -49,7 +49,7 @@
 
 2. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
 
-3. 在 Hbuilder 中导入当前项目（uni-app 类型），修改或更新当前配置，manifest.json 和 pages.json;
+3. 在 Hbuilder 中导入当前项目（uni-app 类型），修改或更新当前配置，manifest.json 和 pages.json（尤其注意要添加对应平台的 appid）;
 
 4. 配置插件，菜单栏点击插件管理可以安装当前项目所需要的插件和 loader，（less、babel、es6 等），npm insatll （步骤 3 不分先后）;
 
