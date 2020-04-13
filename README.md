@@ -43,19 +43,21 @@
 - [JD Front-End Coding Guidelines](https://guide.aotu.io)
 - [Taro · React系小程序及多端统一开发解决方案](https://taro.aotu.io)
 
-### Dev | 开发姿势
+### Dev | 开发姿势（Github这个版本没有集成公司的CLI Tpl，开发者可以手动clone）
 
-1. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
+1. cd projectName => git clone此项目 => 基于此项目开发;
 
-2. 在 Hbuilder 中导入当前项目（uni-app 类型），修改或更新当前配置，manifest.json 和 pages.json
+2. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
 
-3. 配置插件，菜单栏点击插件管理可以安装当前项目所需要的插件和 loader，（less、babel、es6 等），npm insatll （步骤 3 不分先后）
+3. 在 Hbuilder 中导入当前项目（uni-app 类型），修改或更新当前配置，manifest.json 和 pages.json;
 
-4. 菜单栏点击运行到要开发的小程序平台，不习惯当前 IDE 的可以切换到 VS Code，同步开发，实时编译
+4. 配置插件，菜单栏点击插件管理可以安装当前项目所需要的插件和 loader，（less、babel、es6 等），npm insatll （步骤 3 不分先后）;
 
-5. 进入各家开发者后台，提审，发布
+5. 菜单栏点击运行到要开发的小程序平台，不习惯当前 IDE 的可以切换到 VS Code，同步开发，实时编译;
 
-6. 更多补充中
+6. 进入各家开发者后台，提审，发布（也可以基于miniprogram-cli对接各家小程序平台实现自动构建上传）
+
+7. 更多补充中
 
 ### 注意事项/坑
 
