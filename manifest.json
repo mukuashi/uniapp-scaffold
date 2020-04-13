@@ -52,7 +52,7 @@
   /* 快应用特有相关 */
   "mp-weixin": {
     /* 小程序特有相关 */
-    "appid": "your appid",
+    "appid": "", //your appid
     "setting": {
       "urlCheck": true,
       "es6": true,
@@ -88,7 +88,7 @@
       "postcss": true,
       "minified": true
     },
-    "appid": "your appid",
+    "appid": "", //your appid
     // 启用自定义组件模式
     "usingComponents": true,
     // 开启分包优化
@@ -97,7 +97,7 @@
     }
   },
   "mp-baidu": {
-    "appid": "your appid",
+    "appid": "", //your appid
     // 启用自定义组件模式
     "usingComponents": true,
     // 开启分包优化
