@@ -1,6 +1,6 @@
 {
   "name": "uniapp-scaffold",
-  "appid": "__UNI__E981248",
+  "appid": "", // your appid
   "description": "一个基于uni-app的跨平台小程序脚手架",
   "versionName": "0.0.1",
   "versionCode": 1,
