@@ -11,21 +11,21 @@
 
 - Keep 运动助手
 
-| 仓库 | 百度版 | 头条版 | 微信版 |
-| --- | --- | --- | --- |
-| 内网  | <img src="https://wx4.sinaimg.cn/mw690/967d9727ly1gdjbrdlfdcj20u01nmtjf.jpg" width="220" /> | <img src="https://wx4.sinaimg.cn/mw690/967d9727ly1gdjbxw1cpij20u01hdnpd.jpg" width="220" /> | <img src="https://wx4.sinaimg.cn/mw690/967d9727ly1gdjc0hsehrj20u01hdtte.jpg" width="220" /> 
+| 仓库 | 百度版                                                                                      | 头条版                                                                                      | 微信版                                                                                      |
+| ---- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 内网 | <img src="https://wx4.sinaimg.cn/mw690/967d9727ly1gdjbrdlfdcj20u01nmtjf.jpg" width="220" /> | <img src="https://wx4.sinaimg.cn/mw690/967d9727ly1gdjbxw1cpij20u01hdnpd.jpg" width="220" /> | <img src="https://wx4.sinaimg.cn/mw690/967d9727ly1gdjc0hsehrj20u01hdtte.jpg" width="220" /> |
 
 - Asako Studio：浅子文化工作室，一个致力于视觉影像与工程研究的实验室、工作室（以下微信扫码或搜一搜）
 
-| Miniprogram | Home | Creative | Works | About |
-| --- | --- | --- | --- | --- |
-| <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNrb2NnSjVZUVRUZXpmS3NyMmJWekZuZXpKQjVocTRtS0ZwMkRWM3RlNWFRPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" />  | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cUJtQnRIbXFaaDZLV3dNY3FENGtyaWtmTDFhN3BFOHV3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cXdsbXQzZ1prWFpFNG1nVzhEcTc2T2ZaQzJWeVhsUHNRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf4.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cjEzbStSbFRZSko1MVZvMTk5cTJLR1UvWWh1ZXlVQkJnPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5dGhDWCt5ZERFckFuSk9uL1NrdjB3Vi85ZHltakxCWG93PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> 
+| Miniprogram                                                                                                                                                                                          | Home                                                                                                                                                                                                  | Creative                                                                                                                                                                                              | Works                                                                                                                                                                                                 | About                                                                                                                                                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNrb2NnSjVZUVRUZXpmS3NyMmJWekZuZXpKQjVocTRtS0ZwMkRWM3RlNWFRPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cUJtQnRIbXFaaDZLV3dNY3FENGtyaWtmTDFhN3BFOHV3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cXdsbXQzZ1prWFpFNG1nVzhEcTc2T2ZaQzJWeVhsUHNRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf4.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cjEzbStSbFRZSko1MVZvMTk5cTJLR1UvWWh1ZXlVQkJnPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5dGhDWCt5ZERFckFuSk9uL1NrdjB3Vi85ZHltakxCWG93PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> |
 
 - 浅子影报：一页日历，伴你每天好心情 🌞
 
-| Miniprogram | Home | About | Wallpaper Detail | AI日报 |
-| --- | --- | --- | --- | --- |
-| <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRGdDelZVL0l1aEYxSXdQT1JzMHV3SlVlYmlETXU5WHl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRkJSSGYrWTdyM0pwcWZvNDNkVU1uVDkwbm9SSFJYL25nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" />  | <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQmlVejBzYXRtQzFsd1QrSjRMMlB6K1JjRldScm1aWDlRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQkhaNUhYcW8vR1lKS1NFVmhiSUFxK1F4VFRRTTJGNTd3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxREVNQzZpRGg1TUxGWkhEYkZBblZ2M2VnMnFtbGNZb0dBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS3VjS3JSa1RKN1lWUHJ4dGcwTVYydjVXMEVjYm1UbFl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS0E1RGZVYkxuZWkvQjVnc2RGT2FYcG9zYnJFMDNIUUZBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> 
+| Miniprogram                                                                                                                                                                                                                                                                                                                                                                                                     | Home                                                                                                                                                                                                  | About                                                                                                                                                                                                 | Wallpaper Detail                                                                                                                                                                                      | AI 日报                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRGdDelZVL0l1aEYxSXdQT1JzMHV3SlVlYmlETXU5WHl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRkJSSGYrWTdyM0pwcWZvNDNkVU1uVDkwbm9SSFJYL25nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQmlVejBzYXRtQzFsd1QrSjRMMlB6K1JjRldScm1aWDlRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQkhaNUhYcW8vR1lKS1NFVmhiSUFxK1F4VFRRTTJGNTd3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxREVNQzZpRGg1TUxGWkhEYkZBblZ2M2VnMnFtbGNZb0dBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS3VjS3JSa1RKN1lWUHJ4dGcwTVYydjVXMEVjYm1UbFl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS0E1RGZVYkxuZWkvQjVnc2RGT2FYcG9zYnJFMDNIUUZBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> |
 
 - 浅子居家：智能生活，从家开始 🏡
 
@@ -41,11 +41,11 @@
 - [airbnb javascript standard](https://github.com/airbnb/javascript)
 - [Ant Design introduce](https://ant.design/docs/spec/introduce-cn)
 - [JD Front-End Coding Guidelines](https://guide.aotu.io)
-- [Taro · React系小程序及多端统一开发解决方案](https://taro.aotu.io)
+- [Taro · React 系小程序及多端统一开发解决方案](https://taro.aotu.io)
 
-### Dev | 开发姿势（Github这个版本没有集成公司的CLI Tpl，开发者可以手动clone）
+### Dev | 开发姿势（Github 这个版本没有集成公司的 CLI Tpl，开发者可以手动 clone）
 
-1. cd projectName => git clone此项目 => 基于此项目开发;
+1. cd projectName => git clone 此项目 => 基于此项目开发;
 
 2. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
 
@@ -55,7 +55,7 @@
 
 5. 菜单栏点击运行到要开发的小程序平台，不习惯当前 IDE 的可以切换到 VS Code，同步开发，实时编译;
 
-6. 进入各家开发者后台，提审，发布（也可以基于miniprogram-cli对接各家小程序平台实现自动构建上传）
+6. 进入各家开发者后台，提审，发布（也可以基于 miniprogram-cli 对接各家小程序平台实现自动构建上传）
 
 7. 更多补充中
 
@@ -110,7 +110,7 @@
 │ │──App.vue                 # 全局入口vue index
 ```
 
-### 组件 | UI库
+### 组件 | UI 库
 
 ```
 // 组件列表(基于微信视觉规范进一步封装的组件)
@@ -149,7 +149,7 @@ export default {
     return {}
   },
   methods() {
-  
+
   }
 }
 ```

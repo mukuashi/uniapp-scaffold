@@ -5,25 +5,49 @@ page {
   min-height: 100vh;
   font-size: @font-size-base;
   line-height: @line-height-base;
+  background-color: @background-night-color;
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
-page, view, scroll-view,text, image,swiper, navigator,button, checkbox, form, input, label, picker, picker-view, slider, textarea, image, video, audio, map, camera, cover-image, cover-view {
+page,
+view,
+scroll-view,
+text,
+image,
+swiper,
+navigator,
+button,
+checkbox,
+form,
+input,
+label,
+picker,
+picker-view,
+slider,
+textarea,
+image,
+video,
+audio,
+map,
+camera,
+cover-image,
+cover-view {
   box-sizing: border-box;
 }
-cover-image, cover-image:hover {
+cover-image,
+cover-image:hover {
   outline: none;
 }
-image{
+image {
   will-change: transform;
 }
 button::after {
   border: none;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
   height: 0;
   color: transparent;
