@@ -1,117 +1,115 @@
 {
-    "name": "uniapp-scaffold",
-    "appid": "__UNI__E981248",
-    "description": "一个基于uni-app的跨平台小程序脚手架",
-    "versionName": "0.0.2",
-    "versionCode": 1,
-    "transformPx": false,
-    // 全局关闭uni统计
-    "uniStatistics": {
-        "enable": false
-    },
-    "app-plus": {
-        /* 5+App特有相关 */
-        "modules": {},
-        /* 模块配置 */
-        "distribute": {
-            /* 应用发布信息 */
-            "android": {
-                /* android打包配置 */
-                "permissions": [
-                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
-                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
-                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
-            },
-            "ios": {},
-            /* ios打包配置 */
-            "sdkConfigs": {}
-        }
-    },
-    /* SDK配置 */
-    "quickapp": {},
-    /* 快应用特有相关 */
-    "mp-weixin": {
-        /* 小程序特有相关 */
-        "appid": "wxc96dc7ebd9bf61e8",
-        "setting": {
-            "urlCheck": true,
-            "es6": true,
-            "postcss": true,
-            "minified": true
-        },
-        "permission": {
-            "scope.userLocation": {
-                "desc": "开启位置权限，一起来玩耍吧"
-            }
-        },
-        "usingComponents": true,
-        // 开启分包优化
-        "optimization": {
-            "subPackages": true
-        }
-    },
-    "h5": {
-        "title": "一个跨平台小程序脚手架",
-        "domain": "kquanr.com",
-        "router": {
-            "mode": "history"
-        },
-        "optimization": {
-            "treeShaking": {
-                "enable": true // 启用摇树优化  
-            }
-        }
-    },
-    "mp-toutiao": {
-        "setting": {
-            "es6": true,
-            "postcss": true,
-            "minified": true
-        },
-        "appid": "tt9da6eb1b028c1c01",
-        // 启用自定义组件模式
-        "usingComponents": true,
-        // 开启分包优化
-        "optimization": {
-            "subPackages": true
-        }
-    },
-    "mp-baidu": {
-        "appid": "16921844",
-        // 启用自定义组件模式
-        "usingComponents": true,
-        // 开启分包优化
-        "optimization": {
-            "subPackages": true
-        },
-        // 预渲染课程列表topNav数据
-        "prefetches": [
-            "http://kquanr.com/api-xxx"
+  "name": "uniapp-scaffold",
+  "appid": "__UNI__E981248",
+  "description": "一个基于uni-app的跨平台小程序脚手架",
+  "versionName": "0.0.1",
+  "versionCode": 1,
+  "transformPx": false,
+  // 全局关闭uni统计
+  "uniStatistics": {
+    "enable": false
+  },
+  "app-plus": {
+    /* 5+App特有相关 */
+    "modules": {},
+    /* 模块配置 */
+    "distribute": {
+      /* 应用发布信息 */
+      "android": {
+        /* android打包配置 */
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+          "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+          "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+          "<uses-feature android:name=\"android.hardware.camera\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
         ]
-    },
-    "mp-qq": {
-        "setting": {
-            "es6": true
-        }
+      },
+      "ios": {},
+      /* ios打包配置 */
+      "sdkConfigs": {}
     }
+  },
+  /* SDK配置 */
+  "quickapp": {},
+  /* 快应用特有相关 */
+  "mp-weixin": {
+    /* 小程序特有相关 */
+    "appid": "your appid",
+    "setting": {
+      "urlCheck": true,
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "permission": {
+      "scope.userLocation": {
+        "desc": "开启位置权限，一起来玩耍吧"
+      }
+    },
+    "usingComponents": true,
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    }
+  },
+  "h5": {
+    "title": "一个跨平台小程序脚手架",
+    "domain": "kquanr.com",
+    "router": {
+      "mode": "history"
+    },
+    "optimization": {
+      "treeShaking": {
+        "enable": true // 启用摇树优化
+      }
+    }
+  },
+  "mp-toutiao": {
+    "setting": {
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "appid": "your appid",
+    // 启用自定义组件模式
+    "usingComponents": true,
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    }
+  },
+  "mp-baidu": {
+    "appid": "your appid",
+    // 启用自定义组件模式
+    "usingComponents": true,
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    },
+    // 预渲染课程列表topNav数据
+    "prefetches": ["http://kquanr.com/api-xxx"]
+  },
+  "mp-qq": {
+    "setting": {
+      "es6": true
+    }
+  }
 }
