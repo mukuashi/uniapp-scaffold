@@ -35,7 +35,7 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-02 11:15:49
+ * @Last Modified time: 2020-04-07 21:45:27
  */
 import KpIcon from "@/components/kp-icon";
 export default {
@@ -46,7 +46,7 @@ export default {
   props: {
     //标题
     title: {
-      type: String,
+      type: [String, Boolean],
       default: ""
     },
     // 导航栏是否固定于顶部
@@ -61,7 +61,7 @@ export default {
     },
     // 左侧导航开关
     left: {
-      type: [ Boolean, String ],
+      type: [Boolean, String],
       default: false
     }
   },

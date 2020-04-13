@@ -28,7 +28,7 @@
  * @version 0.1 | 2020-02-10 // Initial version.
  * @Date: 2020-02-10 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-02 17:05:34
+ * @Last Modified time: 2020-04-08 01:41:00
  */
 import KpIcon from "../kp-icon";
 import KpAvatar from "../kp-avatar";
@@ -66,8 +66,15 @@ export default {
   computed: {
     extraObj() {
       const tpl = { size: 45, icon: "arrow_right", color: "#585860" };
-      if (this.extra === "miniprogram") {
-        return { ...tpl, icon: "miniprogram", color: "#6367ef" };
+      switch (this.extra) {
+        case "miniprogram":
+          return { ...tpl, icon: "miniprogram", color: "#6367ef" };
+          break;
+        case "wechat":
+          return { ...tpl, icon: "wechat", color: "#07C160", size: 40 };
+          break;
+        default:
+          break;
       }
       return this.extra && this.extra instanceof Object
         ? { ...tpl, ...this.extra }
