@@ -2,10 +2,7 @@
   "pages": [
     // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/home/index",
-      "style": {
-        "navigationStyle": "custom" // 自定义导航栏
-      }
+      "path": "pages/home/index"
     },
     {
       "path": "pages/ued/index",
@@ -16,13 +13,21 @@
     {
       "path": "pages/about/index",
       "style": {
-        "navigationStyle": "custom",
+        "backgroundColor": "#11121c",
+        "backgroundColorBottom": "#11121c"
+      }
+    },
+    {
+      "path": "pages/poster/index",
+      "style": {
+        "disableScroll": true,
         "backgroundColor": "#11121c",
         "backgroundColorBottom": "#11121c"
       }
     }
   ],
   "globalStyle": {
+    "navigationStyle": "custom", // 全局开启自定义导航栏，如需特殊配置在单个页面里设置”default“
     "backgroundColorTop": "#11121c",
     "usingComponents": {
       "poster": "/wxcomponents/wxa-plugin-canvas/poster/index"

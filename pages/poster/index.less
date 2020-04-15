@@ -1,0 +1,65 @@
+@import "../../styles/mixin";
+//
+.poster {
+  height: 100vh;
+  background-color: @background-night-color;
+  &-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: inherit;
+  }
+  &-swiper {
+    text-align: center;
+    padding-top: 120rpx;
+    .swiper {
+      height: 900rpx;
+      &-item {
+        image {
+          width: 90%;
+          transform: scale(0.9);
+          border-radius: 20rpx;
+        }
+        &:nth-last-child(2) {
+          image {
+            border: 3rpx solid rgba(@background-base-color, 0.6);
+          }
+        }
+      }
+      &-current {
+        image {
+          transform: scale(0.99);
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  &-footer {
+    text-align: center;
+    padding-top: 32rpx;
+    &-action {
+      border-color: @font-initialize-color;
+      button {
+        border-color: inherit;
+      }
+    }
+    h2 {
+      padding: 0 5%;
+      .center-middle-flex(@justify: space-around);
+      /deep/.k-btn {
+        .size(280rpx, 88rpx);
+        font-size: 30rpx;
+        border-radius: 100rpx;
+      }
+      .explore {
+        animation: pulse 1s ease-in-out infinite;
+      }
+    }
+    p {
+      padding-top: 50rpx;
+      text {
+        .font-setting(@font-size-base, @color:#87888d);
+      }
+    }
+  }
+}

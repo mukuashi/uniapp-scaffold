@@ -13,7 +13,7 @@ export default {
   services:
     "Not limited to the following businesses：\nGraphic design、advertising services、image shooting and production、organizing artistic activities、computer software services and design research and development、brand marketing and planning、digital currency trading and service providers、community operations and media cooperation, etc.",
   abstract:
-    "A selection of global visual and photographic art creations, a glimpse of all the heroes in the world, and let the AI daily newspaper accompany you every day ☀️",
+    "A set of highly reusable product interaction and front-end design solutions derived from user and corporate values, and providing progressive experience and visual specifications.",
   copyright: "@Asako Studio ✘ PhotoArtLife ✘ MUX Lab",
   labels: [
     "creative",

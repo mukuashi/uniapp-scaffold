@@ -6,9 +6,10 @@
  * @version 0.2 | 2020-03-26 // 添加海报配置.
  * @Date:   2019-07-10 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-15 14:08:13
+ * @Last Modified time: 2020-04-15 22:12:00
  */
-
+import verses from "./verses";
+import wallpapers from "./wallpapers";
 // 基本图片配置
 let images = {
   loading:
@@ -283,5 +284,9 @@ export default {
     solgan: "再小的个体，也有自己的声音。",
     description: "一个致力于视觉影像与工程研究的实验室、工作室等"
   },
-  images
+  images,
+  // 壁纸集
+  wallpapers,
+  // 谚语诗句
+  verses
 };

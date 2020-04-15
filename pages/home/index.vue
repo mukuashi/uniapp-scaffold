@@ -303,11 +303,12 @@
  * @version 0.1 | 2019-07-08 // Initial version.
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-14 16:19:48
+ * @Last Modified time: 2020-04-15 22:18:32
  */
 import config from "@/config";
 import { debounce } from "@/utils";
 import { mapState, mapMutations } from "vuex";
+import * as Services from "@/services/home";
 import KpNavbar from "@/components/kp-navbar";
 import KpAvatar from "@/components/kp-avatar";
 import KpSticky from "@/components/kp-sticky";
@@ -412,8 +413,8 @@ export default {
   },
   methods: {
     async get500pxAlbumList() {
-      // let res = await Services.get500pxAlbumListSvc();
-      // this.entry._500px = res.data;
+      let res = await Services.get500pxAlbumListSvc();
+      this.entry._500px = res.data;
     },
     handleSwiperHeight() {
       uni
