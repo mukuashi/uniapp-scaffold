@@ -33,7 +33,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | Mask遮罩组件，支持locked、透明度自定义等
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2020-03-05 // Initial version.

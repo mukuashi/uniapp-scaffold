@@ -1,60 +1,570 @@
 <template>
   <view class="home">
-    <kp-avatar :image="app.images.logo" size="large"/>
-    <h1>Home</h1>
+    <kp-navbar v-if="tabs.scrollTop<300">
+      <template slot="left">
+        <kp-icon type="set_filled" size="50" @click="handleCommonRoute('/pages/about/index')"/>
+      </template>
+    </kp-navbar>
+    <view class="home-header">
+      <swiper
+        circular
+        class="gallery"
+        interval="6000"
+        :current="home.galleryIndex"
+        @change="handleSwiperChange"
+        @transition="handleSwiperTarget"
+        @animationfinish="handleSwiperFinish"
+      >
+        <swiper-item v-for="(item,index) in home.gallery" :key="index">
+          <image :src="item" lazy-load mode="aspectFill">
+        </swiper-item>
+      </swiper>
+      <!-- 自定义滑动指示点 -->
+      <view class="dots">
+        <view class="dots-count">
+          <text>{{ home.galleryIndex+1 }}</text>
+          \{{ home.gallery.length }}
+        </view>
+        <kp-swiper
+          v-model="home.gallery"
+          :dotsIndex="home.galleryIndex"
+          :dotsDirection="home.galleryDirection"
+          @update="val=>home.galleryIndex=val"
+        />
+      </view>
+      <!-- 多次点赞动画 -->
+      <view :class="['hearts',user.likeAnimate&&'hearts-animate']" v-if="user.likeClick>1">
+        <view v-for="index in 2" :key="index">
+          <kp-icon type="heart_beat" size="60" color="#f66"/>
+        </view>
+      </view>
+      <!-- author -->
+      <view class="subject">
+        <ul class="subject-left">
+          <li>
+            <view class="left-title">{{ app.name }}</view>
+            <kp-tag size="small" bg-color="#d1ebfd" weight="500" class="left-tag">
+              <kp-icon size="24" type="male" color="#3bb2f3"/>
+              <text>{{ app.author.age }}</text>
+            </kp-tag>
+            <kp-tag
+              size="small"
+              color="#f9796a"
+              weight="500"
+              bg-color="#f4dee0"
+              class="left-star"
+            >{{app.author.star}}</kp-tag>
+          </li>
+          <li>
+            <kp-icon size="26" type="location"/>
+            {{ app.author.position }}
+          </li>
+        </ul>
+        <view class="subject-right" @tap="handleAuthorLike">
+          <!-- 点赞后 -->
+          <view class="icon icon-zoom" v-if="user.liked">
+            <kp-icon type="heart_filled" size="60" color="#f44"/>
+          </view>
+          <!-- 未点赞 -->
+          <view v-else class="icon">
+            <view class="animation-heartBeat">
+              <kp-icon type="heart" size="60" color="#f44"/>
+            </view>
+            <view class="ripple" v-for="index in 2" :key="index"/>
+          </view>
+          <view :class="['icon-hearts',user.likeClick&&'icon-hearts-liked']">
+            <span
+              v-for="index in 6"
+              :key="index"
+              :style="{
+                animationDelay: `${index*0.05}s`
+              }"
+            >
+              <kp-icon type="heart_filled" size="22" color="#f44"/>
+            </span>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="home-content">
+      <kp-sticky :scrollTop="tabs.scrollTop" :sticky-height="tabs.stickyHeight" bg-color="#fff">
+        <template slot="header">
+          <scroll-view
+            class="tabs-nav"
+            scroll-x
+            scroll-with-animation
+            :scroll-left="tabs.scrollLeft"
+          >
+            <view
+              v-for="(item,index) in app.tabs"
+              :key="index"
+              :class="['tabs-nav-item',Number(tabs.current)===index && 'active'] "
+              :data-current="index"
+              @tap.stop="e=>handleSwitchTab(e,'nav')"
+            >
+              <text class="title">{{item}}</text>
+            </view>
+          </scroll-view>
+        </template>
+        <template slot="content">
+          <swiper
+            circular
+            duration="300"
+            class="tabs-main"
+            :current="tabs.current"
+            :style="{
+              height: `${tabs.swiperNodeList[tabs.current].height}px`
+            }"
+            @change="e=>handleSwitchTab(e,'main')"
+          >
+            <swiper-item class="tabs-main-content" v-for="(item,sIndex) in app.tabs" :key="sIndex">
+              <ul class="swiper-content" v-if="!sIndex">
+                <li class="sc1">
+                  <view class="title">
+                    <kp-badge class="title-dot" dot/>
+                    <h2>Station</h2>
+                  </view>
+                  <text>{{app.abstract}}</text>
+                </li>
+                <li>
+                  <view class="title">
+                    <kp-badge class="title-dot" dot bg-color="#f5624f"/>
+                    <h2>Introduce</h2>
+                  </view>
+                  <text>{{ app.introduce }}</text>
+                </li>
+                <li>
+                  <view class="title">
+                    <kp-badge class="title-dot" dot bg-color="#4facfe"/>
+                    <h2>Founder</h2>
+                  </view>
+                  <text>{{ app.author.founder }}</text>
+                </li>
+                <li>
+                  <view class="title">
+                    <kp-badge class="title-dot" dot bg-color="#e71e8e"/>
+                    <h2>Services</h2>
+                  </view>
+                  <text>{{ app.services }}</text>
+                </li>
+                <li>
+                  <view class="title">
+                    <kp-badge class="title-dot" dot bg-color="#46e3ac"/>
+                    <h2>Labels</h2>
+                  </view>
+                  <kp-tag
+                    v-for="(row,index) in app.labels"
+                    :key="index"
+                    class="detail-labels"
+                    type="grey"
+                    shape="circle"
+                  >{{row}}</kp-tag>
+                </li>
+                <li>
+                  <view class="title">
+                    <kp-badge class="title-dot" dot bg-color="#a6c1ee"/>
+                    <h2>Teamwork</h2>
+                  </view>
+                  <view class="detail-team">
+                    <view v-for="(row,index) in app.team" :key="index" class="detail-team-item">
+                      <kp-avatar :image="row.image" size="large" mode="aspectFill"/>
+                      <text>{{row.role}}</text>
+                    </view>
+                  </view>
+                </li>
+              </ul>
+              <ul class="swiper-content" v-if="Number(sIndex)===1">
+                <li class="sc2">
+                  <view class="title">
+                    <h2>Miniprogram Club</h2>
+                    <kp-icon type="miniprogram" size="48" color="#6367ef" class="title-icon"/>
+                  </view>
+                  <view class="club1">
+                    <view
+                      class="club1-item tpl-boxshadow"
+                      v-for="(row,index) in app.miniprogram"
+                      :key="index"
+                      :style="{
+                        backgroundImage: row.gradient
+                      }"
+                      @tap="handleOpenMiniprogram(row)"
+                    >
+                      <kp-icon :type="row.icon" size="70"/>
+                      <span>{{ row.name }}</span>
+                    </view>
+                  </view>
+                </li>
+                <li class="sc2">
+                  <view class="title">
+                    <h2>{{`${app.brand} · Matrix Hop`}}</h2>
+                    <kp-icon type="link" size="50" color="#07C160" class="title-icon"/>
+                  </view>
+                  <view class="club2">
+                    <view class="club2-item" v-for="(row,index) in app.community" :key="index">
+                      <kp-author
+                        shape="square"
+                        :avatar="row.image"
+                        :icon="row.icon"
+                        icon-size="56"
+                        :title="row.title"
+                        :info="row.info"
+                        :avatar-bg="row.color"
+                        @navigate="handleOpenCommunity(row)"
+                      >
+                        <kp-icon
+                          slot="extra"
+                          :size="row.vpn ? 40 : 36"
+                          :type="row.vpn ? 'ladder' : 'navigation'"
+                          :color="row.vpn ? '#f09819' : '#07C160'"
+                        />
+                      </kp-author>
+                    </view>
+                  </view>
+                </li>
+              </ul>
+              <ul class="swiper-content" v-if="Number(sIndex)===2">
+                <li class="sc3">
+                  <view class="title">
+                    <h2>Photography Albums</h2>
+                  </view>
+                  <kp-spin size="huge" height="800" v-if="!entry._500px.length"/>
+                  <view v-else class="albums">
+                    <view
+                      class="albums-item tpl-boxshadow"
+                      v-for="(row,index) in entry._500px"
+                      :key="index"
+                      @tap="handleOpen500pxAlbum(row)"
+                    >
+                      <view
+                        class="albums-item-img"
+                        :style="{
+                          backgroundImage: `url(${row.url.p3})`
+                        }"
+                      >
+                        <kp-avatar
+                          class="open"
+                          size="small"
+                          icon="miniprogram"
+                          avatar-bg="#7984db"
+                        />
+                      </view>
+                      <view class="albums-item-right">
+                        <view class="top">{{ row.title }}</view>
+                        <view class="bottom">
+                          <text>{{ `${row.setSetCount}+` }}</text>
+                          <text>More</text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </li>
+              </ul>
+            </swiper-item>
+          </swiper>
+        </template>
+      </kp-sticky>
+    </view>
+    <view class="home-footer tpl-boxshadow">
+      <button hover-class="none" @tap="feedback.guideShare=true">
+        <kp-icon type="share" size="45"/>
+        <text>{{ app.footer.buttons[0] }}</text>
+      </button>
+      <button hover-class="none" open-type="contact">
+        <kp-icon type="message" size="55"/>
+        <text>{{ app.footer.buttons[1] }}</text>
+      </button>
+    </view>
+    <!-- 小交互 -->
+    <kp-actionsheet
+      :tips="feedback.guideTipsConfig.text"
+      :tips-image="feedback.guideTipsConfig.image"
+      :item-list="[]"
+      cancel-text="晓得了"
+      v-model="feedback.guideTips"
+      @cancel="()=>{
+        feedback.guideTips=false
+        feedback.guideTipsConfig = feedback.guideTipsTpl
+      }"
+    />
+    <kp-actionsheet
+      :item-list="feedback.guideShareList"
+      v-model="feedback.guideShare"
+      @confirm="handleSharePoster"
+      @cancel="feedback.guideShare=false"
+    />
   </view>
 </template>
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2014-Now MUX Lab, All rights reseved.
- * @fileoverview | Home
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
+ * @fileoverview | Home 主页
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.
- * @Date:   2019-07-08 10:20:27
+ * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-05 23:24:00
+ * @Last Modified time: 2020-04-14 16:19:48
  */
-import app from "@/config/data";
+import config from "@/config";
+import { debounce } from "@/utils";
+import { mapState, mapMutations } from "vuex";
+import KpNavbar from "@/components/kp-navbar";
 import KpAvatar from "@/components/kp-avatar";
-import * as Services from "@/services/demo";
-
+import KpSticky from "@/components/kp-sticky";
+import KpSwiper from "@/components/kp-swiper";
+import KpIcon from "@/components/kp-icon";
+import KpTag from "@/components/kp-tag";
+import KpBadge from "@/components/kp-badge";
+import KpAuthor from "@/components/kp-author";
+import KpSpin from "@/components/kp-spin";
+import KpActionsheet from "@/components/kp-actionsheet";
+//
+const guideTipsTpl = {
+  text:
+    "作品链接已复制：小程序内暂不支持打开外链（😴）君若有意·何乎山水 => 打开浏览器欣赏吧"
+};
+//
 export default {
   components: {
-    KpAvatar
+    KpNavbar,
+    KpAvatar,
+    KpSticky,
+    KpSwiper,
+    KpIcon,
+    KpTag,
+    KpBadge,
+    KpAuthor,
+    KpSpin,
+    KpActionsheet
   },
   data() {
     return {
-      app
+      home: {
+        gallery: [
+           "/orj1080/967d9727ly3gc0whyclfoj20sg0sge0a.jpg",
+          "/orj1080/967d9727ly3gc0whyfofkj20sg0sg4av.jpg",
+          "/orj1080/967d9727ly3gc0whykstlj20sg0sgb29.jpg",
+          "/orj1080/967d9727ly3gc0whywdupj20sg0sgb0l.jpg",
+          "/orj1080/967d9727ly3gc0whysphij20sg0sgkcg.jpg",
+          "/orj1080/967d9727ly3gc0whyiy96j20sg0sg1jj.jpg",
+          "/orj1080/967d9727ly3gc0whz3i51j20sg0sgu0x.jpg",
+          "/orj1080/967d9727ly3gc0whz6qvlj20sg0sghdt.jpg",
+          "/orj1080/967d9727ly3gc0whz6yf1j20sg0sgkic.jpg"
+        ].map(row => config.sinaimg + row),
+        galleryIndex: 0, //相册初始化位置
+        galleryDirection: "" //滑动方向
+      },
+      user: {
+        likeClick: 0, //点赞喜欢次数，默认为0
+        likeAnimate: false,
+        liked: uni.getStorageSync(`${config.key}_liked`) //用户是否点过赞（点亮小红星）
+      },
+      tabs: {
+        current: 0, //预设当前项的值
+        scrollLeft: 0, //tab标题的滚动条位置
+        scrollTop: 0, //页面滚动距离顶部高度
+        stickyHeight: this.CustomBar, //顶部导航栏自定义高度，App.vue注入
+        swiperNodeList: [] // swiper node节点
+      },
+      // 小交互集合
+      feedback: {
+        guideTips: false, //vpn限制社区的提示
+        guideTipsTpl,
+        guideTipsConfig: { ...guideTipsTpl },
+        guideShare: false, //分享弹窗设置
+        guideShareList: [
+          { text: "分享给朋友", opentype: "share" },
+          { text: "生成分享海报", color: "#07C160" }
+        ]
+      },
+      // 不同社区的entry list
+      entry: {
+        params: {},
+        _500px: []
+      }
     };
   },
-  onLoad() {
-    //  高度自适应
-    uni.getSystemInfo({
-      success: res => {
-        this.winHeight = res.windowHeight;
-      }
-    });
+  computed: {
+    ...mapState(["app"])
+  },
+  onLoad(options) {
+    // hide tabbar
+    uni.hideTabBar();
+    if (options.tab) this.tabs.current = options.tab;
+  },
+  //页面滚动执行方式
+  onPageScroll(e) {
+    this.tabs.scrollTop = e.scrollTop;
+  },
+  onShow() {
+    // 每次切换页面都计算下整个swiper content高度
+    this.handleSwiperHeight();
   },
   onReady() {
     // init data
   },
-  onReachBottom() {
-    // load more
-  },
   onShareAppMessage(options) {
+    const { name, brand, shares } = this.$store.state.app;
     return {
-      title: app.common.solgan || "业务方自定义内容",
-      desc: app.common.desc || "测试一下",
-      path: "/pages/home/index",
-      imageUrl: app.images.logo
+      title: shares.title,
+      path: "pages/home/index"
     };
   },
   methods: {
-    async getDemoList() {
-      let res = await Services.getDemoListSvc();
-      if (res.ok) {
+    async get500pxAlbumList() {
+      // let res = await Services.get500pxAlbumListSvc();
+      // this.entry._500px = res.data;
+    },
+    handleSwiperHeight() {
+      uni
+        .createSelectorQuery()
+        .selectAll(".swiper-content")
+        .boundingClientRect(data => {
+          this.tabs.swiperNodeList = data.map(row => {
+            return {
+              ...row,
+              height: row.height + 50
+            };
+          });
+        })
+        .exec();
+    },
+    handleSwiperChange(e) {
+      // https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html
+      // source为touch时由用户触摸引起
+      if (e.detail.source === "touch") {
+        this.home.galleryIndex = e.target.current;
       }
+    },
+    handleSwiperTarget(e) {
+      this.home.galleryDirection =
+        (e.detail.dx > 0 && "left") || (e.detail.dx < 0 && "right");
+    },
+    handleSwiperFinish(e) {
+      if (!e.detail.source) {
+        this.home.galleryDirection = "";
+      }
+    },
+    handleAuthorLike() {
+      const { liked, likeClick } = this.user;
+      let system = uni.getSystemInfoSync();
+      const { brand, model } = system;
+      let value = `${brand}-${model}-${Date.now()}=> ${likeClick + 1} times`;
+      uni.setStorage({
+        key: `${config.key}_liked`,
+        data: value,
+        success: () => {
+          // 轻触震动小交互
+          uni.vibrateShort({
+            success: () => {
+              // console.log("Thanks for your like！");
+            }
+          });
+          //#ifdef MP-WEIXIN
+          // 针对微信平台的埋点
+          wx.reportAnalytics("click_home_confession", {
+            love_count: likeClick + 1
+          });
+          //#endif
+        }
+      });
+      this.user = {
+        liked: value,
+        likeClick: likeClick + 1,
+        likeAnimate: true
+      };
+      if (liked) {
+        debounce(
+          setTimeout(() => {
+            this.user.likeAnimate = false;
+          }, 5000)
+        );
+      }
+    },
+    handleSwitchTab(e, type) {
+      let cur;
+      if (type === "nav") {
+        cur = e.currentTarget.dataset.current;
+        if (this.tabs.current == cur) {
+          return false;
+        }
+      }
+      if (type === "main") {
+        if (this.tabs.current == e.detail.current) {
+          return false;
+        }
+        cur = e.detail.current;
+      }
+      this.tabs.current = cur;
+      if (cur === 2 && !this.entry._500px.length) {
+        this.get500pxAlbumList();
+      }
+    },
+    handleOpenMiniprogram(item) {
+      // 因小程序内打开能力限制10个，故一部分小程序用action-sheet图片引导方式代替
+      if (!item.disable) {
+        if (item.appid) {
+          uni.navigateToMiniProgram({
+            appId: item.appid,
+            path: item.path,
+            success(res) {
+              // 打开成功
+            }
+          });
+        }
+      } else {
+        this.handleOpenGuide(item);
+      }
+    },
+    handleOpenCommunity(item) {
+      // 小程序自动打开，h5走引导或选择性打开
+      if (item.type === "miniprogram" && item.appid) {
+        return this.handleOpenMiniprogram(item);
+      }
+      uni.setClipboardData({
+        data: item.url,
+        success: res => {
+          this.handleOpenGuide(item);
+        }
+      });
+    },
+    handleOpenGuide(item) {
+      if (item.tipsImg) {
+        this.feedback.guideTipsConfig = {
+          text:
+            "温馨提示：当前小程序打开其他小程序总数已超过最大限制（10个）长按下面图片识别二维码欣赏吧 ❤️",
+          image: item.tipsImg
+        };
+      }
+      this.feedback.guideTips = true;
+    },
+    handleCommonRoute(path) {
+      uni.navigateTo({
+        url: path
+      });
+    },
+    // 打开500px社区
+    handleOpen500pxAlbum(item) {
+      let query = {
+        appid: "wxfb1c0bd6179a8b50",
+        path: `pages/album/album?galleryId=${item.id}`
+      };
+      this.handleOpenMiniprogram(query);
+    },
+    // 分享海报
+    handleSharePoster(val) {
+      // 0直接分享给好友，1生成分享海报
+      switch (val) {
+        case 1:
+          this.handleCommonRoute("/pages/poster/index");
+          break;
+        case 0:
+        default:
+          break;
+      }
+      setTimeout(_ => {
+        this.feedback.guideShare = false;
+      }, 500);
     }
   }
 };

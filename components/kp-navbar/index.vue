@@ -29,13 +29,13 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | 自定义顶部导航栏
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-07 21:45:27
+ * @Last Modified time: 2020-04-14 21:41:47
  */
 import KpIcon from "@/components/kp-icon";
 export default {
@@ -88,7 +88,7 @@ export default {
         if (this.pages > 1) {
           return uni.navigateBack();
         }
-        // 跳转到 tabBar 页面只能使用 switchTab 跳转，
+        // 跳转到 tabBar 页面只能使用 switchTab 跳转
         uni.switchTab({
           url: "/pages/home/index"
         });

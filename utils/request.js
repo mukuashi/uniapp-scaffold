@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | 基于uni-request的二次扩展，Promise 对象实现的request使用方式，支持请求和响应拦截
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.

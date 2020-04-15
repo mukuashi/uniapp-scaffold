@@ -6,8 +6,36 @@ import tpl from "../config/data";
 import config from "../config";
 
 Vue.use(Vuex);
+// author age
+function age() {
+  let birthday = new Date("1994-12-12".replace(/-/g, "/"));
+  let date = new Date();
+  return {
+    age:
+      date.getFullYear() -
+      birthday.getFullYear() -
+      (date.getMonth() < birthday.getMonth() ||
+      (date.getMonth() == birthday.getMonth() &&
+        date.getDate() < birthday.getDate())
+        ? 1
+        : 0)
+  };
+}
+// other flexible data
+function factoryConfig(data) {
+  return {
+    author: {
+      ...data.author,
+      ...age(),
+      blog: "//kquanr.com"
+    },
+    shares: {
+      title: `${data.name}@${data.brand} Come and see, buddy 👬`
+    }
+  };
+}
 // 初始化数据
-let language = uni.getStorageSync(`${config.key}_language`) || "Chinese",
+let language = uni.getStorageSync(`${config.key}_language`) || "English",
   data = language === "English" ? en : zh;
 
 const store = new Vuex.Store({
@@ -15,17 +43,18 @@ const store = new Vuex.Store({
     app: {
       ...tpl,
       ...data,
-      language
+      language,
+      ...factoryConfig(data)
     }
   },
   mutations: {
-    // 切换语言（可以在视图层通过mapMutations或this.$store.commit("changeLanguage", curLanguage)调用）
     changeLanguage(state, payload) {
       data = payload === "English" ? en : zh;
       state.app = {
         ...state.app,
         ...data,
-        language: payload
+        language: payload,
+        ...factoryConfig(data)
       };
     },
     // 更新某个key-value

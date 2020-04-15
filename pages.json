@@ -4,7 +4,7 @@
     {
       "path": "pages/home/index",
       "style": {
-        "navigationBarTitleText": "Home"
+        "navigationStyle": "custom" // 自定义导航栏
       }
     },
     {
@@ -12,30 +12,36 @@
       "style": {
         "navigationBarTitleText": "UED"
       }
+    },
+    {
+      "path": "pages/about/index",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#11121c",
+        "backgroundColorBottom": "#11121c"
+      }
     }
   ],
   "globalStyle": {
+    "backgroundColorTop": "#11121c",
     "usingComponents": {
       "poster": "/wxcomponents/wxa-plugin-canvas/poster/index"
     }
   },
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#574E5F",
-    "borderStyle": "black",
-    "backgroundColor": "#fff",
+    "custom": true,
     "list": [
       {
         "pagePath": "pages/home/index",
         "text": "Home",
-        "iconPath": "static/tabBar/tabbar-home-normal.png",
-        "selectedIconPath": "static/tabBar/tabbar-home-focus.png"
+        "iconPath": "static/tabBar/icon_home_normal.png",
+        "selectedIconPath": "static/tabBar/icon_home_normal.png"
       },
       {
         "pagePath": "pages/ued/index",
-        "text": "UED",
-        "iconPath": "static/tabBar/tabbar-me-normal.png",
-        "selectedIconPath": "static/tabBar/tabbar-me-focus.png"
+        "text": "Lab",
+        "iconPath": "static/tabBar/icon_spin_normal.png",
+        "selectedIconPath": "static/tabBar/icon_spin_normal.png"
       }
     ]
   },
@@ -48,6 +54,10 @@
         "name": "Home", //模式名称
         "path": "pages/home/index", //启动页面，必选
         "query": "" //启动参数
+      },
+      {
+        "name": "About",
+        "path": "pages/about/index"
       }
     ]
   }

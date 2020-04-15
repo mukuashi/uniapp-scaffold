@@ -52,7 +52,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | Skeleton 骨架屏组件，组件内获取数据用默认模板，Page页面里获取数据绑定class或preloadData即可
  * @useage | 需要在业务页面视图层按形状绑定class => k-skeleton-rect（矩形），k-skeleton-circular（圆形），k-skeleton-fillet（圆角矩形）
  * @Author: mukuashi | mukuashi@icloud.com

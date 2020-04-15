@@ -33,7 +33,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | Spin组件，类似Loading，支持自定义配置
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-03-04 // Initial version.

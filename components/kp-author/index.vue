@@ -22,7 +22,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | Author组件，支持头像、标题、描述及额外信息载入等
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2020-02-10 // Initial version.

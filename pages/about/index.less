@@ -1,0 +1,75 @@
+@import "../../styles/mixin";
+//
+.about {
+  background-color: @background-night-color;
+  &-content {
+    padding: 230rpx 45rpx;
+    h1 {
+      text-align: center;
+    }
+    h2,
+    h3 {
+      text {
+        display: block;
+      }
+    }
+    h2 {
+      padding-top: 100rpx;
+      line-height: 1.25;
+      .font-setting(44rpx, 500, @font-theme-color);
+      text {
+        padding-top: 14rpx;
+        line-height: 1.6;
+        .font-setting(@font-size-base, @color:#cfcfd1);
+      }
+    }
+    h3 {
+      line-height: 1.7;
+      padding-top: 50rpx;
+      .font-setting(30rpx, 500, #585860);
+      text {
+        padding: 30rpx 0;
+        &:nth-child(3) {
+          padding-bottom: 0;
+          white-space: nowrap;
+          text-align: right;
+        }
+        &:last-child {
+          padding-top: 0;
+          padding-bottom: 40rpx;
+          text-align: right;
+        }
+      }
+    }
+    h4 {
+      padding: 30rpx 0 20rpx;
+      .font-setting(30rpx, 500, #87888d);
+    }
+    ul {
+      padding-bottom: 10rpx;
+      li {
+        color: @font-theme-color;
+        /deep/.nickname {
+          color: @font-theme-color;
+        }
+        /deep/.info {
+          color: #87888d;
+        }
+        .setting {
+          font-size: 30rpx;
+          text {
+            .custom-position(relative, @bottom:9rpx, @right:7rpx);
+          }
+        }
+      }
+    }
+  }
+  &-footer {
+    text-align: center;
+    padding-bottom: 30rpx;
+    > button {
+      border: none;
+      .font-setting(30rpx, @color:#87888d);
+    }
+  }
+}

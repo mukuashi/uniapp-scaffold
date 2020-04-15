@@ -10,7 +10,7 @@ export default {
     const updateManager = uni.getUpdateManager();
     updateManager.onCheckForUpdate(function(res) {
       // 请求完新版本信息的回调
-      console.log("res.hasUpdate", res.hasUpdate);
+      console.warn(`${res.hasUpdate ? "" : "没有"}发现新版本`, res.hasUpdate);
     });
     updateManager.onUpdateReady(function(res) {
       uni.showModal({

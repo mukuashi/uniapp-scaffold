@@ -16,7 +16,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | Icon组件 H5图标库，基于阿里iconfont的托管（Svg），目前支持两种引用方式（默认iconfont，如需svg方式引入需打开配置）
  * API Usage    | 建议图标放弃图片选用此方式使用，参考中心地址：https://www.iconfont.cn/manage/index?spm=a313x.7781069.1998910419.11&manage_type=myprojects&projectId=1156204&keyword=
  * @Author: mukuashi | mukuashi@icloud.com

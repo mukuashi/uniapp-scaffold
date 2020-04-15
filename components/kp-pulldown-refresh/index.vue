@@ -35,7 +35,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | 下拉刷新组件，不断扩展中...
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.

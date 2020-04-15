@@ -26,7 +26,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | Avatar头像圆字组件，支持图标、文本自定义等
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-10 // Initial version.

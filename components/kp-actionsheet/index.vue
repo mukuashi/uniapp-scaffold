@@ -43,7 +43,7 @@
 <style lang="less" scoped src="./index.less"></style>
 <script>
 /*
- * Copyright (c) 2015-Now Asako Studio. All rights reseved.
+ * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | ActionSheet操作反馈菜单
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2020-02-25 // Initial version.
