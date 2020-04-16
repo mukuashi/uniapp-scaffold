@@ -118,8 +118,12 @@
             @change="e=>handleSwitchTab(e,'main')"
           >
             <swiper-item class="tabs-main-content" v-for="(item,sIndex) in app.tabs" :key="sIndex">
-              <ul class="swiper-content" v-if="!sIndex">
-                <li class="sc1">
+              <!-- 基础组件 -->
+              <ul class="swiper-content" v-if="!sIndex">基础组件（这周补充中）</ul>
+              <!-- 业务组件 -->
+              <ul class="swiper-content" v-if="Number(sIndex)===1">业务组件（这周补充中）</ul>
+              <ul class="swiper-content" v-if="Number(sIndex)===2">
+                <li>
                   <view class="title">
                     <kp-badge class="title-dot" dot/>
                     <h2>Station</h2>
@@ -173,92 +177,6 @@
                   </view>
                 </li>
               </ul>
-              <ul class="swiper-content" v-if="Number(sIndex)===1">
-                <li class="sc2">
-                  <view class="title">
-                    <h2>Miniprogram Club</h2>
-                    <kp-icon type="miniprogram" size="48" color="#6367ef" class="title-icon"/>
-                  </view>
-                  <view class="club1">
-                    <view
-                      class="club1-item tpl-boxshadow"
-                      v-for="(row,index) in app.miniprogram"
-                      :key="index"
-                      :style="{
-                        backgroundImage: row.gradient
-                      }"
-                      @tap="handleOpenMiniprogram(row)"
-                    >
-                      <kp-icon :type="row.icon" size="70"/>
-                      <span>{{ row.name }}</span>
-                    </view>
-                  </view>
-                </li>
-                <li class="sc2">
-                  <view class="title">
-                    <h2>{{`${app.brand} · Matrix Hop`}}</h2>
-                    <kp-icon type="link" size="50" color="#07C160" class="title-icon"/>
-                  </view>
-                  <view class="club2">
-                    <view class="club2-item" v-for="(row,index) in app.community" :key="index">
-                      <kp-author
-                        shape="square"
-                        :avatar="row.image"
-                        :icon="row.icon"
-                        icon-size="56"
-                        :title="row.title"
-                        :info="row.info"
-                        :avatar-bg="row.color"
-                        @navigate="handleOpenCommunity(row)"
-                      >
-                        <kp-icon
-                          slot="extra"
-                          :size="row.vpn ? 40 : 36"
-                          :type="row.vpn ? 'ladder' : 'navigation'"
-                          :color="row.vpn ? '#f09819' : '#07C160'"
-                        />
-                      </kp-author>
-                    </view>
-                  </view>
-                </li>
-              </ul>
-              <ul class="swiper-content" v-if="Number(sIndex)===2">
-                <li class="sc3">
-                  <view class="title">
-                    <h2>Photography Albums</h2>
-                  </view>
-                  <kp-spin size="huge" height="800" v-if="!entry._500px.length"/>
-                  <view v-else class="albums">
-                    <view
-                      class="albums-item tpl-boxshadow"
-                      v-for="(row,index) in entry._500px"
-                      :key="index"
-                      @tap="handleOpen500pxAlbum(row)"
-                    >
-                      <view
-                        class="albums-item-img"
-                        :style="{
-                          backgroundImage: `url(${row.url.p3})`
-                        }"
-                      >
-                        <kp-avatar
-                          class="open"
-                          size="small"
-                          icon="miniprogram"
-                          avatar-bg="#7984db"
-                        />
-                      </view>
-                      <view class="albums-item-right">
-                        <view class="top">{{ row.title }}</view>
-                        <view class="bottom">
-                          <text>{{ `${row.setSetCount}+` }}</text>
-                          <text>More</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-                </li>
-              </ul>
             </swiper-item>
           </swiper>
         </template>
@@ -303,12 +221,12 @@
  * @version 0.1 | 2019-07-08 // Initial version.
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-15 22:18:32
+ * @Last Modified time: 2020-04-16 13:09:10
  */
 import config from "@/config";
 import { debounce } from "@/utils";
 import { mapState, mapMutations } from "vuex";
-import * as Services from "@/services/home";
+// import * as Services from "@/services/home";
 import KpNavbar from "@/components/kp-navbar";
 import KpAvatar from "@/components/kp-avatar";
 import KpSticky from "@/components/kp-sticky";
@@ -342,7 +260,7 @@ export default {
     return {
       home: {
         gallery: [
-           "/orj1080/967d9727ly3gc0whyclfoj20sg0sge0a.jpg",
+          "/orj1080/967d9727ly3gc0whyclfoj20sg0sge0a.jpg",
           "/orj1080/967d9727ly3gc0whyfofkj20sg0sg4av.jpg",
           "/orj1080/967d9727ly3gc0whykstlj20sg0sgb29.jpg",
           "/orj1080/967d9727ly3gc0whywdupj20sg0sgb0l.jpg",
@@ -379,10 +297,7 @@ export default {
         ]
       },
       // 不同社区的entry list
-      entry: {
-        params: {},
-        _500px: []
-      }
+      entry: {}
     };
   },
   computed: {
@@ -412,10 +327,6 @@ export default {
     };
   },
   methods: {
-    async get500pxAlbumList() {
-      let res = await Services.get500pxAlbumListSvc();
-      this.entry._500px = res.data;
-    },
     handleSwiperHeight() {
       uni
         .createSelectorQuery()
@@ -497,9 +408,6 @@ export default {
         cur = e.detail.current;
       }
       this.tabs.current = cur;
-      if (cur === 2 && !this.entry._500px.length) {
-        this.get500pxAlbumList();
-      }
     },
     handleOpenMiniprogram(item) {
       // 因小程序内打开能力限制10个，故一部分小程序用action-sheet图片引导方式代替
@@ -543,14 +451,6 @@ export default {
       uni.navigateTo({
         url: path
       });
-    },
-    // 打开500px社区
-    handleOpen500pxAlbum(item) {
-      let query = {
-        appid: "wxfb1c0bd6179a8b50",
-        path: `pages/album/album?galleryId=${item.id}`
-      };
-      this.handleOpenMiniprogram(query);
     },
     // 分享海报
     handleSharePoster(val) {

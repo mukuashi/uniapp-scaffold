@@ -54,7 +54,7 @@ export default {
     "theme",
     "colorful"
   ],
-  tabs: ["Home", "Creative", "Works"],
+  tabs: ["Home", "Extend", "About"],
   team: [
     {
       name: "Mich",

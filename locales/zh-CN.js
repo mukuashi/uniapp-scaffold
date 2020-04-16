@@ -59,7 +59,7 @@ export default {
     "广告",
     "色彩"
   ],
-  tabs: ["主页", "社区", "创作"],
+  tabs: ["基础", "扩展", "关于"],
   team: [
     {
       name: "Mich",
