@@ -8,35 +8,45 @@
   >
     <view :class="[ `${prefixCls}`]">
       <view class="tips" :style="{ color: tipsColor}" v-if="tips">{{tips}}</view>
-      <view
-        :class="[ 
-          `${prefixCls}-content`, 
-          isCancel && (itemList.length ? `${prefixCls}-box` : `${prefixCls}-line`)
-        ]"
-      >
-        <image v-if="tipsImage" :src="tipsImage" mode="widthFix" webp show-menu-by-longpress>
-        <block v-for="(item,index) in itemList" :key="index">
-          <button
-            :class="[
+      <view :class="[ 
+          `${prefixCls}-content`
+        ]">
+        <image
+          v-if="tipsImage"
+          :src="tipsImage"
+          mode="widthFix"
+          webp
+          @tap="handlePreviewImage"
+        >
+        <view
+          :class="[
+            isCancel && (!itemList.length && `${prefixCls}-line`),
+            itemInline ? `${prefixCls}-inline` : `${prefixCls}-box`
+          ]"
+        >
+          <block v-for="(item,index) in itemList" :key="index">
+            <button
+              :class="[
               `${prefixCls}-btn`,
-              `${prefixCls}-divider`,
+              !itemInline && `${prefixCls}-divider`,
               `${prefixCls}-btn-last` && (!isCancel && index===itemList.length-1)
             ]"
-            :data-index="index"
-            :open-type="item.opentype"
-            :style="{ color:item.color }"
-            @tap="handleClickItem"
-          >{{item.text}}</button>
-        </block>
-      </view>
-      <button
-        :class="[
+              :data-index="index"
+              :open-type="item.opentype"
+              :style="{ color:item.color }"
+              @tap="handleClickItem"
+            >{{item.text}}</button>
+          </block>
+          <button
+            :class="[
           `${prefixCls}-btn`,
           `${prefixCls}-cancel`
         ]"
-        v-if="isCancel"
-        @tap="handleClickAction('cancel')"
-      >{{cancelText}}</button>
+            v-if="isCancel"
+            @tap="handleClickAction('cancel')"
+          >{{cancelText}}</button>
+        </view>
+      </view>
     </view>
   </kp-mask>
 </template>
@@ -49,7 +59,7 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-03-30 19:47:08
+ * @Last Modified time: 2020-04-17 20:09:48
  */
 import KpMask from "../kp-mask";
 export default {
@@ -73,6 +83,7 @@ export default {
       type: Array,
       default: () => [{ text: "确定" }]
     },
+    itemInline: Boolean, // 功能选项inline内敛模式，居中排一列，默认不开启
     //提示文字
     tips: {
       type: String,
@@ -122,6 +133,12 @@ export default {
           this.$emit("cancel", false);
         }, 300);
       }
+    },
+    handlePreviewImage() {
+      uni.previewImage({
+        current: this.tipsImage,
+        urls: [this.tipsImage]
+      });
     }
   }
 };
