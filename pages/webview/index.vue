@@ -1,6 +1,6 @@
 <template>
   <view>
-    <web-view :webview-styles="webviewStyles" :src="webUrl"/>
+    <web-view :src="webUrl"/>
   </view>
 </template>
 
@@ -10,12 +10,8 @@ import { isUrl } from "@/utils";
 export default {
   data() {
     return {
-      webUrl: app.author.blog,
-      webviewStyles: {
-        progress: {
-          color: "#1aad19"
-        }
-      }
+      // 默认打开链接
+      webUrl: "https://mp.weixin.qq.com/s/sy8iYBn_Yu95UUzyUyzTRg"
     };
   },
   onLoad(options) {
@@ -23,7 +19,6 @@ export default {
     if (options.url) {
       if (isUrl(options.url)) {
         this.webUrl = options.url;
-      } else {
       }
     }
   }

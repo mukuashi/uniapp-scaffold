@@ -24,6 +24,9 @@
         "backgroundColor": "#11121c",
         "backgroundColorBottom": "#11121c"
       }
+    },
+    {
+      "path": "pages/webview/index"
     }
   ],
   "globalStyle": {

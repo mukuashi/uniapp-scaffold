@@ -58,6 +58,16 @@
             </view>
           </kp-author>
         </li>
+        <li>
+          <kp-author
+            extra
+            avatar-bg="transparent"
+            icon="pay"
+            icon-size="56"
+            title="鼓励一下"
+            @navigate="handleEncourage"
+          />
+        </li>
       </ul>
     </view>
     <view class="about-footer">
@@ -65,10 +75,10 @@
     </view>
     <!-- 小交互 -->
     <kp-actionsheet
-      :tips="feedback.contact.tips || '作品链接已复制：小程序内暂不支持打开外链（😴）君若有意·何乎山水 => 打开浏览器欣赏吧'"
+      item-inline
+      :tips="feedback.contact.tips || (feedback.contact.qrcode ? '温馨提示：长按识别或保存微信相册扫一扫 ❤️':'作品链接已复制，小程序内暂不支持打开外链（😴）君若有意·何乎山水 => 打开浏览器欣赏吧')"
       :tips-image="feedback.contact.qrcode"
-      :item-list="[]"
-      cancel-text="晓得了"
+      :item-list="feedback.contact.switch ? feedback.guideCtList : []"
       v-model="feedback.guideAction"
       @cancel="feedback.guideAction=false"
     />
@@ -119,7 +129,10 @@ export default {
       // 小交互集合
       feedback: {
         guideLanguage: false,
-        guideAction: false //vpn限制社区的提示
+        guideAction: false, //vpn限制社区的提示
+        guideCtList: [
+          { text: "联系我们", color: "#07C160", opentype: "contact" }
+        ]
       }
     };
   },
@@ -145,8 +158,8 @@ export default {
       });
     },
     handleOpenItem(item) {
-      // 优先级 appid > path > url
-      // 优先打开其他小程序 > 当前小程序内页面 > url或不支持打开h5的引导交互
+      // 优先级 appid > path > target > url
+      // 优先打开其他小程序 > 当前小程序内页面 > 可在app内打开的h5 > 不可在app内打开的h5（action-sheet引导方式）
       if (item.appid) {
         return uni.navigateToMiniProgram({
           appId: item.appid,
@@ -156,38 +169,54 @@ export default {
           }
         });
       }
+      //
       if (item.path) return this.handleCommonRoute(item.path);
+      //
+      if (item.target)
+        return this.handleCommonRoute(
+          `/pages/webview/index?url=${item.target}`
+        );
       //
       uni.setClipboardData({
         data: item.url,
         success: res => {
+          // 带联系信息url > 保存二维码 > 默认项
           this.feedback = {
+            ...this.feedback,
             ...item,
+            contact: item.contact || {},
             guideAction: true
           };
         }
       });
     },
     handleSelectLanguage(item) {
-      let curLanguage = this.languageGroup[item].type;
-      this.languageGroup = this.languageGroup.map(row => {
-        return {
-          ...row,
-          color: row.type === curLanguage && "#07C160"
-        };
-      });
-      // https://vuex.vuejs.org/zh/guide/mutations.html
-      this.$store.commit("changeLanguage", curLanguage);
-      uni.setStorage({
-        key: `${config.key}_language`,
-        data: curLanguage,
-        success: () => {
-          uni.showToast({
-            title: `${this.languageGroup[item].text}已配置`,
-            icon: "success"
-          });
-        }
-      });
+      let curLanguage = this.languageGroup[item].type,
+        prevLanguage = this.$store.state.app.language;
+      // 改变语言再触发以下
+      if (curLanguage !== prevLanguage) {
+        // 触发全局更新语言事件
+        uni.$emit("updateLanguage", prevLanguage);
+        //
+        this.languageGroup = this.languageGroup.map(row => {
+          return {
+            ...row,
+            color: row.type === curLanguage && "#07C160"
+          };
+        });
+        // https://vuex.vuejs.org/zh/guide/mutations.html
+        this.$store.commit("changeLanguage", curLanguage);
+        uni.setStorage({
+          key: `${config.key}_language`,
+          data: curLanguage,
+          success: () => {
+            uni.showToast({
+              title: `${this.languageGroup[item].text}已配置`,
+              icon: "success"
+            });
+          }
+        });
+      }
     },
     // 公共交互打开（true）或关闭（false）
     handleCommonModal(type, action = true) {
@@ -196,6 +225,17 @@ export default {
       } else {
         this.$set(this.feedback, type, action);
       }
+    },
+    handleEncourage() {
+      // update config
+      this.feedback.contact = {
+        switch: true, //是否开启联系客服开关
+        tips: "送人玫瑰，手留余香 🌹",
+        qrcode:
+          "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL4kV3mcOTYn6Zdc2459rib6dWmzVCibVgYMbTBCibKShicjiaGneUQqg3sSatd6BFeLHKKpIV11pq7Ttjg/0?wx_fmt=jpeg"
+      };
+      //
+      this.handleCommonModal("guideAction");
     }
   }
 };
