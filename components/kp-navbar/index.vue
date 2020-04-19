@@ -10,11 +10,10 @@
       height: `${navBarHeight}px`
     }"
   >
-    <view class="left" v-if="left">
+    <view class="left" v-if="left" @tap="handleCommonNavigate">
       <kp-icon
-        :type="pages > 1 ? 'arrow_left': 'home'"
-        :size="pages > 1 ? 60 : 46"
-        @click="handleCommonNavigate"
+        :type="leftIcon || (pages > 1 ? 'arrow_left' : 'home')"
+        :size="leftIconSize || (pages > 1 ? 60 : 46)"
       />
     </view>
     <view class="left" v-else>
@@ -35,7 +34,7 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-07 21:45:27
+ * @Last Modified time: 2020-04-19 22:52:13
  */
 import KpIcon from "@/components/kp-icon";
 export default {
@@ -63,14 +62,16 @@ export default {
     left: {
       type: [Boolean, String],
       default: false
-    }
+    },
+    leftIcon: String,
+    leftIconSize: [Number, String]
   },
   data() {
     return {
       pages: 0, //页面栈
       prefixCls: "k-navbar",
       // 导航栏高度
-      navBarHeight: this.CustomBar
+      navBarHeight: this.CustomBar || 100
     };
   },
   created() {

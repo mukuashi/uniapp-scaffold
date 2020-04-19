@@ -218,7 +218,7 @@ export default {
       url: "https://www.otcc.io",
       contact: {
         qrcode:
-          "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL6P7tL0Rtm5ExNnt3a6kHMSgog8hH6wibFpXG4oJLKib9V623yPARIpDrR9uwHZabSTHoGZOvHT9rRw/0?wx_fmt=jpeg"
+          "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/wx-founder-2.jpeg?sign=04f5355296b6896f0506cc7eaf09ee9f&t=1587282884"
       }
     },
     {

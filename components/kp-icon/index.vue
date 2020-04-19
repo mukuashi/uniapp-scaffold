@@ -2,14 +2,14 @@
   <view :class="[
     `${prefixCls}-class`,
     `${prefixCls}-box`]">
-    <svg :class="[`${prefixCls}-svg`]" aria-hidden="true" @click="onClick" v-if="svg">
+    <svg :class="[`${prefixCls}-svg`]" aria-hidden="true" @tap="onClick" v-if="svg">
       <use :xlink:href="iconName"></use>
     </svg>
     <view
       v-else
       :class="[ prefixCls,`${prefixCls}-${type}` ]"
       :style="{ color: color, 'font-size': size + 'rpx' }"
-      @click="onClick"
+      @tap="onClick"
     />
   </view>
 </template>
@@ -23,7 +23,7 @@
  * @version 0.1 | 2019-07-08 // Initial version.
  * @Date: 2019-07-08 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-03-06 11:27:30
+ * @Last Modified time: 2020-04-19 22:43:03
  */
 import { loadExternalJS } from "@/utils";
 

@@ -1,10 +1,11 @@
 <template>
   <view class="home">
-    <kp-navbar v-if="tabs.scrollTop<300">
-      <template slot="left">
-        <kp-icon type="set_filled" size="50" @click="handleCommonRoute('/pages/about/index')"/>
-      </template>
-    </kp-navbar>
+    <kp-navbar
+      v-if="tabs.scrollTop<300"
+      left="/pages/about/index"
+      left-icon="set_filled"
+      left-icon-size="50"
+    />
     <view class="home-header">
       <swiper
         circular
@@ -228,7 +229,7 @@
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @version 0.3 | 2020-04-19 // 配置语言包及team info.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-19 13:45:47
+ * @Last Modified time: 2020-04-19 23:20:20
  */
 import config from "@/config";
 import { debounce } from "@/utils";

@@ -78,6 +78,7 @@
       item-inline
       :tips="feedback.contact.tips || (feedback.contact.qrcode ? '温馨提示：长按识别或保存微信相册扫一扫 ❤️':'作品链接已复制，小程序内暂不支持打开外链（😴）君若有意·何乎山水 => 打开浏览器欣赏吧')"
       :tips-image="feedback.contact.qrcode"
+      :tips-image-preview="feedback.contact.preview"
       :item-list="feedback.contact.switch ? feedback.guideCtList : []"
       v-model="feedback.guideAction"
       @cancel="feedback.guideAction=false"
@@ -235,6 +236,7 @@ export default {
       // update config
       this.feedback.contact = {
         switch: true, //是否开启联系客服开关
+        preview: true, //是否开启图片点击预览模式
         tips: "送人玫瑰，手留余香 🌹",
         qrcode:
           "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL4kV3mcOTYn6Zdc2459rib6dWmzVCibVgYMbTBCibKShicjiaGneUQqg3sSatd6BFeLHKKpIV11pq7Ttjg/0?wx_fmt=jpeg"

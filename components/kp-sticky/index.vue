@@ -25,7 +25,7 @@
  * @version 0.1 | 2020-02-12 // Initial version.
  * @Date: 2020-02-12 19:01:12
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-27 00:51:35
+ * @Last Modified time: 2020-04-19 20:34:27
  */
 export default {
   name: "KpSticky",
@@ -83,14 +83,12 @@ export default {
   },
   methods: {
     updateStickyChange() {
-      const top = this.top;
-      const scrollTop = this.scrollTop;
       let stickyTop = this.stickyTop;
       // #ifdef H5
       stickyTop = stickyTop - 44;
       stickyTop = stickyTop < 0 ? 0 : stickyTop;
       // #endif
-      this.isFixed = scrollTop + stickyTop >= top ? true : false;
+      this.isFixed = this.scrollTop + stickyTop >= this.top ? true : false;
     },
     updateScrollChange() {
       if (this.timer) {

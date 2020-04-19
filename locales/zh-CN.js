@@ -66,7 +66,7 @@ export default {
       avatar:
         "https://tvax3.sinaimg.cn/crop.4.0.1116.1116.180/967d9727ly8fftw9b3jmmj20v90v0wgq.jpg",
       tipsImg:
-        "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL6P7tL0Rtm5ExNnt3a6kHMS7tdrsvH8Vv8rUMpwOa0o2W9ichQW2mq84ib9oic1EnxUkPxrNj1f013KQ/0?wx_fmt=jpeg",
+        "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/wx-founder-1.jpeg?sign=7a249ee2831aadd06434fcb130f505f6&t=1587283261",
       role: "创始人、创作者、摄影师等"
     },
     {
@@ -74,7 +74,7 @@ export default {
       avatar:
         "http://wx.qlogo.cn/mmopen/lx6nJKHrPibX4TYXXrvNMVoeBf923oQx09OeCP8X7rSajibKtkuyJcticDhSQNhgvqKx46ngn9YHiciaPKLRJYQQY5kV7DRor4OYJ/0",
       tipsImg:
-        "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL6P7tL0Rtm5ExNnt3a6kHMSgog8hH6wibFpXG4oJLKib9V623yPARIpDrR9uwHZabSTHoGZOvHT9rRw/0?wx_fmt=jpeg",
+        "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/wx-founder-2.jpeg?sign=04f5355296b6896f0506cc7eaf09ee9f&t=1587282884",
       role: "市场总监、增长黑客等"
     },
     {

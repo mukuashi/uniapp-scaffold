@@ -16,6 +16,7 @@
           :src="tipsImage"
           mode="widthFix"
           webp
+          show-menu-by-longpress
           @tap="handlePreviewImage"
         >
         <view
@@ -59,7 +60,7 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-17 20:09:48
+ * @Last Modified time: 2020-04-19 20:54:30
  */
 import KpMask from "../kp-mask";
 export default {
@@ -93,6 +94,11 @@ export default {
     tipsColor: String,
     //操作选项添加图片展示
     tipsImage: String,
+    // 图片是否支持点击预览，默认不支持
+    tipsImagePreview: {
+      type: Boolean,
+      default: false
+    },
     //是否需要取消按钮
     isCancel: {
       type: Boolean,
@@ -135,10 +141,12 @@ export default {
       }
     },
     handlePreviewImage() {
-      uni.previewImage({
-        current: this.tipsImage,
-        urls: [this.tipsImage]
-      });
+      if (this.tipsImagePreview) {
+        uni.previewImage({
+          current: this.tipsImage,
+          urls: [this.tipsImage]
+        });
+      }
     }
   }
 };
