@@ -26,8 +26,7 @@ function factoryConfig(data) {
   return {
     author: {
       ...data.author,
-      ...age(),
-      blog: "//kquanr.com"
+      ...age()
     },
     shares: {
       title: `${data.name}@${data.brand} Come and see, buddy 👬`

@@ -8,12 +8,10 @@ const { request } = http;
 export function getMepaiEntryListSvc(query = {}) {
   return request({
     baseUrl: config.mepai, // 自定义请求host
-    url: "/v5/user/works?uid=38224&per_num=21&page=2",
+    url: "/xxx/path",
     method: "get",
     data: {
-      uid: 38224,
-      per_num: query.per_num || 15,
-      page: query.page || 1
+      uid: 12345
     }
   });
 }
@@ -22,7 +20,7 @@ export function getMepaiEntryListSvc(query = {}) {
 export function get500pxAlbumListSvc(query = {}) {
   return request({
     baseUrl: config._500px, // 自定义请求host
-    url: "/community/user-details/862206f444ccbbf9947dd165e267f3713/set",
+    url: "/xxx/path",
     method: "get",
     data: {
       page: 1,

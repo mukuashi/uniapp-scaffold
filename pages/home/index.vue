@@ -171,7 +171,12 @@
                   </view>
                   <view class="detail-team">
                     <view v-for="(row,index) in app.team" :key="index" class="detail-team-item">
-                      <kp-avatar :image="row.image" size="large" mode="aspectFill"/>
+                      <kp-avatar
+                        :image="row.avatar"
+                        size="large"
+                        mode="aspectFill"
+                        @tap="handleOpenCommunity(row)"
+                      />
                       <text>{{row.role}}</text>
                     </view>
                   </view>
@@ -193,17 +198,18 @@
       </button>
     </view>
     <!-- 小交互 -->
+    <!-- 引导关注等 -->
     <kp-actionsheet
       :tips="feedback.guideTipsConfig.text"
       :tips-image="feedback.guideTipsConfig.image"
       :item-list="[]"
-      cancel-text="晓得了"
       v-model="feedback.guideTips"
       @cancel="()=>{
         feedback.guideTips=false
         feedback.guideTipsConfig = feedback.guideTipsTpl
       }"
     />
+    <!-- 分享海报等 -->
     <kp-actionsheet
       :item-list="feedback.guideShareList"
       v-model="feedback.guideShare"
@@ -220,8 +226,9 @@
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2019-07-08 // Initial version.
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
+ * @version 0.3 | 2020-04-19 // 配置语言包及team info.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-16 13:09:10
+ * @Last Modified time: 2020-04-19 13:45:47
  */
 import config from "@/config";
 import { debounce } from "@/utils";
@@ -258,6 +265,7 @@ export default {
   },
   data() {
     return {
+      preLanguage: null,
       home: {
         gallery: [
           "/orj1080/967d9727ly3gc0whyclfoj20sg0sge0a.jpg",
@@ -306,18 +314,24 @@ export default {
   onLoad(options) {
     // hide tabbar
     uni.hideTabBar();
-    if (options.tab) this.tabs.current = options.tab;
-  },
-  //页面滚动执行方式
-  onPageScroll(e) {
-    this.tabs.scrollTop = e.scrollTop;
+    if (options.tab) {
+      this.tabs.current = options.tab;
+    }
+    uni.$on("updateLanguage", this.updateLanguage);
   },
   onShow() {
-    // 每次切换页面都计算下整个swiper content高度
-    this.handleSwiperHeight();
+    // 每次切换语言需重新计算整个swiper content高度
+    const { language } = this.$store.state.app;
+    if (this.preLanguage && this.preLanguage !== language) {
+      this.handleSwiperHeight();
+    }
   },
   onReady() {
     // init data
+    this.handleSwiperHeight();
+  },
+  onUnload() {
+    uni.$off("updateLanguage");
   },
   onShareAppMessage(options) {
     const { name, brand, shares } = this.$store.state.app;
@@ -327,6 +341,9 @@ export default {
     };
   },
   methods: {
+    updateLanguage(data) {
+      this.preLanguage = data;
+    },
     handleSwiperHeight() {
       uni
         .createSelectorQuery()
@@ -426,9 +443,18 @@ export default {
       }
     },
     handleOpenCommunity(item) {
-      // 小程序自动打开，h5走引导或选择性打开
+      // 优先级 appid > path > target > url
+      // 优先打开其他小程序 > 当前小程序内页面 > 可在app内打开的h5 > 不可在app内打开的h5（action-sheet引导方式）
       if (item.type === "miniprogram" && item.appid) {
         return this.handleOpenMiniprogram(item);
+      }
+      if (item.target) {
+        return this.handleCommonRoute(
+          `/pages/webview/index?url=${item.target}`
+        );
+      }
+      if (item.tipsImg) {
+        return this.handleOpenGuide(item);
       }
       uni.setClipboardData({
         data: item.url,
@@ -440,8 +466,7 @@ export default {
     handleOpenGuide(item) {
       if (item.tipsImg) {
         this.feedback.guideTipsConfig = {
-          text:
-            "温馨提示：当前小程序打开其他小程序总数已超过最大限制（10个）长按下面图片识别二维码欣赏吧 ❤️",
+          text: "温馨提示：长按识别或保存微信相册扫一扫 ❤️",
           image: item.tipsImg
         };
       }

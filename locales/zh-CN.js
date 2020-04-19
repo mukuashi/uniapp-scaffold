@@ -62,34 +62,41 @@ export default {
   tabs: ["基础", "扩展", "关于"],
   team: [
     {
-      name: "Mich",
-      image:
+      name: "mukuashi",
+      avatar:
         "https://tvax3.sinaimg.cn/crop.4.0.1116.1116.180/967d9727ly8fftw9b3jmmj20v90v0wgq.jpg",
+      tipsImg:
+        "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL6P7tL0Rtm5ExNnt3a6kHMS7tdrsvH8Vv8rUMpwOa0o2W9ichQW2mq84ib9oic1EnxUkPxrNj1f013KQ/0?wx_fmt=jpeg",
       role: "创始人、创作者、摄影师等"
     },
     {
       name: "James",
-      image:
+      avatar:
         "http://wx.qlogo.cn/mmopen/lx6nJKHrPibX4TYXXrvNMVoeBf923oQx09OeCP8X7rSajibKtkuyJcticDhSQNhgvqKx46ngn9YHiciaPKLRJYQQY5kV7DRor4OYJ/0",
+      tipsImg:
+        "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL6P7tL0Rtm5ExNnt3a6kHMSgog8hH6wibFpXG4oJLKib9V623yPARIpDrR9uwHZabSTHoGZOvHT9rRw/0?wx_fmt=jpeg",
       role: "市场总监、增长黑客等"
     },
     {
       name: "Hepburn",
-      image:
+      avatar:
         "https://tvax4.sinaimg.cn/crop.0.0.1002.1002.180/007q1594ly8garlm6zz9aj30ru0rutc2.jpg",
-      role: "工程师、户外探险爱好者等"
+      role: "工程师、户外探险爱好者等",
+      target: "https://mp.weixin.qq.com/s/sy8iYBn_Yu95UUzyUyzTRg"
     },
     {
       name: "Asako Studio",
-      image:
+      avatar:
         "https://lz.sinaimg.cn/orj1080/967d9727ly3gc0whyiy96j20sg0sg1jj.jpg",
-      role: "设计师、视觉艺术家等"
+      role: "设计师、视觉艺术家等",
+      target: "https://mp.weixin.qq.com/s/sy8iYBn_Yu95UUzyUyzTRg"
     },
     {
       name: "MUX lab",
-      image:
-        "https://cdn.dribbble.com/users/32512/screenshots/6495831/face_id2_effect_by_gleb.gif",
-      role: "产品总监、投资人等"
+      avatar:
+        "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/face_id2_effect_by_gleb.gif?sign=a5612a42fe35267069bdbf330d4070ab&t=1587180383",
+      role: "产品总监、投资人等",
+      target: "https://mp.weixin.qq.com/s/TeRiItQrpMY8dooQopDN3A"
     }
   ],
   footer: {

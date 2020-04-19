@@ -92,6 +92,11 @@
   </view>
 </template>
 <style lang="less" scoped src="./index.less"></style>
+<style>
+page {
+  background-color: #11121c;
+}
+</style>
 <script>
 import config from "@/config";
 import { mapState, mapMutations } from "vuex";
