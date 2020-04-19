@@ -2,10 +2,7 @@
 import Vue from "vue";
 
 export default {
-  globalData: {
-    ...uni.getLaunchOptionsSync()
-  },
-  onLaunch: function() {
+  onLaunch: function(res) {
     // 小程序更新机制 https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/update-mechanism.html
     const updateManager = uni.getUpdateManager();
     updateManager.onCheckForUpdate(function(res) {
