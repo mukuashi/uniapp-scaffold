@@ -175,7 +175,7 @@ const posterConfig = (random = Math.random()) => {
         zIndex: 2
       },
       {
-        x: 155,
+        x: 152,
         y: 1210,
         fontSize: 40,
         fontWeight: "bold",

@@ -2,7 +2,7 @@
 import Vue from "vue";
 
 export default {
-  onLaunch: function(res) {
+  onLaunch: function() {
     // 小程序更新机制 https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/update-mechanism.html
     const updateManager = uni.getUpdateManager();
     updateManager.onCheckForUpdate(function(res) {
