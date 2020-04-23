@@ -8,7 +8,8 @@
     ]"
     :style="{ 
       color: color,
-      backgroundColor :bgColor
+      backgroundColor: bgColor,
+      backgroundImage: bgGradient
     }"
     @tap="handleClick"
   >
@@ -24,7 +25,7 @@
  * @version 0.1 | 2020-01-18 // Initial version.
  * @Date: 2020-01-18 14:21:19
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-23 00:38:10
+ * @Last Modified time: 2020-04-23 12:38:37
  */
 export default {
   name: "KpBadge",
@@ -44,6 +45,8 @@ export default {
     // 用户自定义color会覆盖默认主题type
     color: String,
     bgColor: String,
+    // 渐变属性
+    bgGradient: String,
     //是否是圆点
     dot: {
       type: Boolean,

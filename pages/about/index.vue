@@ -20,7 +20,7 @@
             :avatar="row.image"
             :icon="row.icon"
             icon-size="46"
-            :title="row.title"
+            :title="row.name"
             :info="row.info"
             :avatar-bg="row.color"
             :avatar-gradient="row.gradient"
@@ -36,7 +36,7 @@
             :avatar="row.image"
             :icon="row.icon"
             icon-size="46"
-            :title="row.title"
+            :title="row.name"
             :info="row.info"
             @navigate="handleOpenItem(row)"
           />

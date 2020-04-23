@@ -8,10 +8,10 @@
   word-break: break-all;
   color: @font-initialize-color;
   .center-middle-flex;
-  .custom-position(fixed,@top:0,@left:0,@zindex:@zindex-tips);
+  .custom-position(fixed, @top:0, @left:0, @zindex: @zindex-tips);
   transform: translateZ(0) translateY(-100%);
   transition: all 0.3s ease-in-out;
-  background: rgba(@dark-color, .7); //默认背景色
+  background: rgba(@dark-color, 0.7); //默认背景色
   &-show {
     transform: translateZ(0) translateY(0);
     opacity: 1;
@@ -30,7 +30,7 @@
   font-size: 28rpx;
   color: @font-initialize-color;
   .center-middle-flex;
-  .custom-position(fixed,@left:50%,@zindex:@zindex-tips);
+  .custom-position(fixed, @left:50%, @zindex: @zindex-tips);
   transition: all 0.3s ease-in-out;
   animation: fadeInFalse 1s ease-in-out 1s 1; // 模拟延迟
   &-show {
@@ -44,7 +44,7 @@
     word-break: break-all;
     border-radius: 8rpx;
     padding: 16rpx 30rpx;
-    background: rgba(@dark-color, .7);
+    background: rgba(@dark-color, 0.7);
   }
   &-primary {
     background-color: @primary-color;
@@ -65,13 +65,5 @@
   &-center {
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-}
-@keyframes ffadeInFalse {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: .01;
   }
 }

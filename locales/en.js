@@ -6,7 +6,7 @@ export default {
     star: "LEO",
     position: "Beijing Chaoyang",
     founder:
-      "A Creator，PhotoArtLife、Asako Studio、MUX Lab Founder | Independent Designer、Photographer、Producer、Software Engineer、Full Stack Developer、Media Author etc."
+      "A Creator、Visual Artist、Farmer 👨‍🌾\nPhotoArtLife、Asako Studio Founder\nIndependent Designer、Full Stack Developer、Photographer、Producer、Software Engineer、Open Source Community Author etc."
   },
   introduce:
     "Our team comes from Google、Tencent、Alibaba、Baidu、Xiaomi、Yidao、Blockchain and other Internet software and service industries.\nAnd We dedicated to providing creators with small、beautiful、aggregated creation and sharing content brand marketing services. ",

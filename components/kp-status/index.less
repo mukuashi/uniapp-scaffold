@@ -6,7 +6,7 @@
   .center-middle-flex;
   flex-direction: column;
   background-color: transparent;
-  animation: fadeIn .1s linear 1 forwards;
+  animation: fadeIn 0.1s linear 1 forwards;
   &-content {
     text-align: center;
     margin-top: -10%;
@@ -18,18 +18,9 @@
     }
     span {
       display: inline-block;
-      margin: .2rem 0 0 .4rem;
-      font-size: .4rem;
+      margin: 0.2rem 0 0 0.4rem;
+      font-size: 0.4rem;
       color: @brand-color;
     }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0
-  }
-  100% {
-    opacity: 1
   }
 }
