@@ -76,7 +76,7 @@
     <!-- 小交互 -->
     <kp-actionsheet
       item-inline
-      :tips="feedback.contact.tips || (feedback.contact.qrcode ? '温馨提示：长按识别或保存微信相册扫一扫 ❤️':'作品链接已复制，小程序内暂不支持打开外链（😴）君若有意·何乎山水 => 打开浏览器欣赏吧')"
+      :tips="feedback.contact.tips || feedback.contact.text"
       :tips-image="feedback.contact.qrcode"
       :tips-image-preview="feedback.contact.preview"
       :item-list="feedback.contact.switch ? feedback.guideCtList : []"
@@ -190,7 +190,12 @@ export default {
           this.feedback = {
             ...this.feedback,
             ...item,
-            contact: item.contact || {},
+            contact: {
+              ...item.contact,
+              text: item.contact && item.contact.qrcode
+                ? `温馨提示：长按识别或保存微信相册扫一扫 ❤️\n${item.url || ""}`
+                : '作品链接已复制：小程序内暂不支持打开外链（😴）\n君若有意·何乎山水 => 打开浏览器欣赏吧'
+            },
             guideAction: true
           };
         }
