@@ -11,25 +11,29 @@
       <view :class="[ 
           `${prefixCls}-content`
         ]">
-        <image
-          v-if="tipsImage"
-          :src="tipsImage"
-          mode="widthFix"
-          webp
-          show-menu-by-longpress
-          @tap="handlePreviewImage"
-        >
+        <view :class="[ 
+          `${prefixCls}-content-img`
+        ]" v-if="tipsImage">
+          <image
+            :src="tipsImage"
+            mode="widthFix"
+            webp
+            show-menu-by-longpress
+            @tap="handlePreviewImage"
+          >
+        </view>
         <view
           :class="[
+            `${prefixCls}-box`,
             isCancel && (!itemList.length && `${prefixCls}-line`),
-            itemInline ? `${prefixCls}-inline` : `${prefixCls}-box`
+            itemInline && `${prefixCls}-inline`
           ]"
         >
           <block v-for="(item,index) in itemList" :key="index">
             <button
               :class="[
               `${prefixCls}-btn`,
-              !itemInline && `${prefixCls}-divider`,
+              !itemInline && itemList.length>1 && `${prefixCls}-divider`,
               `${prefixCls}-btn-last` && (!isCancel && index===itemList.length-1)
             ]"
               :data-index="index"
@@ -60,7 +64,7 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-19 20:54:30
+ * @Last Modified time: 2020-05-07 00:07:32
  */
 import KpMask from "../kp-mask";
 export default {
