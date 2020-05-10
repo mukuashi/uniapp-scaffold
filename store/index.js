@@ -27,9 +27,6 @@ function factoryConfig(data) {
     author: {
       ...data.author,
       ...age()
-    },
-    shares: {
-      title: `${data.name}@${data.brand} Come and see, buddy 👬`
     }
   };
 }

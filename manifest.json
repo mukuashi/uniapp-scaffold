@@ -1,5 +1,5 @@
 {
-  "name": "uniapp-scaffold",
+  "name": "Asako UED",
   "appid": "", // your appid
   "description": "一个基于uni-app的跨平台小程序脚手架",
   "versionName": "0.0.1",
@@ -59,6 +59,26 @@
       "postcss": true,
       "minified": true
     },
+    "usingComponents": true,
+    // 需要跳转的小程序列表 APPID
+    // https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html
+    "navigateToMiniProgramAppIdList": [
+      "wx1014f2e01d1623f9", // Asako Studio
+      "wx8106d3961f485f43", // Asako UED
+      "wxd452b156d966e65d", // 浅子影报
+      "wx1bff9cb67feb77b3", // 浅子居家
+      "wx55926564822f5983", // 绿洲
+      "wxaddd5e379b1a72ee", // 米拍
+      "wxffc08ac7df482a27", // 小红书
+      "wx9074de28009e1111", // 微博
+      "wxef0633b7d41f9bb2", // 像素蜜蜂
+      "wxfb1c0bd6179a8b50", // 500px
+      "wx94147d3c986afa3b", // VUE·Vlog
+      "wxbb7da23406addc2f", // 美图
+      "wxa717aca07db3bb5a", // 开眼视频
+      "wxc96dc7ebd9bf61e8", // Keep
+      "wx4314e3b0d3cb43bf" // 站酷
+    ],
     "permission": {
       "scope.userLocation": {
         "desc": "开启位置权限，一起来玩耍吧"
@@ -89,6 +109,7 @@
       "minified": true
     },
     "appid": "", //your appid
+
     // 启用自定义组件模式
     "usingComponents": true,
     // 开启分包优化
@@ -98,6 +119,7 @@
   },
   "mp-baidu": {
     "appid": "", //your appid
+
     // 启用自定义组件模式
     "usingComponents": true,
     // 开启分包优化

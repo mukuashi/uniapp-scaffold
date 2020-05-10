@@ -6,17 +6,10 @@
  * @version 0.2 | 2020-03-26 // 添加海报配置.
  * @Date:   2019-07-10 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-23 15:08:29
+ * @Last Modified time: 2020-05-10 13:05:35
  */
 import verses from "./verses";
 import wallpapers from "./wallpapers";
-// 基本图片配置
-let images = {
-  loading:
-    "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/loading_default.svg?sign=f0e6c72f6e2dc9314f5e6117acf258b7&t=1585201163",
-  logo:
-    "https://images.mepai.me/app/u/38224/avatar_0592e4e09e3051.jpg!170x170.jpg"
-};
 //
 export default {
   // 优先级 appid > path > target > url
@@ -26,7 +19,7 @@ export default {
       name: "Asako Studio",
       info: "视觉影像与工程研究实验室、工作室",
       type: "miniprogram",
-      image:
+      avatar:
         "https://lz.sinaimg.cn/orj1080/967d9727ly3gcb9n1l134j20zk0zkq90.jpg",
       appid: "wx1014f2e01d1623f9"
     },
@@ -37,21 +30,29 @@ export default {
       //image: 'https://lz.sinaimg.cn/osj1080/967d9727ly3gdfbnn3nnhj21jk1jktcq.jpg',
       gradient: "linear-gradient(-60deg, #ff5858 0%, #f09819 100%);", // 渐变色
       icon: "drop",
-      appid: "wxd452b156d966e65d",
-      path: "/pages/poster/index"
+      appid: "wxd452b156d966e65d"
+    },
+    {
+      name: "浅子居家",
+      info: "悦读精致生活，亲手 DIY 你的家",
+      type: "miniprogram",
+      avatar:
+        "https://6173-asako-living-o28nn-1301956907.tcb.qcloud.la/static/Asako%20Living_sl.png?sign=1bd903be88320c61a438a596b1f0d878&t=1588339911",
+      appid: "wx1bff9cb67feb77b3"
     },
     {
       name: "PhotoArtLife·跨世",
       info: "一个设计师、摄影师的全栈之路",
       type: "miniprogram",
-      image:
+      avatar:
         "https://tvax3.sinaimg.cn/crop.4.0.1116.1116.180/967d9727ly8fftw9b3jmmj20v90v0wgq.jpg",
+      appid: "wxd452b156d966e65d",
       path: "/pages/creator/index"
     },
     {
       name: "OTCC",
       info: "B/C2C数字货币交易服务提供商",
-      image:
+      avatar:
         "https://images.mepai.me/app/works/38224/2020-02-28/w_5e58c2f4175bf/05e58c2f417730.jpg!300w.jpg",
       url: "https://www.otcc.io",
       contact: {
@@ -86,22 +87,21 @@ export default {
       name: "Asako Studio",
       info: "分享一些沉淀技术和打磨产品的姿势",
       type: "wechat",
-      image:
+      avatar:
         "https://lz.sinaimg.cn/orj1080/967d9727ly3gcb9n1l134j20zk0zkq90.jpg",
-      url: "https://mp.weixin.qq.com/s/TeRiItQrpMY8dooQopDN3A",
+      target: "https://mp.weixin.qq.com/s/TeRiItQrpMY8dooQopDN3A",
       contact: {
         qrcode:
           "https://mmbiz.qpic.cn/mmbiz_png/RZ7hBsicjvZjBWgNdlViaovUdVWHQGHH8BJicUJwdgiaSDReZwricjYZrB7V0XqWmQ6cScaL2aqAZNlicGJM22aoMxgg/0?wx_fmt=png"
-      },
-      official: true // 是否添加引导关注组件
+      }
     },
     {
       name: "PhotoArtLife",
       info: "记录摄影、设计及产品等探索学习之路",
       type: "wechat",
-      image:
+      avatar:
         "https://tvax3.sinaimg.cn/crop.4.0.1116.1116.180/967d9727ly8fftw9b3jmmj20v90v0wgq.jpg",
-      url: "https://mp.weixin.qq.com/s/sy8iYBn_Yu95UUzyUyzTRg",
+      target: "https://mp.weixin.qq.com/s/sy8iYBn_Yu95UUzyUyzTRg",
       contact: {
         qrcode:
           "https://images.mepai.me/app/works/38224/2020-02-28/w_5e58d07ca4ab0/05e58d07ca4c0d.jpg!1200w.jpg"
@@ -115,10 +115,19 @@ export default {
     "—— 浅子文化工作室"
   ],
   common: {
-    solgan: "再小的个体，也有自己的声音。",
-    description: "一个致力于视觉影像与工程研究的实验室、工作室等"
+    solgan: "Asako Studio",
+    desc: "再小的个体，也有自己的声音。"
   },
-  images,
+  // 常用基本图片配置
+  images: {
+    loading:
+      "https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la/static/loading_default.svg?sign=f0e6c72f6e2dc9314f5e6117acf258b7&t=1585201163",
+    logo:
+      "http://wx.qlogo.cn/mmhead/Q3auHgzwzM6kicJlR84fRiaDQnMciackIRDYXCN0tibZibGiadLWVYO2N3eg/0"
+  },
+  shares: {
+    title: "一个高复用性产品交互和前端设计解决方案"
+  },
   // 壁纸集
   wallpapers,
   // 谚语诗句

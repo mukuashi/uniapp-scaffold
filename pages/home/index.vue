@@ -120,9 +120,12 @@
           >
             <swiper-item class="tabs-main-content" v-for="(item,sIndex) in app.tabs" :key="sIndex">
               <!-- 基础组件 -->
-              <ul class="swiper-content" v-if="!sIndex">基础组件（这周补充中）</ul>
+              <ul class="swiper-content" v-if="!sIndex">Dear please wait a moment and come soon</ul>
               <!-- 业务组件 -->
-              <ul class="swiper-content" v-if="Number(sIndex)===1">业务组件（这周补充中）</ul>
+              <ul
+                class="swiper-content"
+                v-if="Number(sIndex)===1"
+              >Dear please wait a moment and come soon</ul>
               <ul class="swiper-content" v-if="Number(sIndex)===2">
                 <li>
                   <view class="title">
@@ -229,7 +232,7 @@
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @version 0.3 | 2020-04-19 // 配置语言包及team info.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-19 23:20:20
+ * @Last Modified time: 2020-05-10 13:01:37
  */
 import config from "@/config";
 import { debounce } from "@/utils";
@@ -483,7 +486,10 @@ export default {
       // 0直接分享给好友，1生成分享海报
       switch (val) {
         case 1:
-          this.handleCommonRoute("/pages/poster/index");
+          this.handleOpenMiniprogram({
+            appid:'wx1014f2e01d1623f9',
+            path: 'pages/poster/index'
+          });
           break;
         case 0:
         default:

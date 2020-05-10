@@ -17,7 +17,7 @@
         <li v-for="(row,index) in app.products" :key="index">
           <kp-author
             :extra="row.type==='miniprogram' ? 'miniprogram' : true"
-            :avatar="row.image"
+            :avatar="row.avatar"
             :icon="row.icon"
             icon-size="46"
             :title="row.name"
@@ -33,7 +33,7 @@
         <li v-for="(row,index) in app.attention" :key="index">
           <kp-author
             :extra="row.type==='wechat' ? 'wechat' : true"
-            :avatar="row.image"
+            :avatar="row.avatar"
             :icon="row.icon"
             icon-size="46"
             :title="row.name"
@@ -192,9 +192,11 @@ export default {
             ...item,
             contact: {
               ...item.contact,
-              text: item.contact && item.contact.qrcode
-                ? `温馨提示：长按识别或保存微信相册扫一扫 ❤️\n${item.url || ""}`
-                : '作品链接已复制：小程序内暂不支持打开外链（😴）\n君若有意·何乎山水 => 打开浏览器欣赏吧'
+              text:
+                item.contact && item.contact.qrcode
+                  ? `温馨提示：长按识别或保存微信相册扫一扫 ❤️\n${item.url ||
+                      ""}`
+                  : "作品链接已复制：小程序内暂不支持打开外链（😴）\n君若有意·何乎山水 => 打开浏览器欣赏吧"
             },
             guideAction: true
           };
@@ -206,8 +208,6 @@ export default {
         prevLanguage = this.$store.state.app.language;
       // 改变语言再触发以下
       if (curLanguage !== prevLanguage) {
-        // 触发全局更新语言事件
-        uni.$emit("updateLanguage", prevLanguage);
         //
         this.languageGroup = this.languageGroup.map(row => {
           return {
