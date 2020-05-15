@@ -291,7 +291,7 @@ export default {
         liked: uni.getStorageSync(`${config.key}_liked`) //用户是否点过赞（点亮小红星）
       },
       tabs: {
-        current: 0, //预设当前项的值
+        current: 2, //预设当前项的值
         scrollLeft: 0, //tab标题的滚动条位置
         scrollTop: 0, //页面滚动距离顶部高度
         stickyHeight: this.CustomBar, //顶部导航栏自定义高度，App.vue注入
@@ -336,6 +336,10 @@ export default {
   },
   onUnload() {
     uni.$off("updateLanguage");
+  },
+  //页面滚动执行方式
+  onPageScroll(e) {
+    this.tabs.scrollTop = e.scrollTop;
   },
   onShareAppMessage(options) {
     const { name, brand, shares } = this.$store.state.app;
@@ -487,8 +491,8 @@ export default {
       switch (val) {
         case 1:
           this.handleOpenMiniprogram({
-            appid:'wx1014f2e01d1623f9',
-            path: 'pages/poster/index'
+            appid: "wx1014f2e01d1623f9",
+            path: "pages/poster/index"
           });
           break;
         case 0:

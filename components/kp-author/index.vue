@@ -8,6 +8,7 @@
       :shape="shape"
       :avatar-bg="avatarBg"
       :avatar-gradient="avatarGradient"
+      :size="avatarSize"
     />
     <view class="author-content">
       <text class="nickname" v-if="title">{{title}}</text>
@@ -42,6 +43,11 @@ export default {
     avatar: String,
     avatarBg: String,
     avatarGradient: String,
+    avatarSize: {
+      type: [String, Number],
+      // "small", "default", "large", 自定义Number
+      default: "default"
+    },
     icon: String,
     iconSize: {
       type: [String, Number],
