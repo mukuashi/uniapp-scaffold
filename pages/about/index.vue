@@ -208,6 +208,8 @@ export default {
         prevLanguage = this.$store.state.app.language;
       // 改变语言再触发以下
       if (curLanguage !== prevLanguage) {
+        // 触发全局更新语言事件
+        uni.$emit("updateLanguage", prevLanguage);
         //
         this.languageGroup = this.languageGroup.map(row => {
           return {
