@@ -1,136 +1,136 @@
 {
-    "name" : "Asako UED",
-    "appid" : "__UNI__A1AEE00", // your appid
-    "description" : "一个基于uni-app的跨平台小程序脚手架",
-    "versionName" : "0.0.1",
-    "versionCode" : 1,
-    "transformPx" : false,
-    // 全局关闭uni统计
-    "uniStatistics" : {
-        "enable" : false
-    },
-    "app-plus" : {
-        /* 5+App特有相关 */
-        "modules" : {},
-        /* 模块配置 */
-        "distribute" : {
-            /* 应用发布信息 */
-            "android" : {
-                /* android打包配置 */
-                "permissions" : [
-                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
-                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
-                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-                    "<uses-feature android:name=\"android.hardware.camera\"/>",
-                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
-            },
-            "ios" : {},
-            /* ios打包配置 */
-            "sdkConfigs" : {}
-        }
-    },
-    /* SDK配置 */
-    "quickapp" : {},
-    /* 快应用特有相关 */
-    "mp-weixin" : {
-        /* 小程序特有相关 */
-        "appid" : "", //your appid
-        "setting" : {
-            "urlCheck" : true,
-            "es6" : true,
-            "postcss" : true,
-            "minified" : true
-        },
-        "usingComponents" : true,
-        // 需要跳转的小程序列表 APPID
-        // https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html
-        "navigateToMiniProgramAppIdList" : [
-            "wx1014f2e01d1623f9", // Asako Studio
-            "wx8106d3961f485f43", // Asako UED
-            "wxd452b156d966e65d", // 浅子影报
-            "wx1bff9cb67feb77b3", // 浅子居家
-            "wx55926564822f5983", // 绿洲
-            "wxaddd5e379b1a72ee", // 米拍
-            "wxffc08ac7df482a27", // 小红书
-            "wx9074de28009e1111", // 微博
-            "wxef0633b7d41f9bb2", // 像素蜜蜂
-            "wxfb1c0bd6179a8b50", // 500px
-            "wx94147d3c986afa3b", // VUE·Vlog
-            "wxbb7da23406addc2f", // 美图
-            "wxa717aca07db3bb5a", // 开眼视频
-            "wxc96dc7ebd9bf61e8", // Keep
-            "wx4314e3b0d3cb43bf" // 站酷
-        ],
-        "permission" : {
-            "scope.userLocation" : {
-                "desc" : "开启位置权限，一起来玩耍吧"
-            }
-        },
-        // 开启分包优化
-        "optimization" : {
-            "subPackages" : true
-        }
-    },
-    "h5" : {
-        "title" : "一个跨平台小程序脚手架",
-        "domain" : "kquanr.com",
-        "router" : {
-            "mode" : "history"
-        },
-        "optimization" : {
-            "treeShaking" : {
-                "enable" : true // 启用摇树优化
-            }
-        }
-    },
-    "mp-toutiao" : {
-        "setting" : {
-            "es6" : true,
-            "postcss" : true,
-            "minified" : true
-        },
-        "appid" : "", //your appid
-
-        // 启用自定义组件模式
-        "usingComponents" : true,
-        // 开启分包优化
-        "optimization" : {
-            "subPackages" : true
-        }
-    },
-    "mp-baidu" : {
-        "appid" : "", //your appid
-
-        // 启用自定义组件模式
-        "usingComponents" : true,
-        // 开启分包优化
-        "optimization" : {
-            "subPackages" : true
-        },
-        // 预渲染课程列表topNav数据
-        "prefetches" : [ "http://kquanr.com/api-xxx" ]
-    },
-    "mp-qq" : {
-        "setting" : {
-            "es6" : true
-        }
+  "name": "Asako UED",
+  "appid": "__UNI__A1AEE00", // your appid
+  "description": "一个基于uni-app的跨平台小程序脚手架",
+  "versionName": "0.0.1",
+  "versionCode": 1,
+  "transformPx": false,
+  // 全局关闭uni统计
+  "uniStatistics": {
+    "enable": false
+  },
+  "app-plus": {
+    /* 5+App特有相关 */
+    "modules": {},
+    /* 模块配置 */
+    "distribute": {
+      /* 应用发布信息 */
+      "android": {
+        /* android打包配置 */
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+          "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+          "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+          "<uses-feature android:name=\"android.hardware.camera\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+        ]
+      },
+      "ios": {},
+      /* ios打包配置 */
+      "sdkConfigs": {}
     }
+  },
+  /* SDK配置 */
+  "quickapp": {},
+  /* 快应用特有相关 */
+  "mp-weixin": {
+    /* 小程序特有相关 */
+    "appid": "", //your appid
+    "setting": {
+      "urlCheck": true,
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "usingComponents": true,
+    // 需要跳转的小程序列表 APPID
+    // https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html
+    "navigateToMiniProgramAppIdList": [
+      "wx1014f2e01d1623f9", // Asako Studio
+      "wx8106d3961f485f43", // Asako UED
+      "wxd452b156d966e65d", // 浅子影报
+      "wx1bff9cb67feb77b3", // 浅子居家
+      "wx55926564822f5983", // 绿洲
+      "wxaddd5e379b1a72ee", // 米拍
+      "wxffc08ac7df482a27", // 小红书
+      "wx9074de28009e1111", // 微博
+      "wxef0633b7d41f9bb2", // 像素蜜蜂
+      "wxfb1c0bd6179a8b50", // 500px
+      "wx94147d3c986afa3b", // VUE·Vlog
+      "wxbb7da23406addc2f", // 美图
+      "wxa717aca07db3bb5a", // 开眼视频
+      "wxc96dc7ebd9bf61e8", // Keep
+      "wx4314e3b0d3cb43bf" // 站酷
+    ],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "开启位置权限，一起来玩耍吧"
+      }
+    },
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    }
+  },
+  "h5": {
+    "title": "一个跨平台小程序脚手架",
+    "domain": "kquanr.com",
+    "router": {
+      "mode": "history"
+    },
+    "optimization": {
+      "treeShaking": {
+        "enable": true // 启用摇树优化
+      }
+    }
+  },
+  "mp-toutiao": {
+    "setting": {
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "appid": "", //your appid
+
+    // 启用自定义组件模式
+    "usingComponents": true,
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    }
+  },
+  "mp-baidu": {
+    "appid": "", //your appid
+
+    // 启用自定义组件模式
+    "usingComponents": true,
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    },
+    // 预渲染课程列表topNav数据
+    "prefetches": ["http://kquanr.com/api-xxx"]
+  },
+  "mp-qq": {
+    "setting": {
+      "es6": true
+    }
+  }
 }
