@@ -1,6 +1,6 @@
 ## 简介
 
-* uniapp-scaffold（studio-scaffold） 是一款基于Vue的跨平台小程序脚手架及插拔式模板，提供超过 20+个（基于微信视觉规范）基础和业务组件，包含自定义 Request 请求库、Utils、Theme 主题、Vuex全局数据管理、国际化配置等于一体的插拔式应用框架，可快速落地业务。
+* uniapp-scaffold（studio-scaffold） 是一款基于Vue 2. x的跨平台小程序脚手架及插拔式模板，提供超过 20+个（基于微信视觉规范）基础和业务组件，包含自定义 request 请求库、utils、theme 主题、vuex全局数据管理、国际化配置等于一体的插拔式应用框架，可快速落地业务。
 
 ### 特点：
 
@@ -15,19 +15,27 @@
 | - | - | - | - |
 | 内网 | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/15e97cc922f2c0.jpg!1200w.jpg" width="220" /> | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/25e97cc922f254.jpg!1200w.jpg" width="220" /> | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/05e97cc922f30c.jpg!1200w.jpg" width="220" /> |
 
-* Asako Studio：浅子文化工作室，一个致力于视觉影像与工程研究的实验室、工作室（以下微信扫码或搜一搜）
+* Asako Studio：
+
+浅子文化工作室，一个致力于视觉影像与工程研究的实验室、工作室（以下微信扫码或搜一搜）
 
 | Miniprogram  | Home | Creative | Works | About |
 | - | - | - | - | - |
 | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGU1UlRYV2liZmI2NXQ3WmpvbmxORk85Uk1oVFppSDFJcHlmYWlLUVd5ajdnPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cUJtQnRIbXFaaDZLV3dNY3FENGtyaWtmTDFhN3BFOHV3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cXdsbXQzZ1prWFpFNG1nVzhEcTc2T2ZaQzJWeVhsUHNRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf4.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cjEzbStSbFRZSko1MVZvMTk5cTJLR1UvWWh1ZXlVQkJnPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGZWRXM5Z0NjSUJzTVJnbHNsYWUvbzBwaW5LSGZhcGJ4SnhDVXV5aFMwbXBnPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> |
 
-* 浅子影报：AI 精选全球视觉与摄影艺术创作，览尽天下英雄，伴你每天好心情 🌞
+* 浅子影报：
+
+一页日历 • 精美壁纸库 RSS
+
+AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 
 | Miniprogram | Home | About | Wallpaper Detail | AI 日报 |
 | - | - | - | - | - |
 | <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRGdDelZVL0l1aEYxSXdQT1JzMHV3SlVlYmlETXU5WHl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRkJSSGYrWTdyM0pwcWZvNDNkVU1uVDkwbm9SSFJYL25nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQmlVejBzYXRtQzFsd1QrSjRMMlB6K1JjRldScm1aWDlRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf4.nosdn0.126.net/img/eCsxeXUwR1dBeGZWRXM5Z0NjSUJzSmY4aHFmTWtGMmZPQWgwWmlsMzhOODFobDBzU1VrNE9nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxREVNQzZpRGg1TUxGWkhEYkZBblZ2M2VnMnFtbGNZb0dBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS3VjS3JSa1RKN1lWUHJ4dGcwTVYydjVXMEVjYm1UbFl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS0E1RGZVYkxuZWkvQjVnc2RGT2FYcG9zYnJFMDNIUUZBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> |
 
 * 浅子居家：智能生活，从家开始 🏡
+
+* Asako UED：一款集齐才华（规范）与颜值（专业）的用户体验设计语言
 
 * 更多补充中
 
@@ -66,6 +74,7 @@
 3. 高级开发技巧 https://uniapp.dcloud.io/snippet
 4. 性能优化建议 https://uniapp.dcloud.io/performance
 5. 如果出现微信开发者工具启动后白屏的问题，检查是否启动多个微信开发者工具，如果是则关闭所有打开的微信开发者工具，然后再重新运行（注意IDE插件和编译Loader要安装，否则可能出现编译白屏的情况）
+6. 可以通过微信开发者工具切换pages.json中condition配置的页面，或者关闭微信开发者工具，然后再从HBuilderX中启动指定页
 
 #### 头条版
 
