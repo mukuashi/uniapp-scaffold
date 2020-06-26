@@ -1,6 +1,6 @@
 {
   "name": "Asako UED",
-  "appid": "", // your appid
+  "appid": "__UNI__A1AEE00", // your appid
   "description": "一个基于uni-app的跨平台小程序脚手架",
   "versionName": "0.0.1",
   "versionCode": 1,
@@ -84,7 +84,6 @@
         "desc": "开启位置权限，一起来玩耍吧"
       }
     },
-    "usingComponents": true,
     // 开启分包优化
     "optimization": {
       "subPackages": true
