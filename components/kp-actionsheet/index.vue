@@ -11,6 +11,7 @@
       <view :class="[ 
           `${prefixCls}-content`
         ]">
+        <slot/>
         <view :class="[ 
           `${prefixCls}-content-img`
         ]" v-if="tipsImage">
@@ -64,7 +65,7 @@
  * @version 0.1 | 2020-02-25 // Initial version.
  * @Date: 2020-02-25 20:45:22
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-05-07 00:07:32
+ * @Last Modified time: 2020-07-12 16:41:02
  */
 import KpMask from "../kp-mask";
 export default {
@@ -86,7 +87,7 @@ export default {
     //菜单按钮数组，自定义文本颜色，红色参考色：#e53a37
     itemList: {
       type: Array,
-      default: () => [{ text: "确定" }]
+      default: () => [{ text: "确定", color: "#07C160" }]
     },
     itemInline: Boolean, // 功能选项inline内敛模式，居中排一列，默认不开启
     //提示文字
