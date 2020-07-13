@@ -105,6 +105,7 @@ AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 ``` 
 ├── Project(Core Code)       # project name
 │ ├── /config/               # 环境及基础配置
+│ ├── /locales/              # 国际化语言配置（亦可放到config中）
 │ ├── /cdn_files/            # 项目图片及静态资源CDN
 │ ├── /components/           # 公共组件库: 基础 + 部分业务组件
 │ ├── /pages/                # 主要业务页面（index.vue + index.less）
@@ -183,13 +184,12 @@ export function getAlbumListSvc(query = {}) {
     baseUrl: config.yourkey, // 自定义请求host
     url: "/yourpath",
     method: "get",
-    data: Object.assign(
+    data: 
       {
         page: 1,
         size: 10
-      },
-      query
-    )
+        ...query
+      }
   });
 }
 
@@ -218,9 +218,7 @@ export default {
 
 ### 一点补充
 
-* Request. js 库：基于原生 request 和 uni-request 等再封装的一款请求库，支持拦截、异步、捕捉错误等统一处理的能力，如需业务扩展可直接联系脚手架作者；
-
-* Theme Less 主题库：整个 app 的主题库，由 theme、mixin、reset 等基础配置样式组成，支持业务方自定义自己的主题库；
+* 项目中的所有图片均为原创，且已授权和签约图库社区，暂不得在其他商业项目中使用，目前仅供学习使用。
 
 ### 技术维护
 
