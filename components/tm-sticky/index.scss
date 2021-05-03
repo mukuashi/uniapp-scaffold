@@ -1,0 +1,8 @@
+.#{$global-prefix}-sticky {
+  &-fixed {
+    width: 100vw;
+    padding-left: 30rpx;
+    @include custom-position(fixed, $left: 0, $zindex: $zindex-mask - 1);
+    @include center-middle-flex($justify: flex-start, $align: flex-end);
+  }
+}

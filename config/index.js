@@ -5,16 +5,40 @@
  * @version 0.1 | 2019-07-08 // Initial version.
  * @Date:   2019-07-08 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-21 17:04:33
+ * @Last Modified time: 2021-05-03 19:21:46
  */
-import { env } from "./env";
+import data from './data';
 
-let path = env === "production" ? "" : `${env}.`;
+const env = process.env.NODE_ENV;
+console.log(`当前运行环境：${env}`);
+
+const isProd = env === 'production';
 
 export default {
+  env,
+  prefix: 'tm',
   key: "asako-ued",
-  api: "http://api.kquanr.com", // 自定义测试环境开关
-  sinaimg: "https://lz.sinaimg.cn", // 新浪微博、绿洲
-  mepai: "https://api.mepai.me",
-  _500px: "https://500px.me"
+  hosts: {
+    ...data.domain
+  },
+  theme: {
+    default: '#623bff',
+    miniprogram: '#6367ef',
+    wechat: '#07C160',
+    warning: '#ff9900',
+    info: '#2db7f5',
+    success: '#24c789',
+    error: '#e53a37',
+    disable: '#dee2e6',
+    colors: ['#24c789', '#6367ef', '#23A0FA', '#9beb23', '#e1eb21', '#09d9e0'],
+  },
+  // 核心数据，如 appid、key等
+  core: {
+    appId: 'wx8106d3961f485f43', // 小程序appid
+    // lbs
+    lbs: {
+      key: '',
+    }
+  },
+  ...data
 };

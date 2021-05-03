@@ -1,0 +1,28 @@
+.colors {
+  section {
+    margin-bottom: $layout-padding;
+    h3,.item {
+      margin-bottom: inherit;
+    }
+    h3 {
+      font-weight: 500;
+    }
+    .item {
+      &:nth-child(even) {
+        margin-right: $layout-padding;
+      }
+      display: inline-block;
+      min-width: calc(50% - #{$layout-padding/2} - 1rpx);
+      &-plain {
+        /deep/.#{$global-prefix}-author {
+          .nickname {
+            color: $font-initialize-color;
+          }
+          .desc {
+            color: $font-theme-color;
+          }
+        }
+      }
+    }
+  }
+}

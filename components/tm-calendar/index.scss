@@ -1,0 +1,124 @@
+.#{$global-prefix}-calendar {
+  color: $text-weight-color;
+  background-color: $background-init-color;
+  border-radius: 20rpx 20rpx 0 0;
+  overflow: hidden;
+
+  &-header {
+    width: 100%;
+    font-size: $layout-padding;
+    background-color: $background-init-color;
+    overflow: hidden;
+    color: $dark-color;
+
+    &-text {
+      margin-top: $layout-padding;
+      padding: 0 60rpx;
+      @include center-middle-flex;
+    }
+  }
+
+  &-action {
+    padding: 40rpx 0 40rpx 0;
+
+    &-icon {
+      margin: 0 $layout-padding/2;
+    }
+
+    &-text {
+      padding: 0 $layout-padding/2;
+      color: $dark-color;
+      font-size: 32rpx;
+      line-height: 32rpx;
+      font-weight: bold;
+    }
+  }
+
+  &-week-day {
+    @include center-middle-flex;
+    padding: 6px 0;
+    overflow: hidden;
+
+    &-text {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 6px 0;
+    background-color: $background-init-color;
+    position: relative;
+
+    &-end-date {
+      border-top-right-radius: 8rpx;
+      border-bottom-right-radius: 8rpx;
+    }
+
+    &-start-date {
+      border-top-left-radius: 8rpx;
+      border-bottom-left-radius: 8rpx;
+    }
+
+    &-item {
+      width: 14.2857%;
+      @include center-middle-flex;
+      padding: 6px 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      &-disabled {
+        opacity: 0.5;
+      }
+      
+      &-inner {
+        height: 84rpx;
+        @include center-middle-flex;
+        flex-direction: column;
+        font-size: 32rpx;
+        position: relative;
+        border-radius: 50%;
+        &-desc {
+          width: 100%;
+          font-size: $font-size-sl;
+          line-height: $font-size-sl;
+          transform: scale(0.75);
+          transform-origin: center center;
+          text-align: center;
+          @include custom-position(absolute,$left:0,$bottom: 2rpx,$zindex:2);
+        }
+      }
+
+      &-tips {
+        width: 100%;
+        font-size: $font-size-sl;
+        line-height: $font-size-sl;
+        transform: scale(0.8);
+        transform-origin: center center;
+        text-align: center;
+        @include custom-position(absolute,$left:0,$bottom: 8rpx,$zindex:2);
+      }
+    }
+
+    &-bg-month {
+      font-size: 130px;
+      line-height: 130px;
+      color: $text-light-color;
+      transform: translate(-50%, -50%);
+      @include custom-position(absolute,$left: 50%,$bottom: 50%,$zindex:1);
+    }
+  }
+
+  &-bottom {
+    padding: 0 1.5*$layout-padding 1.5*$layout-padding;
+    font-size: $font-size-sl;
+    color: $text-light-color;
+    text-align: center;
+    &-choose {
+      margin-bottom: 12rpx;
+    }
+  }
+}

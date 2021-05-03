@@ -1,0 +1,33 @@
+.icons{
+  &-container {
+    padding-top: $layout-padding/2;
+  }
+  &-wrapper {
+    @include center-middle-flex(flex, space-between);
+    @include flex-wrap(wrap);
+    .item {
+      width: 180rpx;
+      text-align: center;
+      margin-right: 0;
+      color: $text-color;
+      padding: $layout-padding/1.5 0;
+      margin-bottom: $layout-padding;
+      border-radius: $border-radius-base;
+      &.active{
+        background-color: $success-color;
+        color: $font-initialize-color;
+        transition: all $transition-time;
+        transform: scale(1.2);
+        text {
+          color: inherit;
+        }
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      .icon-wrapper {
+        @include center-middle-flex;
+      }
+    }
+  }
+}

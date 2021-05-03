@@ -1,0 +1,23 @@
+@import "./iconfont";
+//
+.#{$global-prefix}-icon {
+  &-box {
+    display: inherit;
+  }
+  &-svg {
+  }
+  &-iconfont {
+  }
+  display: inline-block;
+  font-family: "iconfont" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  font-size: 28rpx;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: inherit;
+}

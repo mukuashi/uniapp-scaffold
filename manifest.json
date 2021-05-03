@@ -1,22 +1,29 @@
 {
   "name": "Asako UED",
-  "appid": "__UNI__A1AEE00", // your appid
-  "description": "一个基于uni-app的跨平台小程序脚手架",
+  "appid": "__UNI__F61F0C1",
+  "description": "一个致力于视觉影像与工程研究的实验室、工作室等",
   "versionName": "0.0.1",
   "versionCode": 1,
   "transformPx": false,
-  // 全局关闭uni统计
+  // 是否全局关闭uni统计
   "uniStatistics": {
-    "enable": false
+    "enable": false //全局关闭
   },
+  /* 5+App特有相关 */
   "app-plus": {
-    /* 5+App特有相关 */
-    "modules": {},
+    "usingComponents": true,
+    "splashscreen": {
+      "alwaysShowBeforeRender": true,
+      "waiting": true,
+      "autoclose": true,
+      "delay": 0
+    },
     /* 模块配置 */
+    "modules": {},
+    /* 应用发布信息 */
     "distribute": {
-      /* 应用发布信息 */
+      /* android打包配置 */
       "android": {
-        /* android打包配置 */
         "permissions": [
           "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
           "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
@@ -42,65 +49,40 @@
           "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
         ]
       },
-      "ios": {},
       /* ios打包配置 */
+      "ios": {},
+      /* SDK配置 */
       "sdkConfigs": {}
     }
   },
-  /* SDK配置 */
-  "quickapp": {},
   /* 快应用特有相关 */
+  "quickapp": {},
+  /* 小程序特有相关 */
   "mp-weixin": {
-    /* 小程序特有相关 */
-    "appid": "", //your appid
-    "setting": {
-      "urlCheck": true,
-      "es6": true,
-      "postcss": true,
-      "minified": true
+    "appid": "wx8106d3961f485f43",
+    "setting" : {
+      "urlCheck" : true,
+      "es6" : true,
+      "postcss" : true,
+      "minified" : true
     },
-    "usingComponents": true,
-    ],
-    "permission": {
-      "scope.userLocation": {
-        "desc": "开启位置权限，一起来玩耍吧"
+    "usingComponents" : true,
+    "permission" : {
+      "scope.userLocation" : {
+        "desc" : "开启你的位置权限"
       }
     },
+    "requiredBackgroundModes" : [ "audio", "location" ],
     // 开启分包优化
-    "optimization": {
-      "subPackages": true
-    }
-  },
-  "h5": {
-    "title": "一个跨平台小程序脚手架",
-    "domain": "kquanr.com",
-    "router": {
-      "mode": "history"
+    "optimization" : {
+      "subPackages" : true
     },
-    "optimization": {
-      "treeShaking": {
-        "enable": true // 启用摇树优化
-      }
-    }
+    "lazyCodeLoading" : "requiredComponents"
   },
-  "mp-toutiao": {
-    "setting": {
-      "es6": true,
-      "postcss": true,
-      "minified": true
-    },
-    "appid": "", //your appid
-
-    // 启用自定义组件模式
-    "usingComponents": true,
-    // 开启分包优化
-    "optimization": {
-      "subPackages": true
-    }
+  "mp-alipay": {
+    "usingComponents": true
   },
   "mp-baidu": {
-    "appid": "", //your appid
-
     // 启用自定义组件模式
     "usingComponents": true,
     // 开启分包优化
@@ -110,9 +92,48 @@
     // 预渲染课程列表topNav数据
     "prefetches": ["http://kquanr.com/api-xxx"]
   },
+  "mp-toutiao": {
+    // 启用自定义组件模式
+    "usingComponents": true,
+    // 开启分包优化
+    "optimization": {
+      "subPackages": true
+    },
+    "setting": {
+      "minified": true,
+      "postcss": true,
+      "es6": true
+    }
+  },
+  "h5": {
+    "router" : {
+      "mode" : "history",
+      "base" : "/"
+    },
+    "optimization" : {
+      "treeShaking" : {
+        "enable" : true // 启用摇树优化
+      }
+    },
+    "sdkConfigs" : {
+      "maps" : {
+        "qqmap" : {
+          "key" : "XM4BZ-S4IKU-6GRV3-BT3XH-O27EQ-ZSF2U"
+        }
+      }
+    },
+    "devServer" : {
+      "port" : 8000,
+      "https" : false
+    },
+    "title": "Asako Studio",
+    "domain": "kquanr.com"
+  },
   "mp-qq": {
     "setting": {
-      "es6": true
+      "es6": true,
+      "postcss": true,
+      "minified": true
     }
   }
 }

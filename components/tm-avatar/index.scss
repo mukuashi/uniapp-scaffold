@@ -1,0 +1,37 @@
+@mixin avatar-size($size, $font-size) {
+  @include square($size);
+  border-radius: 100%;
+}
+//
+.#{$global-prefix}-avatar {
+  color: $font-initialize-color;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  position: relative;
+  background-color: rgba($background-light-color, 0.8);
+  @include center-middle-flex($flex: inline-flex);
+  @include avatar-size($avatar-size-base, $avatar-font-size-base);
+  &-image {
+    background: transparent;
+  }
+  &-small {
+    @include avatar-size($avatar-size-sm, $avatar-font-size-sm);
+  }
+  &-large {
+    @include avatar-size($avatar-size-lg, $avatar-font-size-lg);
+  }
+  &-square {
+    border-radius: 8rpx;
+  }
+  & > image {
+    @include square(100%);
+    border-radius: inherit;
+  }
+  &-shadow {
+    box-shadow: 0 2rpx 4rpx 0 rgba($dark-color, 0.15);
+  }
+  &-text {
+    @include text-overflow;
+  }
+}

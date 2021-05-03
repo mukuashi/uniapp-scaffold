@@ -1,0 +1,91 @@
+.#{$global-prefix}-compare {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  &-image {
+    width: 100%;
+    position: absolute;
+  }
+  &-control {
+    width: 100%;
+    height: 360rpx;
+    border-top: 1rpx solid #ccc;
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    &-top {
+      height: 180rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: top;
+      padding: 30rpx 40rpx 0;
+      .choose-img {
+        border: 1rpx solid #ccc;
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 20rpx;
+        position: relative;
+        .cross-line {
+          width: 80rpx;
+          height: 2rpx;
+          position: absolute;
+          top: 49rpx;
+          left: 10rpx;
+          background: #ccc;
+        }
+        .vertical-line {
+          width: 2rpx;
+          height: 80rpx;
+          position: absolute;
+          left: 49rpx;
+          top: 10rpx;
+          background: #ccc;
+        }
+      }
+      .input-top{
+        @include center-middle-flex;
+        .input{
+          width: 120rpx;
+          padding-left: 10rpx;
+          margin: 14rpx 0 0 18rpx;
+          border: 1px solid #999999;
+        }
+      }
+      .move-warp {
+        position: relative;
+        width: 120rpx;
+        height: 120rpx;
+        .arrow {
+          width: 50rpx;
+          height: 50rpx;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0,0,0,0.1);
+          border-radius: 10rpx;
+        }
+        .icon-top {
+          left: 20rpx;
+        }
+        .icon-right {
+          right: 0;
+          top: 48rpx;
+        }
+        .icon-bottom {
+          bottom: -20rpx;
+          left: 20rpx;
+        }
+        .icon-left {
+          top: 48rpx;
+          left: -32rpx;
+        }
+      }
+    }
+    &-opacity {
+      height: 150rpx;
+    }
+  }
+}

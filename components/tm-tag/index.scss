@@ -1,0 +1,58 @@
+.#{$global-prefix}-tag {
+  text-align: center;
+  font-size: $font-size-sl;
+  color: $font-initialize-color;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 2rpx 7rpx;
+  &-small {
+    font-size: 20rpx;
+  }
+  &-large {
+    font-size: $font-size-base;
+    padding: 2rpx 12rpx;
+  }
+  // 缩略省略号
+  &-slug {
+    @include text-overflow;
+  }
+  // 形状
+  &-square {
+    border-radius: 0;
+  }
+  &-circle {
+    border-radius: 50rpx;
+  }
+  // 默认圆角
+  &-fillet {
+    border-radius: 6rpx;
+  }
+  // 透明
+  &-plain {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    background-color: transparent;
+  }
+  // 主题
+  &-default {
+    color: rgba($text-light-color, 0.9);
+    background-color: $font-minor-color;
+  }
+  &-primary {
+    background-color: $primary-color;
+  }
+  &-error {
+    background-color: $error-color;
+  }
+  &-success {
+    background-color: $success-color;
+  }
+  &-warning {
+    background-color: $warning-color;
+  }
+  &-grey {
+    color: rgba($text-light-color, 0.8);
+    border: 3rpx $border-style-base $border-color-base;
+    background-color: $background-init-color;
+  }
+}

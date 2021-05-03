@@ -1,0 +1,60 @@
+@import "./theme";
+
+// https://github.com/Tencent/weui-wxss
+page {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+page,
+view,
+scroll-view,
+text,
+image,
+swiper,
+navigator,
+button,
+checkbox,
+form,
+input,
+label,
+picker,
+picker-view,
+slider,
+textarea,
+image,
+video,
+audio,
+map,
+camera,
+cover-image,
+cover-view {
+  box-sizing: border-box;
+}
+
+cover-image,
+cover-image:hover {
+  outline: none;
+}
+
+image {
+  will-change: transform;
+}
+
+button::after {
+  border: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}

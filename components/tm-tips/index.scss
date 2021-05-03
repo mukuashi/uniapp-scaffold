@@ -1,0 +1,68 @@
+/*顶部消息提醒 start*/
+.#{$global-prefix}-toptips {
+  opacity: 0;
+  width: 100%;
+  padding: 16rpx 30rpx;
+  font-size: 30rpx;
+  word-break: break-all;
+  color: $font-initialize-color;
+  @include center-middle-flex;
+  @include custom-position(fixed, $top: 0, $left: 0, $zindex: $zindex-tips);
+  transform: translateZ(0) translateY(-100%);
+  transition: all $animation-time $timing-function;
+  background: rgba($dark-color, 0.7); //默认背景色
+  &-show {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+/*顶部消息提醒 end*/
+/*toast消息提醒 start*/
+/*注意问题：
+1、fixed 元素宽度无法自适应，所以增加了子元素
+2、fixed 和 display冲突导致动画效果消失，暂时使用visibility替代
+*/
+.#{$global-prefix}-toast {
+  opacity: 0;
+  width: 80%;
+  visibility: hidden;
+  font-size: 28rpx;
+  color: $font-initialize-color;
+  @include center-middle-flex;
+  @include custom-position(fixed, $left: 50%, $zindex: $zindex-tips);
+  transition: all $animation-time $timing-function;
+  animation: fadeInFalse 1s  1s $timing-function 1; // 模拟延迟
+  &-show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.#{$global-prefix}-tips {
+  &-content {
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 8rpx;
+    padding: 16rpx 30rpx;
+    background: rgba($dark-color, 0.7);
+  }
+  &-primary {
+    background-color: $primary-color;
+  }
+  &-success {
+    background-color: $success-color;
+  }
+  &-warning {
+    background: $warning-color;
+  }
+  &-error {
+    background: $error-color;
+  }
+  &-bottom {
+    bottom: 120rpx;
+    transform: translateX(-50%);
+  }
+  &-center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

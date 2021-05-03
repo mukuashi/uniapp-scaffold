@@ -1,9 +1,13 @@
 <template>
   <view class="about">
-    <kp-navbar left/>
+    <tm-navbar :left='navbar.left' />
     <view class="about-content">
       <h1>
-        <kp-avatar size="180" :image="app.images.logo" @tap="handleCommonModal('guideLanguage')"/>
+        <tm-avatar 
+          size="180" 
+          :image="app.images.logo" 
+          @tap="handleCommonModal('guideLanguage')"
+        />
       </h1>
       <h2>
         {{app.name}}
@@ -15,15 +19,14 @@
       <h4>浅子出品</h4>
       <ul>
         <li v-for="(row,index) in app.products" :key="index">
-          <kp-author
+          <tm-author
             :extra="row.type==='miniprogram' ? 'miniprogram' : true"
             :avatar="row.avatar"
             :icon="row.icon"
             icon-size="46"
             :title="row.name"
-            :info="row.info"
-            :avatar-bg="row.color"
-            :avatar-gradient="row.gradient"
+            :desc="row.desc"
+            :avatar-bg="row.gradient || row.color"
             @navigate="handleOpenItem(row)"
           />
         </li>
@@ -31,13 +34,13 @@
       <h4>关注我们</h4>
       <ul>
         <li v-for="(row,index) in app.attention" :key="index">
-          <kp-author
+          <tm-author
             :extra="row.type==='wechat' ? 'wechat' : true"
             :avatar="row.avatar"
             :icon="row.icon"
             icon-size="46"
             :title="row.name"
-            :info="row.info"
+            :desc="row.desc"
             @navigate="handleOpenItem(row)"
           />
         </li>
@@ -45,21 +48,21 @@
       <h4>更多设置</h4>
       <ul>
         <li>
-          <kp-author
+          <tm-author
             avatar-bg="transparent"
             icon="language"
-            icon-size="60"
+            icon-size="59"
             title="切换语言"
             @navigate="handleCommonModal('guideLanguage')"
           >
             <view slot="extra" class="setting">
               <text>{{ language.text }}</text>
-              <kp-icon size="45" type="arrow_right" color="#585860"/>
+              <tm-icon size="45" type="arrow_right" />
             </view>
-          </kp-author>
+          </tm-author>
         </li>
         <li>
-          <kp-author
+          <tm-author
             extra
             avatar-bg="transparent"
             icon="pay"
@@ -74,62 +77,34 @@
       <button plain hover-class="none" open-type="feedback">意见反馈</button>
     </view>
     <!-- 小交互 -->
-    <kp-actionsheet
+    <tm-actionsheet
       item-inline
       :tips="feedback.contact.tips || feedback.contact.text"
       :tips-image="feedback.contact.qrcode"
       :tips-image-preview="feedback.contact.preview"
       :item-list="feedback.contact.switch ? feedback.guideCtList : []"
       v-model="feedback.guideAction"
-      @cancel="feedback.guideAction=false"
     />
-    <kp-actionsheet
+    <tm-actionsheet
       tips="切换语言首选项"
       :item-list="languageGroup"
       v-model="feedback.guideLanguage"
-      @cancel="feedback.guideLanguage=false"
       @confirm="handleSelectLanguage"
     />
   </view>
 </template>
-<style lang="less" scoped src="./index.less"></style>
-<style>
-page {
-  background-color: #11121c;
-}
-</style>
+<style lang="scss" scoped src="./index.scss"></style>
 <script>
-import config from "@/config";
-import { mapState, mapMutations } from "vuex";
-import KpIcon from "@/components/kp-icon";
-import KpNavbar from "@/components/kp-navbar";
-import KpAvatar from "@/components/kp-avatar";
-import KpAuthor from "@/components/kp-author";
-import KpActionsheet from "@/components/kp-actionsheet";
-//
+import { mapMutations } from 'vuex';
 export default {
-  components: {
-    KpIcon,
-    KpNavbar,
-    KpAvatar,
-    KpAuthor,
-    KpActionsheet
-  },
   data() {
+    const { app } = this.$store.state
     return {
-      languageGroup: [
-        {
-          type: "English",
-          text: "English"
-        },
-        {
-          type: "Chinese",
-          text: "简体中文"
-        }
-      ].map(row => {
+      languageGroup: app.languages.map(row => {
         return {
           ...row,
-          color: row.type === this.$store.state.app.language && "#07C160"
+          color:
+            row.type === app.language && app.theme.success
         };
       }),
       // 小交互集合
@@ -137,52 +112,44 @@ export default {
         guideLanguage: false,
         guideAction: false, //vpn限制社区的提示
         guideCtList: [
-          { text: "联系我们", color: "#07C160", opentype: "contact" }
+          {
+            text: "联系我们",
+            color: app.theme.success,
+            opentype: "contact"
+          }
         ]
       }
     };
   },
   computed: {
     language() {
-      return this.languageGroup.find(
-        row => row.type === this.$store.state.app.language
-      );
-    },
-    ...mapState(["app"])
+      return this.languageGroup.find(row => row.type === this.app.language);
+    }
+  },
+  onLoad(options) {
+    // share
+    uni.showShareMenu({
+      withShareTicket: true,
+      menus: ["shareAppMessage", "shareTimeline"]
+    });
   },
   onShareAppMessage(options) {
-    const { name, brand, shares } = this.$store.state.app;
+    const { shares } = this.app;
     return {
       title: shares.title,
       path: "pages/about/index"
     };
   },
   methods: {
-    handleCommonRoute(path) {
-      uni.navigateTo({
-        url: path
-      });
-    },
+    ...mapMutations(['changeLanguage']),
     handleOpenItem(item) {
       // 优先级 appid > path > target > url
       // 优先打开其他小程序 > 当前小程序内页面 > 可在app内打开的h5 > 不可在app内打开的h5（action-sheet引导方式）
-      if (item.appid) {
-        return uni.navigateToMiniProgram({
-          appId: item.appid,
-          path: item.path,
-          success(res) {
-            // 打开成功
-          }
-        });
-      }
+      if (item.appid) return this.handleOpenMiniprogram(item)
       //
       if (item.path) return this.handleCommonRoute(item.path);
       //
-      if (item.target)
-        return this.handleCommonRoute(
-          `/pages/webview/index?url=${item.target}`
-        );
-      //
+      if (item.target) return this.handleCommonRoute(`/pages/webview/index?url=${item.target}`);
       uni.setClipboardData({
         data: item.url,
         success: res => {
@@ -192,39 +159,36 @@ export default {
             ...item,
             contact: {
               ...item.contact,
-              text:
-                item.contact && item.contact.qrcode
-                  ? `温馨提示：长按识别或保存微信相册扫一扫 ❤️\n${item.url ||
-                      ""}`
-                  : "作品链接已复制：小程序内暂不支持打开外链（😴）\n君若有意·何乎山水 => 打开浏览器欣赏吧"
+              text: item.contact && item.contact.qrcode
+                  ? `温馨提示：长按识别或保存到微信相册扫一扫\n${item.url || ""}`
+                  : `小程序内暂不支持打开当前外链，建议打开浏览器查看\n${item.url || ''}`
             },
             guideAction: true
           };
         }
       });
     },
-    handleSelectLanguage(item) {
-      let curLanguage = this.languageGroup[item].type,
-        prevLanguage = this.$store.state.app.language;
+    handleSelectLanguage(idx) {
+      let curLanguage = this.languageGroup[idx].type,
+          prevLanguage = this.app.language;
       // 改变语言再触发以下
       if (curLanguage !== prevLanguage) {
-        // 触发全局更新语言事件
-        uni.$emit("updateLanguage", prevLanguage);
-        //
         this.languageGroup = this.languageGroup.map(row => {
           return {
             ...row,
-            color: row.type === curLanguage && "#07C160"
+            color: row.type === curLanguage && this.app.theme.success
           };
         });
+        // 触发全局更新语言事件
+        uni.$emit("updateLanguage", prevLanguage);  
         // https://vuex.vuejs.org/zh/guide/mutations.html
-        this.$store.commit("changeLanguage", curLanguage);
+        this.changeLanguage(curLanguage);
         uni.setStorage({
-          key: `${config.key}_language`,
+          key: `${this.app.key}_language`,
           data: curLanguage,
           success: () => {
             uni.showToast({
-              title: `${this.languageGroup[item].text}已配置`,
+              title: `${this.languageGroup[idx].abbr || this.languageGroup[idx].text}已配置`,
               icon: "success"
             });
           }
@@ -245,8 +209,7 @@ export default {
         switch: true, //是否开启联系客服开关
         preview: true, //是否开启图片点击预览模式
         tips: "送人玫瑰，手留余香 🌹",
-        qrcode:
-          "https://mmbiz.qpic.cn/mmbiz_jpg/g7N4GSDkLL4kV3mcOTYn6Zdc2459rib6dWmzVCibVgYMbTBCibKShicjiaGneUQqg3sSatd6BFeLHKKpIV11pq7Ttjg/0?wx_fmt=jpeg"
+        qrcode: `${this.app.domain.cloud.studio}/static/images/qrcode_team_encourage.jpeg`,
       };
       //
       this.handleCommonModal("guideAction");

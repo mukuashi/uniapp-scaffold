@@ -1,0 +1,39 @@
+@mixin badge-type($background, $color: $font-initialize-color) {
+  color: $color;
+  background-color: $background;
+}
+
+.#{$global-prefix}-badge {
+  font-size: $badge-size-base;
+  line-height: 1;
+  padding: 4rpx 12rpx;
+  border-radius: 100rpx;
+  display: inherit;
+  
+  &-dot {
+    @include square(16rpx);
+    border-radius: 8rpx;
+    line-height: 1;
+  }
+
+  &-small {
+    font-size: $badge-size-small;
+  }
+
+  &-large {
+    font-size: $badge-size-large;
+  }
+  // 主题
+  &-default {
+    @include badge-type($background-base-color,$text-weight-color);
+  }
+  &-primary {
+    @include badge-type($primary-color);
+  }
+  &-error {
+    @include badge-type($error-color);
+  }
+  &-warning {
+    @include badge-type($warning-color);
+  }
+}

@@ -1,12 +1,11 @@
 /*
  * Copyright (c) 2019-Now Asako Studio. All rights reseved.
  * @fileoverview | 名言谚语诗句等data，后期换到server api维护.
- * @Reference：
  * @Author: mukuashi | mukuashi@icloud.com
  * @version 0.1 | 2020-03-28 // Initial version.
  * @Date:   2020-03-28 15:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-06 23:53:31
+ * @Last Modified time: 2021-05-03 21:03:14
  */
 const verses = [
   {
@@ -397,10 +396,6 @@ const verses = [
   {
     text: "人的一生会遇到两个人，一个惊艳了时光，一个温柔了岁月。",
     author: "苏剧《经年》"
-  },
-  {
-    text: "据说那些你一笑就跟着你笑的人，不是傻逼就是爱你的人。",
-    author: "安东尼《给不二的情书》"
   },
   {
     text:

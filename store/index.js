@@ -1,14 +1,16 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import en from "../locales/en";
-import zh from "../locales/zh-CN";
-import tpl from "../config/data";
-import config from "../config";
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+import en from '@/config/locales/en';
+import zh from '@/config/locales/zh-CN';
+import config from '@/config';
+
+import auth from './modules/auth'
 
 Vue.use(Vuex);
 // author age
 function age() {
-  let birthday = new Date("1994-12-12".replace(/-/g, "/"));
+  let birthday = new Date("1994-08-01".replace(/-/g, "/"));
   let date = new Date();
   return {
     age:
@@ -27,41 +29,53 @@ function factoryConfig(data) {
     author: {
       ...data.author,
       ...age()
+    },
+    shares: {
+      title: `${data.name}@${data.brand} Come and see, buddy 👬`
     }
   };
 }
 // 初始化数据
 let language = uni.getStorageSync(`${config.key}_language`) || "English",
-  data = language === "English" ? en : zh;
+    data = language === "English" ? en : zh;
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
     app: {
-      ...tpl,
+      ...config,
       ...data,
       language,
-      ...factoryConfig(data)
-    }
+      ...factoryConfig(data),
+    },
   },
   mutations: {
     changeLanguage(state, payload) {
-      data = payload === "English" ? en : zh;
+      data = payload === 'English' ? en : zh;
       state.app = {
         ...state.app,
         ...data,
         language: payload,
-        ...factoryConfig(data)
+        ...factoryConfig(data),
       };
     },
-    // 更新某个key-value
+    // 更新某个key-value，module对应模块，type更新的第一个key，next为可选的第二个key,value为更新的值
     commonUpdate(state, payload) {
-      state[payload.type] = {
-        ...state[payload.type],
-        ...payload.value
-      };
-    }
+      const { module, type, next, value } = payload;
+      if (next) {
+        state[module][type][next] = {
+          ...state[type][next],
+          ...value,
+        };
+      } else {
+        state[module][type] = {
+          ...state[type],
+          ...value,
+        };
+      }
+    },
   },
-  actions: {}
+  actions: {},
+  modules: {
+    auth
+  },
 });
-
-export default store;

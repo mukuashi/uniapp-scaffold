@@ -1,0 +1,48 @@
+.#{$global-prefix}-clock {
+  &-box {
+    display: flex;
+	  align-items: center;
+  }
+  &-item {
+    border: 1rpx solid;
+    border-radius: 6rpx;
+    white-space: nowrap;
+    transform: translateZ(0);
+    @include center-middle-flex;
+  }
+  &-time {
+    margin: 0;
+    padding: 0;
+  }
+  &-colon {
+    display: flex;
+    justify-content: center;
+    padding: 0 5rpx;
+    &-pad {
+      padding: 0 !important;
+    }
+  }
+  &-scale {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+  &-ms {
+    border: 1rpx solid;
+    overflow: hidden;
+    border-radius: 6rpx;
+    &-list {
+      animation: loop 1s steps(10) infinite;
+    }
+    &-item {
+      @include center-middle-flex;
+    }
+  }
+}
+@keyframes loop {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100%);
+	}
+}

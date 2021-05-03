@@ -1,0 +1,153 @@
+.#{$global-prefix}-map {
+  position: relative;
+  height: inherit;
+  map {
+    @include size(100%, inherit);
+  }
+  &-callout {
+    &-item {
+      background-color: $background-init-color;
+      border-radius: 4rpx;
+      font-size: 26rpx;
+      color: $theme-color;
+      padding: 0 16rpx;
+      height: 44rpx;
+      line-height: 44rpx;
+      text-align: center;
+      @include center-middle-flex;
+    }
+  }
+  &-audio {
+    padding: 0 $layout-padding;
+    background-color: $background-init-color;
+    @include size(100%, 82rpx);
+    @include custom-position(absolute,$top:0);
+    @include center-middle-flex($justify: space-between);
+    transition: all $timing-function .2s;
+    span {
+      color: $title-color;
+      margin-bottom: 8rpx;
+      image {
+        height: 45rpx;
+      }
+      text {
+        padding-left: 16rpx;
+      }
+    }
+  }
+  &-collect {
+    @include custom-position(absolute,$top: $layout-padding,$right: $layout-padding);
+    &-box {
+      top: 112rpx;
+    }
+  }
+  &-bottom {
+    margin: $layout-padding;
+    @include custom-position(absolute,$bottom: env(safe-area-inset-bottom),$left: 0,$right: 0);
+    .actions {
+      @include center-middle-flex($justify: space-between);
+      margin-bottom: $layout-padding;
+      &-box {
+        @extend .#{$global-prefix}-map-animate;
+      }
+      li {
+      }
+    }
+  }
+  &-polyline-bottom{
+    margin-left: 0;
+    margin-right: 0;
+    .actions{
+      margin: 0 $layout-padding;
+      margin-bottom: $layout-padding;
+    }
+  }
+  &-card {
+    &-polyline {
+      padding: 0 8rpx;
+    }
+    .title {
+      padding-bottom: 10rpx;
+      @include font-setting(34rpx, 600, $title-color);
+      @include line-overflow(100%);
+    }
+    .desc {
+      font-size: 26rpx;
+    }
+    .card {
+      &-content {
+        @include center-middle-flex($justify: space-between);
+        flex: 1;
+        li {
+          width: 100%;
+        }
+        &-audio {
+          margin-right: 24rpx;
+        }
+      }
+    }
+  }
+
+  &-animate {
+    animation: slideInUp .25s linear 1;
+    &-down {
+      transition: all linear .35s;
+    }
+    &-hidden {
+      animation: slideOutDown .25s linear 1;
+    }
+  }
+
+  &-routes {
+    @include custom-position(absolute, $bottom: 10px, $left: 50%, $zindex: 10);
+    transform: translateX(-50%);
+
+    &-list {
+      margin-top: 18rpx;
+      padding-left: 28rpx;
+      background-color: $background-init-color;
+    }
+
+    image {
+      width: 200rpx;
+      animation: fadeIn .35s $timing-function 1;
+    }
+  }
+  // 顶部气泡
+  &-callout {
+    &-checkin {
+      position: relative;
+      border-radius: 24rpx;
+      padding: 0 18rpx;
+      height: 44rpx;
+      background-color: rgba($dark-color, 0.4);
+      @include font-setting(26rpx, 600, $font-initialize-color);
+      line-height: 44rpx;
+      text-align: center;
+      @include center-middle-flex;
+      overflow: visible;
+      // display: none;
+      &.hide {
+        display: none;
+      }
+      &::after {
+        content: '';
+        @include custom-position(absolute, $left: 50%, $top: 100%);
+        transform: translate3d(-50%, 0, 0);
+        border: 10rpx solid rgba($color: $dark-color, $alpha: 0.4);
+        @include size(0, 0);
+        border-color: rgba($color: $dark-color, $alpha: 0.4) transparent transparent transparent;
+      }
+    }
+  }
+  // 卡片中距离最近
+  .tag-closest {
+    display: inline-block;
+    margin-left: 10rpx;
+    @include center-middle-height(36rpx);
+    background-color: #fff5e9;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    @include font-setting(20rpx, $color: $theme-color);
+  }
+}

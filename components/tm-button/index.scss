@@ -1,0 +1,127 @@
+// mixin
+@mixin button() {
+  margin: 0;
+  border: 0;
+  position: relative;
+  touch-action: manipulation;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  user-select: none;
+  text-align: center;
+  transition: all 0.15s;
+  width: inherit;
+  @include center-middle-flex;
+  @include button-size($btn-font-size, $btn-height, $btn-border-radius);
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    > * {
+      pointer-events: none;
+    }
+  }
+  .icon {
+    margin-right: 12rpx;
+  }
+}
+
+@mixin button-size($size, $height, $border-radius) {
+  height: $height;
+  font-size: $size;
+  border-radius: $border-radius;
+}
+
+@mixin button-style($background, $color, $border) {
+  color: $color;
+  background-color: $background;
+  border: 2rpx solid $border;
+}
+
+@mixin button-variant(
+  $background: null,
+  $color: $font-initialize-color,
+  $border: null
+) {
+  @if $border {
+    @include button-style($background, $color, $border);
+  } @else {
+    @include button-style($background, $color, $background);
+  }
+  @each $key in primary, success, warning, error, ghost {
+    &.#{$global-prefix}-btn-#{$key}.#{$global-prefix}-btn-plain {
+      color: $background;
+      border-color: $background;
+      background-color: transparent;
+    }
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      opacity: 0.6;
+    }
+  }
+}
+
+//
+.#{$global-prefix}-btn {
+  @include button();
+
+  &-long {
+  }
+  &-default {
+    padding: 0 40rpx;
+    @include button-variant(
+      $background-init-color,
+      $btn-default-color,
+      $border-color-base
+    );
+  }
+  &-small {
+    padding: 0 20rpx;
+    @include button-size($btn-font-size-sl, $btn-height-sl, $btn-border-radius);
+  }
+  &-large {
+    padding: 0 80rpx;
+    @include button-size($btn-font-size-lg, $btn-height-lg, $btn-border-radius);
+  }
+
+  &-circle {
+    border-radius: 50rpx;
+  }
+
+  &-success {
+    @include button-variant($success-color);
+  }
+
+  &-primary {
+    @include button-variant($primary-color);
+  }
+
+  &-warning {
+    @include button-variant($warning-color);
+  }
+
+  &-error {
+    @include button-variant($error-color);
+  }
+  &-dashed {
+    border-style: dashed;
+  }
+  &-ghost {
+  }
+  &-square {
+    border-radius: 0;
+  }
+  &-bgimg {
+    border: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}

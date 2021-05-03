@@ -1,0 +1,22 @@
+.#{$global-prefix}-status {
+  @include center-middle-flex;
+  &-fix {
+    @include size(100%, 100vh);
+  }
+  &-content {
+    animation: fadeIn 0.15s linear 1;
+    flex-direction: column;
+    @include center-middle-flex;
+    image {
+      display: block;
+      margin-bottom: $layout-padding;
+    }
+    p {
+      color: $text-light-color;
+      font-size: 26rpx;
+    }
+    .button {
+      margin-top: $layout-padding;
+    }
+  }
+}

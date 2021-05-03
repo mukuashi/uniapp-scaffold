@@ -1,0 +1,253 @@
+/*
+ * Copyright (c) 2020-Now Asako Studio. All rights reseved.
+ * @fileoverview | scss minxin 配置项目中公共处理的mixin
+ * @Author: mukuashi | mukuashi@icloud.com
+ * @version 0.1 | 2019-03-08 // Initial version.
+ * @Date: 2019-03-08 15:59:03 
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2021-01-06 15:54:01
+*/
+@import "./theme";
+
+//组件初始化
+@mixin component-reset() {
+  font-family: $font-family-default;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  box-sizing: $box-sizing;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@mixin box-reset() {
+  border: none;
+  outline: 0;
+  padding: 0;
+  box-shadow: none;
+  line-height: initial;
+  background-image: none;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+}
+
+@mixin ul-initialize() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+//color exchange
+@mixin dark-fade($value) {
+  color: rgba($dark-color, $value);
+}
+
+// 分割线
+@mixin vertical-divider() {
+  &::after {
+    content: " ";
+    @include size(1px, 14px);
+    transform: translateY(-50%);
+    @include custom-position(absolute, $right: 0, $top: 50%);
+    vertical-align: middle;
+    background-color: rgba($font-initialize-color, 0.3);
+  }
+}
+// font set
+@mixin font-setting($size: $font-size-base, $weight: null, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+// button adjust
+@mixin hairline() {
+  content: "";
+  @include custom-position(absolute, $top: 0, $left: 0);
+  @include square(200%);
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid $border-color-base;
+}
+// 一行 文本自动省略号,传width为max-width
+@mixin text-overflow($max-width: 100%) {
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行
+@mixin line-overflow($line: 1, $width: 100%) {
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+//定位相关
+//position
+@mixin custom-position(
+  $position,
+  $top: null,
+  $bottom: null,
+  $left: null,
+  $right: null,
+  $zindex: null
+) {
+  position: $position;
+  z-index: $zindex;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+
+//水平垂直居中-1
+@mixin center-middle-position($top: 50%, $left: 50%) {
+  @include custom-position(absolute, $top: $top, $left: $left);
+  transform: translate(-50%, -50%);
+}
+
+//水平垂直居中-2
+@mixin center-middle-height($height: null) {
+  height: $height;
+  line-height: $height;
+}
+
+//水平垂直居中-3 | 默认全部居中，支持参数自定义替换
+@mixin center-middle-flex($flex: flex, $justify: center, $align: center) {
+  @include flexbox($flex);
+  @include justify-content($justify);
+  @include align-items($align);
+}
+
+// 底部适配iPhoneX
+@mixin iphonex-bottom($color: #fff) {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: $color;
+}
+
+//clearfix清除浮动
+@mixin clearfix() {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+
+//size
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// The spec: http://www@mixin w3@mixin org/TR/css3-flexbox
+// Flexbox display
+@mixin flexbox($flex: flex) {
+  display: $flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none | 先去掉prefix自动补全浏览器前缀，小程序不用考虑兼容
+@mixin flex($values) {
+  flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+  flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+  flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+  align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+  align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+  align-self: $align;
+}

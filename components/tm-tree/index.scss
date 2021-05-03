@@ -1,0 +1,40 @@
+
+.#{$global-prefix}-tree {
+  &-list{
+    display: flex;
+    flex-direction: column;
+    padding: 0 $layout-padding;
+  }
+  &-item {
+    font-size: $font-size-md;
+    color: $title-color;
+    height: 0;
+    opacity: 0;
+    transition: .2s;
+    position: relative;
+    @include center-middle-flex($justify: space-between);
+    label {
+      min-width: 90%;
+    }
+    &-border {
+      border-bottom: 2rpx solid rgba($dark-color,.04);
+    }
+    &-show {
+      height: 108rpx;
+      opacity: 1;
+    }
+    &-showchild  {
+      &-rotate {
+        transform: rotate(180deg);
+      }
+    }
+    &-last {
+      &:before {
+        opacity: 0;
+      }
+    }
+    &-selected {
+      color: $theme-color;
+    }
+  }
+}

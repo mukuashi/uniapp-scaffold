@@ -1,0 +1,43 @@
+.#{$global-prefix}-author {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  @include center-middle-flex($justify: flex-start);
+  &-padding {
+    padding: $layout-padding 0;
+  }
+  &-card {
+    border-radius: 8rpx;
+    padding: $layout-padding;
+    background: $background-init-color;
+    box-shadow: 0 10rpx 30rpx 0 rgba($dark-color, 0.05);
+  }
+  &-card &-extra {
+    padding-right: $layout-padding/2;
+  }
+  &-disable {
+    filter: grayscale(88%);
+    background-color: $disable-color;
+  }
+  &-left {
+    margin-right: 18rpx;
+  }
+  &-content {
+    vertical-align: middle;
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+    .nickname {
+      @include font-setting(30rpx, 500, rgba($title-color, 0.9));
+      @include line-overflow;
+    }
+    .desc {
+      @include font-setting($font-size-base, $color: $text-light-color);
+      @include line-overflow;
+    }
+  }
+  &-extra {
+    color: $text-light-color;
+    @include custom-position(absolute, $right: 8rpx);
+  }
+}

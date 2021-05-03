@@ -25,34 +25,35 @@ export default {
       // 新的版本下载失败
       console.log("新版本下载失败");
     });
-    //
-    uni.getSystemInfo({
-      success: function(e) {
-        // #ifndef MP
-        Vue.prototype.StatusBar = e.statusBarHeight;
-        if (e.platform == "android") {
-          Vue.prototype.CustomBar = e.statusBarHeight + 50;
-        } else {
-          Vue.prototype.CustomBar = e.statusBarHeight + 45;
-        }
-        // #endif
-
-        // #ifdef MP-WEIXIN
-        Vue.prototype.StatusBar = e.statusBarHeight;
-        let custom = wx.getMenuButtonBoundingClientRect();
-        Vue.prototype.Custom = custom;
-        Vue.prototype.CustomBar =
-          custom.bottom + custom.top - e.statusBarHeight;
-        // #endif
-
-        // #ifdef MP-ALIPAY
-        Vue.prototype.StatusBar = e.statusBarHeight;
-        Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
-        // #endif
-        // 移动端胶囊原因整体高度调整一下
-        Vue.prototype.CustomBar = Vue.prototype.CustomBar * 1.2;
-      }
-    });
+    // 顶部导航栏、状态栏以及机型
+    const systemInfo = uni.getSystemInfoSync();
+    const { statusBarHeight, titleBarHeight, screenHeight, platform, model, pixelRatio, windowWidth } = systemInfo;
+    if (platform === 'android') {
+      systemInfo.isIphone = false;
+      systemInfo.statusBarHeight = statusBarHeight || 24;
+      systemInfo.customBar = (statusBarHeight + 50) * 750 / windowWidth;
+    } else {
+      systemInfo.isIphone = true;
+      systemInfo.statusBarHeight = statusBarHeight || 20;
+      systemInfo.customBar = (statusBarHeight + 45) * 750 / windowWidth;
+    }
+    // iphoneX及之后的iphone手机，其screenHeight最小是812，且pixelRatio最小是2。
+    if (model.includes('iPhone') && screenHeight >= 812 && pixelRatio >= 2) {
+      systemInfo.isIpx = true;
+      systemInfo.statusBarHeight = statusBarHeight || 44;
+    } else {
+      systemInfo.isIpx = false;
+    }
+    // #ifdef MP
+    const custom = uni.getMenuButtonBoundingClientRect();
+    systemInfo.customBar = platform === 'ios' ? 44 : 48;
+    systemInfo.menuButton = custom;
+    // #endif
+    // #ifdef MP-ALIPAY
+    systemInfo.customBar = statusBarHeight + titleBarHeight;
+    // #endif
+    Vue.prototype.systemInfo = systemInfo;
+    console.log(systemInfo);
   },
   onShow: function() {
     console.log("App Show");
@@ -62,7 +63,4 @@ export default {
   }
 };
 </script>
-<style lang="less">
-@import "./styles/animate.less";
-@import "./styles/reset.less";
-</style>
+<style lang="scss" src='./styles/index.scss'></style>

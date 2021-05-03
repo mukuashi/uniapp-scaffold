@@ -1,0 +1,57 @@
+.#{$global-prefix}-card {
+  border-radius: 8rpx;
+  padding: $layout-padding;
+  background: $background-init-color;
+  font-size: $font-size-base;
+  transition: all $transition-time $timing-function;
+  &-shadow {
+    box-shadow: 0 10rpx 30rpx 0 rgba($dark-color,0.05);
+  }
+  &-bordered {
+    border: $border-width-base $border-style-base $border-color-base;
+  }
+  &-head {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &-current {
+      @include center-middle-flex;
+      @include custom-position(absolute, $left: 0, $top: 0,$zindex: $zindex-affix+1);
+      @include square(44rpx);
+      will-change: transform;
+      background-color: $theme-color;
+      color: $font-initialize-color;
+      font-size: $font-size-base;
+      border-radius: 8rpx 0 8rpx 0;
+    }
+    &-content {
+      display: flex;
+      z-index: $zindex-affix;
+      .avatar {
+        margin-right: 24rpx;
+      }
+      .paragraph {
+        h1 {
+          @include font-setting($size: $font-size-md, $weight:600, $color:$title-color);
+        }
+        p {
+          color: $text-weight-color;
+          font-size: $font-size-sl;
+          @include line-overflow($line: 2);
+        }
+      }
+    }
+  }
+  &-extra {
+    @include custom-position(absolute, $right: 0, $top: 0, $zindex:11);
+    color: $text-weight-color;
+  }
+  &-body {
+    padding-top: $layout-padding;
+  }
+  &-skeleton {
+    background-size: 400% 100%;
+    background-image: linear-gradient(90deg,#f2f2f2 25%,#e6e6e6 37%,#f2f2f2 63%);
+    animation: skeleton-loading 1.5s linear infinite forwards;
+  }
+}

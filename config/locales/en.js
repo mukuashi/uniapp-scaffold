@@ -1,0 +1,57 @@
+// 英文
+export default {
+  name: "Asako UED",
+  brand: "PhotoArtLife",
+  author: {
+    star: "LEO",
+    position: "Beijing Chaoyang",
+    founder: "A Creator、Asako Studio Founder\nPhotographer、Independent Designer、Full Stack Developer、Software Engineer、Producer、Travel Blogger、Young artist、Contracted Creators At Home And Abroad、Photography Community and Many Open Source Products Author etc."
+  },
+  copyright: "@PhotoArtLife｜Asako Studio",
+  introduce: "Our team comes from Google、Tencent、Alibaba、Baidu、Xiaomi、Yidao、Blockchain and other Internet software and service industries.\nAnd We dedicated to providing creators with small、beautiful、aggregated creation and sharing content brand marketing services. ",
+  services: "Not limited to the following businesses：\nGraphic design、advertising services、image shooting and production、organizing artistic activities、computer software services and design research and development、brand marketing and planning、digital currency trading and service providers、community operations and media cooperation, etc.",
+  abstract: "A set of highly reusable product interaction and front-end design solutions derived from user and corporate values, and providing progressive experience and visual specifications.",
+  labels: [
+    "creative",
+    "design",
+    "photography",
+    "animation",
+    "travel",
+    "creation",
+    "writer",
+    "media",
+    "explore",
+    "program",
+    "code",
+    "product",
+    "producer",
+    "director",
+    "blogger",
+    "record",
+    "vlog",
+    "video",
+    "photo",
+    "reporter",
+    "engineer",
+    "challenge",
+    "imaginative",
+    "laboratory",
+    "studio",
+    "entrepreneurship",
+    "market",
+    "business",
+    "commerce",
+    "blockchain",
+    "bitcoin",
+    "arts",
+    "vision",
+    "adware",
+    "freedom",
+    "theme",
+    "colorful"
+  ],
+  tabs: ["Home", "Creative", "Works"],
+  footer: {
+    buttons: ["Share", "Message"]
+  }
+};

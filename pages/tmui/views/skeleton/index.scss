@@ -1,0 +1,34 @@
+.skeleton {
+  &-box {
+    li {
+      &:first-child {
+        padding: $layout-padding 0 $layout-padding/2;
+      }
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      &-desc {
+        flex: 1;
+      }
+      &-list {
+        color: $text-color;
+        margin-bottom: $layout-padding;
+      }
+      image {
+        @include square(96rpx);
+        border-radius: 50%;
+        margin-right: $layout-padding;
+        border: 0;
+        outline: 0;
+      }
+      h1 {
+        color: $title-color;
+        font-size: $font-size-md;
+      }
+      p {
+        color: $text-color;
+      }
+    }
+  }
+}

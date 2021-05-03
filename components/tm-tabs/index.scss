@@ -1,0 +1,52 @@
+.#{$global-prefix}-tabs {
+  &-view {
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+  }
+  &-box {
+    position: relative;
+    /* #ifdef MP-TOUTIAO */
+    white-space: nowrap;
+    /* #endif */
+  }
+  &-item {
+    /* #ifndef APP-NVUE */
+    display: inline-block;
+    /* #endif */
+    text-align: center;
+    transition-property: background-color, color;
+    &-active {
+      color: $font-initialize-color;
+      transition-timing-function: $timing-function;
+    }
+  }
+  &-bar {
+    @include custom-position(absolute, $bottom: 0);
+  }
+
+  &-flex {
+    @include center-middle-flex($justify: space-between);
+  }
+}
+/* #ifndef APP-NVUE */
+::-webkit-scrollbar,
+::-webkit-scrollbar,
+::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+/* #endif */
+/* #ifdef H5 */
+// 通过样式穿透，隐藏H5下，scroll-view下的滚动条
+scroll-view ::v-deep ::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+/* #endif */

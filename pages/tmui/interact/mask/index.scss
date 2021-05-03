@@ -1,0 +1,21 @@
+.mask {
+  &-content {
+    background-color: $background-init-color;
+    padding: $layout-padding;
+    border-radius: inherit;
+    h1 {
+      @include font-setting($size: $font-size-md, $color: $title-color);
+    }
+    p {
+      line-height: 3;
+      @include font-setting($color: $text-color);
+    }
+    image {
+      width: 100%;
+    }
+    .close {
+      color: $text-color;
+      @include custom-position(absolute,$right: $layout-padding,$top: $layout-padding);
+    }
+  }
+}

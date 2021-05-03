@@ -1,0 +1,57 @@
+.#{$global-prefix}-spin {
+  color: $theme-color;
+  vertical-align: middle;
+  text-align: center;
+  &-dot {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $theme-color;
+    @include square($spin-dot-size);
+    animation: spin-bounce 1.5s $timing-function infinite;
+  }
+
+  &-huge &-dot {
+    @include square($spin-dot-size-hg);
+  }
+
+  &-large &-dot {
+    @include square($spin-dot-size-lg);
+  }
+
+  &-small &-dot {
+    @include square($spin-dot-size-sl);
+  }
+
+  &-center {
+    @include center-middle-flex;
+    height: inherit;
+  }
+  &-main {
+    > image {
+      @include square(0);
+    }
+  }
+  &-fix {
+    
+  }
+  &-fix &-main {
+    @include center-middle-position;
+  }
+  &-fix &-dot {
+    display: inline-block;
+  }
+  &-inline &-text {
+    display: inline-block;
+    padding-left: $layout-padding/2;
+  }
+  &-inline &-main {
+    display: flex;
+    align-items: center;
+  }
+  &-text {
+    display: block;
+    color: $text-color;
+    font-size: $font-size-sl;
+  }
+}

@@ -1,0 +1,85 @@
+.#{$global-prefix}-actionsheet {
+  // min-height: 100rpx;
+  background-color: $background-base-color;
+  &-fillet {
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+  }
+  &-top {
+    border-radius: 0;
+  }
+  &-tips {
+    padding: 40rpx 60rpx;
+    border-radius: inherit;
+    text-align: center;
+    @include font-setting(27rpx, 400, $text-light-color);
+    background: $background-init-color;
+    &-null {
+      button:first-child {
+        margin-top: 0!important;
+      }
+    }
+  }
+
+  &-content {
+    text-align: center;
+
+    &-img {
+      margin-top: 18rpx;
+      background: $background-init-color;
+
+      >image {
+        animation: zoomIn 0.5s $timing-function 1;
+      }
+    }
+  }
+
+  &-box {
+    button:last-child {
+      margin-top: 18rpx;
+    }
+  }
+
+  &-inline {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse; //倒序
+
+    button {
+      margin-top: 18rpx;
+      border-radius: 0;
+      &:not(:last-child) {
+        border-left: 1rpx $border-style-base $border-color-base;;
+      }
+    }
+  }
+
+  &-line {
+    border: 3rpx solid $background-base-color;
+  }
+
+  &-btn {
+    @include size(100%, 120rpx);
+    position: relative;
+    background: $background-init-color;
+    @include center-middle-flex;
+    @include font-setting(36rpx, $color: $title-color);
+
+    &-last {
+      //padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  &-divider {
+    &::before {
+      content: "";
+      width: 100%;
+      border-top: 1rpx $border-style-base $border-color-base;;
+      @include custom-position(absolute, $top: 0, $left: 0);
+    }
+  }
+
+  &-cancel {
+    color: $text-weight-color;
+  }
+}

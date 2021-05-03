@@ -1,0 +1,36 @@
+.#{$global-prefix}-navbar {
+  width: 100%;
+  @include custom-position(absolute, $top: 0, $left: 0);
+
+  &-fixed {
+    @include custom-position(fixed, $zindex: $zindex-mask + 1);
+    transition: all 0.2s;
+  }
+
+  &-content {
+    width: 100%;
+    @include center-middle-flex;
+    color: $font-initialize-color;
+  }
+
+  .status_bar {
+    width: 100%;
+  }
+
+  .left {
+    @include custom-position(absolute, $left: 24rpx);
+  }
+
+  .right {
+    @include custom-position(absolute, $right: 0);
+  }
+
+  .title {
+    transition: all $animation-time $timing-function;
+    @include center-middle-flex;
+    @include font-setting($font-size-md, 500);
+    &-name {
+      @include line-overflow($width: 424rpx);
+    }
+  }
+}

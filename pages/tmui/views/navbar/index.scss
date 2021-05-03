@@ -1,0 +1,10 @@
+.navbar{
+  &-left {
+    @include square(64rpx);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  footer {
+    margin-top: 180rpx;
+  }
+}

@@ -1,0 +1,15 @@
+.animation {
+  &-item {
+    border-radius: 50%;
+    margin: 2 * $layout-padding auto;
+    color: $font-initialize-color;
+    background-color: $success-color;
+    animation: heartBeat $animation-time $timing-function infinite;
+    @include square(250rpx);
+    @include center-middle-flex;
+    flex-direction: column;
+    text {
+      font-size: $font-size-sl;
+    }
+  }
+}

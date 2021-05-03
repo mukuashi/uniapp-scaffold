@@ -1,0 +1,70 @@
+.#{$global-prefix}-mask {
+  position: relative;
+  &-center {
+    
+  }
+  &-cover {
+    transition: all $animation-time;
+    @include size(100vw, 100vh);
+    @include custom-position(fixed, $top: 0, $left: 0, $zindex: $zindex-mask);
+  }
+  .content,.close {
+    z-index: $zindex-mask + 1;
+  }
+  .content {
+    min-width: 85%;
+    border-radius: 8rpx;
+    &-top,&-bottom {
+      @include custom-position(fixed,$left: 0,$right: 0);
+    }
+    &-top {
+      top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &-bottom {
+      bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &-center {
+      @include center-middle-position;
+      position: fixed;
+    }
+    > img {
+      width: 100%;
+    }
+  }
+  .close {
+    opacity: 0.8;
+    margin-top: $layout-padding;
+    text-align: center;
+    transition: all .5s;
+    position: relative;
+    color: $font-theme-color;
+  }
+  .animation {
+    &-in {
+      &-top {
+        animation: slideInDown $animation-time $timing-function 1;
+      }
+      &-center {
+        animation: zoomIn $animation-time $timing-function 1;
+      }
+      &-bottom {
+        animation: slideInUp $animation-time $timing-function 1;
+      }  
+    }
+    &-out {
+      &-top {
+        animation: slideOutUp $animation-time $timing-function 1;
+      }
+      &-center {
+        animation: zoomOut $animation-time $timing-function 1;
+      }
+      &-bottom {
+        animation: slideOutDown $animation-time ease-out 1;
+      }
+    }
+  }
+}

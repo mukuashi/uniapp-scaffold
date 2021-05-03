@@ -1,0 +1,7 @@
+.#{$global-prefix}-animation {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  animation: fadeInRight $animation-time $timing-function 1;
+}

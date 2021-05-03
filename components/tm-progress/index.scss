@@ -1,0 +1,72 @@
+.#{$global-prefix}-progress {
+  width: 100%;
+  overflow-x: hidden;
+  @include center-middle-flex($justify: space-between);
+  &-bg {
+    @include size(100%, inherit);
+  }
+  &-round {
+    border-radius: 100rpx;
+  }
+	&-active {
+    position: relative;
+    height: inherit;
+    border-radius: inherit;
+    transition: all 0.2s ease;
+    &-animate::before {
+      content: '';
+      opacity: 0;
+      border-radius: inherit;
+      background-color: $background-init-color;
+      @include custom-position(absolute,$top: 0,$right: 0,$bottom: 0,$left: 0);
+      animation: progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
+    }
+  }
+  &-default {
+    background-color: $theme-color;
+  }
+  &-success {
+    background-color: $success-color;
+  }
+  &-warning {
+    background-color: $warning-color;
+  }
+  &-error {
+    background-color: $error-color;
+  }
+  &-percent {
+    margin-left: 12rpx;
+    font-size: $font-size-sl;
+    color: $title-color;
+    min-width: 70rpx;
+    text-align: center;
+  }
+	&-striped {
+		background-image: linear-gradient(45deg, rgba($background-init-color, 0.15) 25%, transparent 25%, transparent 50%, rgba($background-init-color, 0.15) 50%, rgba($background-init-color, 0.15) 75%, transparent 75%, transparent);
+		background-size: 39px 39px;
+    animation: progress-stripes 2s linear infinite;
+  }
+}
+
+@keyframes progress-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 39px 0;
+  }
+}
+@keyframes progress-active {
+  0%{
+    width:0;
+    opacity:.1
+  }
+  20%{
+    width:0;
+    opacity:.5
+  }
+  to{
+    width:100%;
+    opacity:0
+  }
+}

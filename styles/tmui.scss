@@ -1,0 +1,97 @@
+.#{$global-prefix}ui {
+  &-container {
+    min-height: 100vh;
+    background-color: $background-base-color;
+    padding: 60rpx $layout-padding;
+    header {
+      padding-bottom: 60rpx;
+      h1 {
+        @include font-setting($size: $font-size-md, $weight:600, $color:$title-color);
+        margin-bottom: $layout-padding / 2;
+      }
+      p {
+        color: $text-color;
+      }
+    }
+    section {
+      > .item {
+        margin-bottom: $layout-padding;
+      }
+    }
+  }
+  &-list {
+    section {
+      margin-bottom: $layout-padding;
+      .column {
+        &:not(:last-of-type) {
+          margin-bottom: $layout-padding;
+        }
+      }
+      .item {
+        display: inline-block;
+        margin-right: 3%;
+        > text {
+          color: $text-color;
+          font-size: $font-size-sl;
+          display: block;
+          text-align: center;
+          padding-top: 12rpx;
+        }
+        &-right {
+          margin-right: $layout-padding;
+        }
+        &-bottom {
+          padding-bottom: $layout-padding;
+        }
+        &-half {
+          min-width: 47%;
+        }
+        &-block {
+          display: block;
+          margin-right: 0;
+          text {
+            padding: 0 0 12rpx;
+            text-align: left;
+          }
+        }
+      }
+      .user {
+        margin-bottom: $layout-padding;
+      }
+    }
+  }
+  &-card {
+    &-bottom {
+      padding-bottom: 0!important;
+    }
+  }
+  &-title-badge {
+    display: flex;
+    align-items: center;
+    color: $text-weight-color;
+    margin-bottom: $layout-padding;
+    text {
+      margin-left: 12rpx;
+      font-size: $font-size-sl;
+    }
+  }
+  &-item {
+    &:not(:last-of-type) {
+      margin-bottom: 1.5*$layout-padding;
+    }
+    &-margin {
+      slider {
+        margin: 2*$layout-padding 0 $layout-padding;
+      }
+    }
+    label {
+      margin-left: $layout-padding/1.5;
+      text {
+        font-size: $font-size-sl;
+      }
+    }
+    text {
+      color: $text-weight-color;
+    }
+  }
+}

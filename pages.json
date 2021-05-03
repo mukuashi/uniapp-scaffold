@@ -2,38 +2,242 @@
   "pages": [
     // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/home/index"
+      "path": "pages/home/index",
+      "style": {
+        "backgroundColor": "#fff",
+        "navigationBarTextStyle": "white",
+        "backgroundColorTop": "#11121c",
+        "navigationStyle": "custom"
+      }
     },
     {
-      "path": "pages/ued/index",
-      "style": {
-        "navigationBarTitleText": "UED"
-      }
+      "path": "pages/lab/index"
+    },
+    {
+      "path": "pages/webview/index"
     },
     {
       "path": "pages/about/index",
       "style": {
         "backgroundColor": "#11121c",
-        "backgroundColorBottom": "#11121c"
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
       }
-    },
+    }
+  ],
+  "subPackages": [
     {
-      "path": "pages/poster/index",
-      "style": {
-        "disableScroll": true,
-        "backgroundColor": "#11121c",
-        "backgroundColorBottom": "#11121c"
-      }
-    },
-    {
-      "path": "pages/webview/index"
+      "root": "pages/tmui",
+      "pages": [
+        {
+          "path": "basic/index",
+          "style": {
+            "navigationBarTitleText": "基础组件"
+          }
+        },
+        {
+          "path": "basic/button/index",
+          "style": {
+            "navigationBarTitleText": "Button"
+          }
+        },
+        {
+          "path": "basic/card/index",
+          "style": {
+            "navigationBarTitleText": "Card"
+          }
+        },
+        {
+          "path": "basic/avatar/index",
+          "style": {
+            "navigationBarTitleText": "Avatar"
+          }
+        },
+        {
+          "path": "basic/badge/index",
+          "style": {
+            "navigationBarTitleText": "Badge"
+          }
+        },
+        {
+          "path": "basic/tag/index",
+          "style": {
+            "navigationBarTitleText": "Tag"
+          }
+        },
+        {
+          "path": "basic/progress/index",
+          "style": {
+            "navigationBarTitleText": "Propress"
+          }
+        },
+        {
+          "path": "interact/index",
+          "style": {
+            "navigationBarTitleText": "交互组件"
+          }
+        },
+        {
+          "path": "interact/mask/index",
+          "style": {
+            "navigationBarTitleText": "Mask"
+          }
+        },
+        {
+          "path": "interact/actionsheet/index",
+          "style": {
+            "navigationBarTitleText": "Actionsheet"
+          }
+        },
+        {
+          "path": "interact/spin/index",
+          "style": {
+            "navigationBarTitleText": "Spin"
+          }
+        },
+        {
+          "path": "interact/countup/index",
+          "style": {
+            "navigationBarTitleText": "Countup"
+          }
+        },
+        {
+          "path": "interact/text-animate/index",
+          "style": {
+            "navigationBarTitleText": "TextAnimate"
+          }
+        },
+        {
+          "path": "interact/clock/index",
+          "style": {
+            "navigationBarTitleText": "Clock"
+          }
+        },
+        {
+          "path": "views/index",
+          "style": {
+            "navigationBarTitleText": "视图组件"
+          }
+        },
+        {
+          "path": "views/author/index",
+          "style": {
+            "navigationBarTitleText": "Author"
+          }
+        },
+        {
+          "path": "views/tabs/index",
+          "style": {
+            "navigationBarTitleText": "Tabs"
+          }
+        },
+        {
+          "path": "views/status/index",
+          "style": {
+            "navigationBarTitleText": "Status"
+          }
+        },
+        {
+          "path": "views/navbar/index",
+          "style": {
+            "navigationBarTitleText": "Navbar",
+            "navigationStyle":"custom"
+          }
+        },
+        {
+          "path": "views/skeleton/index",
+          "style": {
+            "navigationBarTitleText": "Skeleton"
+          }
+        },
+        {
+          "path": "views/sticky/index",
+          "style": {
+            "navigationBarTitleText": "Sticky"
+          }
+        },
+        {
+          "path": "views/swiper/index",
+          "style": {
+            "navigationBarTitleText": "Swiper"
+          }
+        },
+        {
+          "path": "views/tree/index",
+          "style": {
+            "navigationBarTitleText": "Tree"
+          }
+        },
+        {
+          "path": "layout/index",
+          "style": {
+            "navigationBarTitleText": "布局"
+          }
+        },
+        {
+          "path": "layout/flex/index",
+          "style": {
+            "navigationBarTitleText": "Flex"
+          }
+        },
+        {
+          "path": "layout/grid/index",
+          "style": {
+            "navigationBarTitleText": "Grid"
+          }
+        },
+        {
+          "path": "colors/index",
+          "style": {
+            "navigationBarTitleText": "色彩"
+          }
+        },
+        {
+          "path": "icons/index",
+          "style": {
+            "navigationBarTitleText": "图标"
+          }
+        },
+        {
+          "path": "form/index",
+          "style": {
+            "navigationBarTitleText": "表单组件"
+          }
+        },
+        {
+          "path": "form/calendar/index",
+          "style": {
+            "navigationBarTitleText": "Calendar"
+          }
+        },
+        {
+          "path": "map/index",
+          "style": {
+            "navigationBarTitleText": "地图"
+          }
+        },
+        {
+          "path": "animation/index",
+          "style": {
+            "navigationBarTitleText": "动画"
+          }
+        }
+      ]
     }
   ],
   "globalStyle": {
-    "navigationStyle": "custom", // 全局开启自定义导航栏，如需特殊配置在单个页面里设置”default“
-    "backgroundColorTop": "#11121c",
+    "backgroundColor": "#f7f7f7",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
     "usingComponents": {
       "poster": "/wxcomponents/wxa-plugin-canvas/poster/index"
+    }
+  },
+  // https://uniapp.dcloud.io/collocation/pages?id=easycom
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^tm-(.*)": "@/components/tm-$1/index.vue" // 匹配components目录内的vue文件
     }
   },
   "tabBar": {
@@ -46,7 +250,7 @@
         "selectedIconPath": "static/tabBar/icon_home_normal.png"
       },
       {
-        "pagePath": "pages/ued/index",
+        "pagePath": "pages/lab/index",
         "text": "Lab",
         "iconPath": "static/tabBar/icon_spin_normal.png",
         "selectedIconPath": "static/tabBar/icon_spin_normal.png"
@@ -59,7 +263,7 @@
     "current": 0, // 当前激活的模式(list 的索引项)
     "list": [
       {
-        "name": "Home", //模式名称
+        "name": "Studio", //模式名称
         "path": "pages/home/index", //启动页面，必选
         "query": "" //启动参数
       },
