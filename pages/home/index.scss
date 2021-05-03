@@ -228,8 +228,8 @@
               flex-flow: row wrap;
               padding-top: 15rpx;
               &-item {
-                width: calc(100% / 3 - #{$layout-padding * 2 / 3} - 2rpx);
-                min-height: 250rpx;
+                width: calc(50% - #{$layout-padding / 2} - 1rpx);
+                min-height: 300rpx;
                 border-radius: 12rpx;
                 margin-bottom: $layout-padding;
                 padding: 12rpx 0;
@@ -241,11 +241,8 @@
                 span {
                   @include custom-position(absolute, $bottom: 6rpx);
                 }
-                &:not(:nth-child(3n)) {
+                &:nth-child(odd) {
                   margin-right: $layout-padding;
-                }
-                &:last-child {
-                  margin-right: 0;
                 }
               }
             }

@@ -2,7 +2,7 @@
   <view :class="[ `${app.prefix}ui-container`,'colors' ]">
    <header :class="[ `${app.prefix}ui-header` ]">
       <h1>Colorful</h1>
-      <p>色彩，Tm Deisgn 经过大量实践和研究，在移动端方向输出一套系统级和产品级色彩体系。
+      <p>色彩，{{ app.name }}经过大量实践和研究，在移动端方向输出一套系统级和产品级色彩体系。
         以主题色和产品衍生色贯穿整个产品的组件和页面，遵循「有效、清晰、准确、美」的原则，为您的应用带来统一且鲜明的视觉效果。</p>
     </header>
     <section
@@ -36,7 +36,7 @@
  * @version 0.1 | 2021-03-05 // Initial version.
  * @Date:   2021-03-05 14:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-03-19 10:34:23
+ * @Last Modified time: 2021-05-03 22:25:22
  */
 
 export default {

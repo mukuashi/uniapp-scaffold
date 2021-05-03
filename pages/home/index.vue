@@ -294,7 +294,7 @@
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @version 0.3 | 2020-04-18 // 配置语言包及team info.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-05-03 21:33:25
+ * @Last Modified time: 2021-05-03 21:38:51
  */
 import { debounce } from "@/utils";
 import * as Services from "@/services/home";
@@ -519,10 +519,12 @@ export default {
     },
     // 分享海报
     handleSharePoster(val) {
-      // 0直接分享给好友，1生成分享海报
       switch (val) {
         case 1:
-          this.handleCommonRoute("../poster/index");
+          this.handleOpenMiniprogram({
+            appid: 'wx1014f2e01d1623f9',
+            path: 'pages/poster/index?source=asako_ued_home'
+          });
           break;
         case 0:
         default:
