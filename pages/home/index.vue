@@ -1,6 +1,6 @@
 <template>
   <view class="home">
-    <tm-navbar
+    <ad-navbar
       v-if="tabs.scrollTop<300"
       left="/pages/about/index"
       left-icon="set_filled"
@@ -26,7 +26,7 @@
           <text>{{ home.galleryIndex+1 }}</text>
           \{{ home.gallery.length }}
         </view>
-        <tm-swiper
+        <ad-swiper
           v-model="home.gallery"
           :dotsIndex="home.galleryIndex"
           :dotsDirection="home.galleryDirection"
@@ -36,7 +36,7 @@
       <!-- 多次点赞动画 -->
       <view :class="['hearts',user.likeAnimate&&'hearts-animate']" v-if="user.likeClick>1">
         <view v-for="index in 2" :key="index">
-          <tm-icon type="heart_beat" size="60" color="#f66"/>
+          <ad-icon type="heart_beat" size="60" color="#f66"/>
         </view>
       </view>
       <!-- author -->
@@ -44,26 +44,26 @@
         <ul class="subject-left" @tap="handleCommonRoute('../about/index')">
           <li>
             <view class="left-title">{{ app.name }}</view>
-            <tm-tag size="small" bg-color="#d1ebfd" weight="500" class="left-tag">
-              <tm-icon size="21" type="male" color="#3bb2f3"/>
+            <ad-tag size="small" bg-color="#d1ebfd" weight="500" class="left-tag">
+              <ad-icon size="21" type="male" color="#3bb2f3"/>
               <text>{{ app.author.age }}</text>
-            </tm-tag>
-            <tm-tag size="small" color="#f9796a" weight="500" bg-color="#f4dee0">{{app.author.star}}</tm-tag>
+            </ad-tag>
+            <ad-tag size="small" color="#f9796a" weight="500" bg-color="#f4dee0">{{app.author.star}}</ad-tag>
           </li>
           <li>
-            <tm-icon size="26" type="location"/>
+            <ad-icon size="26" type="location"/>
             {{ app.author.position }}
           </li>
         </ul>
         <view class="subject-right" @tap="handleAuthorLike">
           <!-- 点赞后 -->
           <view class="icon icon-zoom" v-if="user.liked">
-            <tm-icon type="heart_filled" size="60" color="#f44"/>
+            <ad-icon type="heart_filled" size="60" color="#f44"/>
           </view>
           <!-- 未点赞 -->
           <view v-else class="icon">
             <view class="animation-heartBeat">
-              <tm-icon type="heart" size="60" color="#f44"/>
+              <ad-icon type="heart" size="60" color="#f44"/>
             </view>
             <view class="ripple" v-for="index in 2" :key="index"/>
           </view>
@@ -75,14 +75,14 @@
                 animationDelay: `${index*0.05}s`
               }"
             >
-              <tm-icon type="heart_filled" size="22" color="#f44"/>
+              <ad-icon type="heart_filled" size="22" color="#f44"/>
             </span>
           </view>
         </view>
       </view>
     </view>
     <view class="home-content">
-      <tm-sticky :scrollTop="tabs.scrollTop" bg-color="#fff">
+      <ad-sticky :scrollTop="tabs.scrollTop" bg-color="#fff">
         <template slot="header">
           <scroll-view
             class="tabs-nav"
@@ -108,7 +108,7 @@
             class="tabs-main"
             :current="tabs.current"
             :style="{
-              height: `${tabs.swiperNodeList[tabs.current].height}px`
+              height: `${tabs.swiperNodeList[tabs.current] && tabs.swiperNodeList[tabs.current].height || 750}px`
             }"
             @change="e=>handleSwitchTab(e,'main')"
           >
@@ -116,46 +116,46 @@
               <ul class="swiper-content" v-if="!sIndex">
                 <li class="sc1">
                   <view class="title">
-                    <tm-badge class="title-dot" dot/>
+                    <ad-badge class="title-dot" dot/>
                     <h2>Station</h2>
                   </view>
                   <text>{{app.abstract}}</text>
                 </li>
                 <li>
                   <view class="title">
-                    <tm-badge class="title-dot" dot bg-color="#f5624f"/>
+                    <ad-badge class="title-dot" dot bg-color="#f5624f"/>
                     <h2>Introduce</h2>
                   </view>
                   <text>{{ app.introduce }}</text>
                 </li>
                 <li>
                   <view class="title">
-                    <tm-badge class="title-dot" dot bg-color="#e71e8e"/>
+                    <ad-badge class="title-dot" dot bg-color="#e71e8e"/>
                     <h2>Services</h2>
                   </view>
                   <text>{{ app.services }}</text>
                 </li>
                 <li>
                   <view class="title">
-                    <tm-badge class="title-dot" dot bg-color="#46e3ac"/>
+                    <ad-badge class="title-dot" dot bg-color="#46e3ac"/>
                     <h2>Labels</h2>
                   </view>
-                  <tm-tag
+                  <ad-tag
                     v-for="(row,index) in app.labels"
                     :key="index"
                     class="detail-labels"
                     type="grey"
                     shape="circle"
-                  >{{row}}</tm-tag>
+                  >{{row}}</ad-tag>
                 </li>
                 <li>
                   <view class="title">
-                    <tm-badge class="title-dot" dot bg-color="#a6c1ee"/>
+                    <ad-badge class="title-dot" dot bg-color="#a6c1ee"/>
                     <h2>Teamwork</h2>
                   </view>
                   <view class="detail-team">
                     <view v-for="(row,index) in app.team" :key="index" class="detail-team-item">
-                      <tm-avatar
+                      <ad-avatar
                         :image="row.avatar"
                         size="large"
                         mode="aspectFill"
@@ -170,7 +170,7 @@
                 <li class="sc2">
                   <view class="title">
                     <h2>Components</h2>
-                    <tm-icon
+                    <ad-icon
                       type="miniprogram"
                       size="48"
                       class="title-icon"
@@ -187,7 +187,7 @@
                       }"
                       @tap="handleCommonRoute(row.path)"
                     >
-                      <tm-icon :type="row.icon" size="70"/>
+                      <ad-icon :type="row.icon" size="70"/>
                       <span>{{ row.name }}</span>
                     </view>
                   </view>
@@ -198,7 +198,7 @@
                   <view class="title">
                     <h2>Photography Albums</h2>
                   </view>
-                  <tm-spin size="huge" s-height="600" v-if="!entry._500px.length"/>
+                  <ad-spin size="huge" s-height="600" v-if="!entry._500px.length"/>
                   <view v-else class="albums">
                     <view
                       class="albums-item tpl-boxshadow"
@@ -212,7 +212,7 @@
                           backgroundImage: `url(${row.url.p3})`
                         }"
                       >
-                        <tm-avatar
+                        <ad-avatar
                           class="open"
                           size="small"
                           icon="miniprogram"
@@ -233,26 +233,25 @@
             </swiper-item>
           </swiper>
         </template>
-      </tm-sticky>
+      </ad-sticky>
     </view>
     <view class="home-footer tpl-boxshadow">
       <button hover-class="none" @tap="feedback.guideShare=true">
-        <tm-icon type="share" size="45"/>
+        <ad-icon type="share" size="45"/>
         <text>{{ app.footer.buttons[0] }}</text>
       </button>
       <button hover-class="none" open-type="contact">
-        <tm-icon type="message" size="55"/>
+        <ad-icon type="message" size="55"/>
         <text>{{ app.footer.buttons[1] }}</text>
       </button>
     </view>
-    <!-- 小交互 -->
-
     <!-- 引导关注等 -->
-    <tm-actionsheet
+    <ad-actionsheet
       :tips="feedback.guideTipsConfig.text"
       :tips-image="feedback.guideTipsConfig.image"
       :item-list="[]"
       v-model="feedback.guideTips"
+      tips-image-preview
     >
       <swiper
         class="custom-actionsheet"
@@ -268,6 +267,7 @@
             show-menu-by-longpress
             mode='widthFix'
             :src="feedback.guideTipsConfig.qrcode" 
+            @tap="handlePreviewImage(feedback.guideTipsConfig.qrcode)"
           />
         </swiper-item>
         <swiper-item>
@@ -275,9 +275,9 @@
           <text>{{ app.author.founder }}</text>
         </swiper-item>
       </swiper>
-    </tm-actionsheet>
+    </ad-actionsheet>
     <!-- 分享海报等 -->
-    <tm-actionsheet
+    <ad-actionsheet
       :item-list="feedback.guideShareList"
       v-model="feedback.guideShare"
       @confirm="handleSharePoster"
@@ -294,7 +294,7 @@
  * @version 0.2 | 2020-02-29 // 首页swiper和小程序配置更新.
  * @version 0.3 | 2020-04-18 // 配置语言包及team info.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-05-03 21:38:51
+ * @Last Modified time: 2021-05-29 15:18:03
  */
 import { debounce } from "@/utils";
 import * as Services from "@/services/home";
@@ -386,18 +386,14 @@ export default {
       this.entry._500px = res.data;
     },
     handleSwiperHeight() {
-      uni
-        .createSelectorQuery()
-        .selectAll(".swiper-content")
-        .boundingClientRect(data => {
-          this.tabs.swiperNodeList = data.map(row => {
-            return {
-              ...row,
-              height: row.height + 50
-            };
-          });
-        })
-        .exec();
+      uni.createSelectorQuery().selectAll(".swiper-content").boundingClientRect(data => {
+        this.tabs.swiperNodeList = data.map(row => {
+          return {
+            ...row,
+            height: row.height + 50
+          };
+        });
+      }).exec();
     },
     handleSwiperChange(e) {
       // https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html
@@ -533,6 +529,12 @@ export default {
       setTimeout(_ => {
         this.feedback.guideShare = false;
       }, 500);
+    },
+    handlePreviewImage(val) {
+      uni.previewImage({
+        current: val,
+        urls: Array.of(val)
+      })
     }
   }
 };

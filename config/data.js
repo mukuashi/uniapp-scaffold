@@ -6,7 +6,7 @@
  * @version 0.2 | 2020-03-26 // 添加海报配置.
  * @Date:   2019-07-10 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-05-03 20:25:33
+ * @Last Modified time: 2021-05-29 14:34:34
  */
 import verses from "./verses";
 import wallpapers from "./wallpapers";
@@ -18,9 +18,6 @@ const domain = {
   _500px: "https://500px.com.cn",
   lbs: 'https://apis.map.qq.com',
   weather: 'https://wis.qq.com',
-  asr: 'https://aiwx.html5.qq.com/api/asr',
-  ai: 'https://gw.tvs.qq.com',
-  cos: 'https://wisdomscenic-1251316161.file.myqcloud.com/wisdom_scenic_miniprogram',
   cloud: {
     studio: 'https://6173-asako-studio-9c2pl-1301657606.tcb.qcloud.la',
     daily: 'https://6173-asako-daily-avyxm-1301749635.tcb.qcloud.la',
@@ -57,10 +54,10 @@ const gallery = [
 
 // loading
 const loading = [
-  '/images/loading_01.gif',
-  '/images/loading_02.gif',
-  '/images/loading_03.gif',
-].map(row => `${domain.cos}/tmui/${row}`);
+  'loading_01.gif',
+  'loading_02.gif',
+  'loading_03.gif',
+].map(row => `${domain.cloud.studio}/static/loading/${row}`);
   
 // animate name list
 const animations = [
@@ -258,49 +255,49 @@ export default {
       name: '色彩',
       icon: 'heart_beat',
       gradient: gradients[0],
-      path: '/pages/tmui/colors/index',
+      path: '/pages/adui/colors/index',
     },
     {
       name: '图标',
       icon: 'explore',
       gradient: gradients[1],
-      path: '/pages/tmui/icons/index',
+      path: '/pages/adui/icons/index',
     },
     {
       name: '基础组件',
       icon: 'cafe',
       gradient: gradients[2],
-      path: '/pages/tmui/basic/index',
+      path: '/pages/adui/basic/index',
     },
     {
       name: '交互组件',
       icon: 'message',
       gradient: gradients[3],
-      path: '/pages/tmui/interact/index',
+      path: '/pages/adui/interact/index',
     },
     {
       name: '布局组件',
       icon: 'layout',
       gradient: gradients[4],
-      path: '/pages/tmui/layout/index',
+      path: '/pages/adui/layout/index',
     },
     {
       name: '表单组件',
       icon: 'form',
       gradient: gradients[5],
-      path: '/pages/tmui/form/index',
+      path: '/pages/adui/form/index',
     },
     {
       name: '视图组件',
       icon: 'view',
       gradient: gradients[6],
-      path: '/pages/tmui/views/index',
+      path: '/pages/adui/views/index',
     },
     {
       name: '动画组件',
       icon: 'animation',
       gradient: gradients[7],
-      path: '/pages/tmui/animation/index',
+      path: '/pages/adui/animation/index',
     }
   ],
   attention: [

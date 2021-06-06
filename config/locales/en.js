@@ -1,6 +1,6 @@
 // 英文
 export default {
-  name: "Asako UED",
+  name: "Asako Design",
   brand: "PhotoArtLife",
   author: {
     star: "LEO",

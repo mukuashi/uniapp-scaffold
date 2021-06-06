@@ -6,7 +6,8 @@
 *.sln
 *.sw*
 node_modules/
-unpackage/dist/*
+unpackage/
+dist/
 .idea/
 .DS_Store
 yarn.lock

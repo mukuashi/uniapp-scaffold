@@ -1,19 +1,24 @@
 ## 简介
 
-* uniapp-scaffold（studio-scaffold） 是一款基于Vue 2. x的跨平台小程序脚手架及插拔式模板，提供超过 20+个（基于微信视觉规范）基础和业务组件，包含自定义 request 请求库、utils、theme 主题、vuex全局数据管理、国际化配置等于一体的插拔式应用框架，可快速落地业务。
+* uniapp-scaffold 是一款基于 Vue 2.x 的跨平台小程序脚手架及插拔式模板，提供超过 20+个（基于微信视觉规范）基础和业务组件，包含自定义 request 请求库、utils、theme 主题、vuex 全局数据管理、国际化配置等于一体的插拔式应用框架，可快速落地业务。
 
 ### 特点：
 
 * **全：** 组件和工具库齐全，积木式开发并输出各端小程序（主要方向） + h5 + app
 * **简：** 一套 code，Vue 2. x 写法，上手成本低，可快速撸业务页面
 
-### Who's using it（可在对应 App 内搜索或扫码欣赏）
+### 技术架构
+uni-app，Vue、SASS、Vue CLI、Webpack、miniprogram-ci等
 
-* Keep 运动助手
+### Asako Design 设计语言
 
-| 仓库 | 百度版 | 头条版  | 微信版 |
-| - | - | - | - |
-| 内网 | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/15e97cc922f2c0.jpg!1200w.jpg" width="220" /> | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/25e97cc922f254.jpg!1200w.jpg" width="220" /> | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/05e97cc922f30c.jpg!1200w.jpg" width="220" /> |
+* 面向移动端场景打造的一款个性化组件库（30+）
+
+| Studio | UED |
+| :------: | :------: |
+| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lh0joc1j20zk0zktfp.jpg" width="300" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lgzrm7zj20zk0zkn4e.jpg" width="300" /> |
+
+### 谁在使用(部分作品)
 
 * Asako Studio：
 
@@ -21,7 +26,7 @@
 
 | Miniprogram  | Home | Creative | Works | About |
 | - | - | - | - | - |
-| <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGU1UlRYV2liZmI2NXQ3WmpvbmxORk85Uk1oVFppSDFJcHlmYWlLUVd5ajdnPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cUJtQnRIbXFaaDZLV3dNY3FENGtyaWtmTDFhN3BFOHV3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cXdsbXQzZ1prWFpFNG1nVzhEcTc2T2ZaQzJWeVhsUHNRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf4.nosdn0.126.net/img/eCsxeXUwR1dBeGVpcXBRdVlkRko5cjEzbStSbFRZSko1MVZvMTk5cTJLR1UvWWh1ZXlVQkJnPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGZWRXM5Z0NjSUJzTVJnbHNsYWUvbzBwaW5LSGZhcGJ4SnhDVXV5aFMwbXBnPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> |
+| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gcer72tttfj20dt0okq5g.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoh2y8ej20yi483k8u.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgohuhsij20yi49cwtn.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoiyq7ij20yi38i4e4.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgojj1y7j20yi4bc7i4.jpg" width="240" /> |
 
 * 浅子影报：
 
@@ -29,16 +34,117 @@
 
 AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 
-| Miniprogram | Home | About | Wallpaper Detail | AI 日报 |
+| Miniprogram | Home | About | Creator | AI日报 |
 | - | - | - | - | - |
-| <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRGdDelZVL0l1aEYxSXdQT1JzMHV3SlVlYmlETXU5WHl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxRkJSSGYrWTdyM0pwcWZvNDNkVU1uVDkwbm9SSFJYL25nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf3.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxQmlVejBzYXRtQzFsd1QrSjRMMlB6K1JjRldScm1aWDlRPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf4.nosdn0.126.net/img/eCsxeXUwR1dBeGZWRXM5Z0NjSUJzSmY4aHFmTWtGMmZPQWgwWmlsMzhOODFobDBzU1VrNE9nPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf5.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxREVNQzZpRGg1TUxGWkhEYkZBblZ2M2VnMnFtbGNZb0dBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> | <img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS3VjS3JSa1RKN1lWUHJ4dGcwTVYydjVXMEVjYm1UbFl3PT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /><br/><img src="http://imglf6.nosdn0.126.net/img/eCsxeXUwR1dBeGNsdE9SVWdXZHNxS0E1RGZVYkxuZWkvQjVnc2RGT2FYcG9zYnJFMDNIUUZBPT0.jpeg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg" width="180" /> |
+| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gduq4gsy60j20v91jk76k.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoklgqzj20yi5ce7wi.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgol7di1j20yi4o0dvi.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8igamk7wj20cacmbhe7.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gduq1irikwj20v91jlnph.jpg" width="240" /><br/><img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gduq1lbqmqj20v91jl4qr.jpg" width="240" /> |
 
-* 浅子居家：智能生活，从家开始 🏡
+* 浅子居家：
 
-* Asako UED：一款集齐才华（规范）与颜值（专业）的用户体验设计语言
+悦读精致生活，亲手DIY你的家 🏡
+
+| Miniprogram | Home | About |
+| - | - | - |
+| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lh0c9r2j20zk0zk7bm.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/orj360/967d9727ly1gr8ig2k8opj20yi22onpi.jpg" width="240" /><br/><img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8ig5o86oj20yi22o7ws.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8ig6xcmqj20yi4sr4ea.jpg" width="240" /> | 
+
+* Asako Design：
+
+一款集齐才华（规范）与颜值（专业）的用户体验设计语言
+
+| Miniprogram | Home | Components | About |
+| - | - | - | - |
+| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lgzrm7zj20zk0zkn4e.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoglcm0j20yi4br4gp.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoln2ucj20yi396qd3.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/orj360/967d9727ly1gqzgom35c3j20yi4prdvt.jpg" width="240" /> |
+
+* Keep 运动助手
+
+| 仓库 | 百度版 | 头条版  | 微信版 |
+| - | - | - | - |
+| 内网 | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/15e97cc922f2c0.jpg!1200w.jpg" width="220" /> | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/25e97cc922f254.jpg!1200w.jpg" width="220" /> | <img src="https://images.mepai.me/app/works/38224/2020-04-16/w_5e97cc922f0fa/05e97cc922f30c.jpg!1200w.jpg" width="220" /> |
 
 * 更多补充中
 
+### Dev | 开发姿势
+
+> VSCode + 小程序IDE + HbuilderX(可选，可通过修改目录，与cli方式切换)
+> VSCode开发，HbuilderX实时编译（可视化菜单操作），小程序IDE实时预览
+> cd projectName => git clone 此项目 => 基于此项目进行业务开发;
+
+#### ① HbuilderX IDE 方式
+
+1. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
+
+2. 在 Hbuilder 中导入当前项目（uni-app 类型），修改或更新当前配置，manifest.json 和 pages.json（尤其注意要添加对应平台的 appid，在开发者后台配置 request、downloadFile 域名）;
+
+3. 配置插件，菜单栏点击插件管理可以安装当前项目所需要的插件和 loader，（scss、babel、es6 等），yarn（步骤 3 不分先后）;
+
+4. 菜单栏【运行】到对应开发的平台，不习惯当前IDE的可以切换到VSCode，同步开发，实时编译;
+
+#### ② CLI工程方式
+持续集成参考文档：https://ask.dcloud.net.cn/article/35750
+##### HBuilderX 工程转换为 vue-cli 工程
+
+> vue-cli 版更新频率较高，当需要使用一些新特性时可以转换为 vue-cli 工程
+
+步骤：
+1. 将 HBuilderX 工程内的文件（除 unpackage、node_modules 目录）拷贝至 vue-cli 工程内 src 目录
+2. 在 vue-cli 工程内重新安装 npm 依赖（如果之前使用了 npm 依赖的话）
+
+### Publish | 发布
+
+> 小程序方向会有主包、子包、插件（后续支持）的不同产物，h5方向会有不同路由模式（history、hash）的配置
+
+#### ① HbuilderX IDE 方式
+
+一：主包模式
+1. 点击菜单“发行”，到对应小程序平台或游览器；
+
+二：子包模式
+在 HBuilderX 3.1.0+ 中点击发行小程序的菜单，勾选发行混合分包，填写分包目录名称，打包后，将对应目录文件拷贝至已有小程序中，需要自己补充原小程序app.json中的页面或分包配置
+注意：
+1. 发行混合分包后，App.vue中的onLaunch会在首次进入分包时触发(HBuilderX 3.1.1+)；
+2. 开发时需要将资源(图片，css，js等)、页面的绝对路径调整为相对路径，否则打包到原生小程序中时，可能出现路径查找错误;
+3. 需要自己把页面或分包配置添加到已有小程序的app.json中。
+参考文档：https://uniapp.dcloud.io/hybrid
+
+<div align="center">
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/dc4655a0-62e2-11eb-bdc1-8bd33eb6adaa.png">
+</div>
+
+#### ② CLI工程方式
+
+> vue.config.js 里可以定制相关环境产物路径
+
+一：主包模式
+yarn build:mp-weixin
+
+二：子包模式
+1. yarn build:mp-weixin --subpackage（--subpackage=fileName可生产子文件，默认无）
+2. unpackage/build下对应不用平台的编译产物（如mp-weixin对应微信小程序）
+
+> 备注：npm run均可以换成yarn使用
+
+### Structure | 结构
+
+``` 
+├── uniapp-scaffold          # your project name
+│ ├── /config/               # 业务基础/全局/国际化/皮肤配置等
+│ ├── /components/           # 公共组件库: 基础 + 部分高复用业务组件
+│ ├── /mixins/               # index已默认全局混入，其他可按需业务自行注入
+│ ├── /pages/                # 主要业务页面（index.vue + index.scss）
+│ ├── /services/             # 服务Service，建议按照业务模块拆分
+│ ├── /styles/               # 全局样式 => core + mixin + function + theme...
+│ ├── /store/                # 数据流（globalApp、业务数据等）
+│ ├── /static/               # 项目图片、图标、字体及静态资源CDN、tabBar等
+│ ├── /utils/                # lib、request、tool等
+│ ├── /node_modules/         # npm依赖包
+│ ├── /uni_modules/          # 存放[uni_module](/uni_modules)规范的插件
+│ ├── /unpackage/            # 编译后多个平台的源码（dev开发版、dist生产版）
+│ ├── /wxcomponents/         # 存放小程序组件的目录
+│ ├── /platforms/            # 存放各平台专用页面的目录，[详见](https://uniapp.dcloud.io/platform?id=整体目录条件编译)
+│ │──page.json               # 配置页面路由、导航条、选项卡等页面类信息
+│ │──manifest.json           # 配置应用名称、appid、logo、版本等打包信息
+│ │──main.js                 # Vue初始化入口文件
+│ │──App.vue                 # 应用配置，用来配置App全局样式以及监听应用生命周期
+```
 ### Guides | 参考资料
 
 * [uni-app 文档](https://uniapp.dcloud.io)
@@ -50,53 +156,10 @@ AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 * [Ant Design introduce](https://ant.design/docs/spec/introduce-cn)
 * [JD Front-End Coding Guidelines](https://guide.aotu.io)
 * [Taro · React 系小程序及多端统一开发解决方案](https://taro.aotu.io)
-
-### Dev | 开发姿势
-
-cd projectName => git clone 此项目 => 基于此项目开发;
-
-一：主包模式
-
-1. 工具，先下载各平台开发工具（IDE）https://uniapp.dcloud.io/quickstart
-
-2. 在 Hbuilder 中导入当前项目（uni-app 类型），修改或更新当前配置，manifest.json 和 pages.json（尤其注意要添加对应平台的 appid，在开发者后台配置 request、downloadFile 域名）;
-
-3. 配置插件，菜单栏点击插件管理可以安装当前项目所需要的插件和 loader，（scss、babel、es6 等），yarn（步骤 3 不分先后）;
-
-4. 菜单栏点击运行到要开发的小程序平台，不习惯当前 IDE 的可以切换到 VS Code，同步开发，实时编译;
-
-5. 进入各家开发者后台，提审，发布（也可以基于 miniprogram-cli 对接各家小程序平台实现自动构建上传）
-
-6. 更多补充中
-
-二：子包模式
-
-默认小程序：yarn dev:mp-weixin 
-
-h5：yarn dev:h5 
-
-更多平台：mp-alipy、mp-baidu、mp-toutiao等 
-
-备注：注意不同渠道小程序要更新manifest.json里的mp-weixin appid
-
-### Publish | 发布
-
-一：主包模式
-
-1. 点击菜单“发行”，到对应小程序平台；
-
-二：子包模式
-
-1. vue.config.js里已配置相关环境产物路径（景区和出行渠道不同）
-
-2. ~~main.js里runtime相关逻辑代码注释（仅出行渠道注释，已动态引入runtime模块，忽略此步骤）~~
-
-3. 编译不同渠道产物（--subpackage选项默认已在脚本里拼接，升级后不用）
-- 景区小程序：yarn build:mp-weixin
-
-4. 不同渠道打tag或发包
-
-备注：npm run均可以换成yarn使用，2021-03后HbuilderX工具内支持发行子包/插件模式
+* [跨端开发框架深度横评之 2020 版](https://juejin.im/post/5e8e8d5a6fb9a03c6d3d9f42#heading-11)
+* [使用 uni-app 开发小程序，比直接原生开发小程序好在哪里？](https://ask.dcloud.net.cn/article/36484)
+* [跨端图表库uCharts仓库](https://gitee.com/uCharts/uCharts)
+* [跨端图表库uCharts文档](http://doc.ucharts.cn)
 
 
 ### Structure
@@ -123,52 +186,49 @@ h5：yarn dev:h5
 │ │──build                   # 生产环境各种产物
 ```
 
-### 组件 | UI 库
+### UI 库 | 组件
 
 ``` 
-Asako UED
+🐬
+AdUI：Asako（浅子，作者的Home） Design（用户体验设计中心）旗下的UI组件库
 一款集才华（规范）与颜值（专业）的用户体验设计组件库（基于微信视觉规范进一步封装的组件)
-全局组件（@/components目录下）已开启easycom模式，可以不用像传统vue组件那样安装、引用、注册，可以直接在业务中使用（tm-xxx）
+全局组件（@/components目录下）已开启easycom模式，可以不用像传统vue组件那样安装、引用、注册，可以直接在业务中使用（ad-xxx）
 
 * 基础组件
-  + tm-button
-  + tm-avatar
-  + tm-icon
-  + tm-badge
-  + tm-mask（遮罩，可自定义slot content及position）
-  + tm-tag
-  + tm-tips
-  + tm-actionsheet（浮动面板，支持更强大的配置和淡入淡出动画）
-  + tm-card
-  + tm-spin（支持svg、img、css loading）
-  + tm-calender（日历）
-  + tm-text-animate（文字渐变动画）
-  + tm-countup（数字递增及动画）
-  + tm-tree（树结构）
+  + ad-button
+  + ad-avatar
+  + ad-icon
+  + ad-badge
+  + ad-mask（遮罩，可自定义slot content及position）
+  + ad-tag
+  + ad-tips
+  + ad-actionsheet（浮动面板，支持更强大的配置和淡入淡出动画）
+  + ad-card
+  + ad-spin（支持svg、img、css loading）
+  + ad-calender（日历）
+  + ad-text-animate（文字渐变动画）
+  + ad-countup（数字递增及动画）
+  + ad-tree（树结构）
 
 * 业务组件
-  + tm-author（一条数据/一个作者的丰富场景，头像、title、描述、额外插槽等）
-  + tm-skeleton（骨架屏）
-  + tm-status（状态结果页）
-  + tm-swiper（3D画廊幻灯片）
-  + tm-sticky（滑动固定器）
-  + tm-navbar（自定义导航栏）
-  + tm-clock（计时器）
-  + tm-interact（互动）
-  + tm-map（个性化地图）
+  + ad-author（一条数据/一个作者的丰富场景，头像、title、描述、额外插槽等）
+  + ad-skeleton（骨架屏）
+  + ad-status（状态结果页）
+  + ad-swiper（3D画廊幻灯片）
+  + ad-sticky（滑动固定器）
+  + ad-navbar（自定义导航栏）
+  + ad-clock（计时器）
+  + ad-interact（互动）
+  + ad-map（个性化地图）
   + Poster（分享海报插件/wxcomponents/wxa-plugin-canvas）
   + more...
 
 * 图表组件
-  + tm-charts（支持个性化配置config/charts，类型支持折线图、柱状图、饼图等10+种）
+  + ad-charts（支持个性化配置config/charts，类型支持折线图、柱状图、饼图等10+种）
 
 // 使用方式
-任何页面均可直接使用tm-xxx组件（已全局注入）
-<template>
-  <tm-icon type='home' size=36 color='#f00' />
-</template>
+可以在任何视图层页面以ad-xxx引用
 ```
-
 
 ### Services | 数据
 
@@ -185,7 +245,7 @@ const { request } = http;
 // 某推荐列表
 export function getAlbumListSvc(query = {}) {
   return request({
-    // hostKey: 'recommend' // @/config hosts下配置对应key（自定义host时推荐方式，优于baseUrl）
+    // hostKey: 'monkey' // @/config hosts下配置对应key（自定义host时推荐方式，优于baseUrl）
     // baseUrl: config.yourkey, // 自定义请求host，不指定会走默认api
     url: "/your-api-path",
     method: "post", // 'get'可省略
@@ -230,6 +290,7 @@ export default {
 5. 如果出现微信开发者工具启动后白屏的问题，检查是否启动多个微信开发者工具，如果是则关闭所有打开的微信开发者工具，然后再重新运行（注意 IDE 插件和编译 Loader 要安装，否则可能出现编译白屏的情况）
 6. 可以通过微信开发者工具切换 pages.json 中 condition 配置的页面，或者关闭微信开发者工具，然后再从 HBuilderX 中启动指定页
 7. 如遇到编译异常情况，如找不到npm依赖包，可能是npm安装路径有问题，建议检查node相关
+8. H5端Demo可能有部分组件加载失败的情况，目前大部分组件和组件在H5端是可用的，部分case未测试到位，欢迎及时反馈
 
 #### 头条版
 
@@ -250,12 +311,11 @@ export default {
 * JSON 返回中会遇到换行符导致解析失败，需要在 request 阶段过滤这几种换行符
 
 ### 升级日志
-1. 脚手架初始化，支持27+自定义组件；
-
+1. 脚手架初始化，25+自定义组件；
 
 ### 技术维护
 
-mukuashi@icloud. com
+mukuashi@icloud.com
 
 ### License
 

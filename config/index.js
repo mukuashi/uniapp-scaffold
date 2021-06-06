@@ -5,7 +5,7 @@
  * @version 0.1 | 2019-07-08 // Initial version.
  * @Date:   2019-07-08 10:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-05-03 19:21:46
+ * @Last Modified time: 2021-05-29 14:58:59
  */
 import data from './data';
 
@@ -16,8 +16,8 @@ const isProd = env === 'production';
 
 export default {
   env,
-  prefix: 'tm',
-  key: "asako-ued",
+  prefix: 'ad',
+  key: "asako-design",
   hosts: {
     ...data.domain
   },

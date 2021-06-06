@@ -1,9 +1,9 @@
 <template>
   <view class="about">
-    <tm-navbar :left='navbar.left' />
+    <ad-navbar :left='navbar.left' />
     <view class="about-content">
       <h1>
-        <tm-avatar 
+        <ad-avatar 
           size="180" 
           :image="app.images.logo" 
           @tap="handleCommonModal('guideLanguage')"
@@ -19,7 +19,7 @@
       <h4>浅子出品</h4>
       <ul>
         <li v-for="(row,index) in app.products" :key="index">
-          <tm-author
+          <ad-author
             :extra="row.type==='miniprogram' ? 'miniprogram' : true"
             :avatar="row.avatar"
             :icon="row.icon"
@@ -34,7 +34,7 @@
       <h4>关注我们</h4>
       <ul>
         <li v-for="(row,index) in app.attention" :key="index">
-          <tm-author
+          <ad-author
             :extra="row.type==='wechat' ? 'wechat' : true"
             :avatar="row.avatar"
             :icon="row.icon"
@@ -48,7 +48,7 @@
       <h4>更多设置</h4>
       <ul>
         <li>
-          <tm-author
+          <ad-author
             avatar-bg="transparent"
             icon="language"
             icon-size="59"
@@ -57,12 +57,12 @@
           >
             <view slot="extra" class="setting">
               <text>{{ language.text }}</text>
-              <tm-icon size="45" type="arrow_right" />
+              <ad-icon size="45" type="arrow_right" />
             </view>
-          </tm-author>
+          </ad-author>
         </li>
         <li>
-          <tm-author
+          <ad-author
             extra
             avatar-bg="transparent"
             icon="pay"
@@ -77,7 +77,7 @@
       <button plain hover-class="none" open-type="feedback">意见反馈</button>
     </view>
     <!-- 小交互 -->
-    <tm-actionsheet
+    <ad-actionsheet
       item-inline
       :tips="feedback.contact.tips || feedback.contact.text"
       :tips-image="feedback.contact.qrcode"
@@ -85,7 +85,7 @@
       :item-list="feedback.contact.switch ? feedback.guideCtList : []"
       v-model="feedback.guideAction"
     />
-    <tm-actionsheet
+    <ad-actionsheet
       tips="切换语言首选项"
       :item-list="languageGroup"
       v-model="feedback.guideLanguage"
@@ -159,6 +159,7 @@ export default {
             ...item,
             contact: {
               ...item.contact,
+              preview: true,
               text: item.contact && item.contact.qrcode
                   ? `温馨提示：长按识别或保存到微信相册扫一扫\n${item.url || ""}`
                   : `小程序内暂不支持打开当前外链，建议打开浏览器查看\n${item.url || ''}`

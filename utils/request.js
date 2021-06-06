@@ -77,15 +77,9 @@ export default {
         }
         res.config = options;
         // data || status
-        const errToast = (info) => {
+        const errToast = (info = {}) => {
           uni.showToast({
-            title:
-              (info.data
-                && (info.data.error
-                  || info.data.message
-                  || info.data.errMsg
-                  || info.data.text))
-              || '服务器开小差了 ～',
+            title: (info?.data && (info.data.error || info.data.message || info.data.errMsg || info.data.text)) || '服务器开小差了 ～',
             icon: 'none',
           });
         };

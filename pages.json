@@ -27,7 +27,7 @@
   ],
   "subPackages": [
     {
-      "root": "pages/tmui",
+      "root": "pages/adui",
       "pages": [
         {
           "path": "basic/index",
@@ -237,7 +237,7 @@
   "easycom": {
     "autoscan": true,
     "custom": {
-      "^tm-(.*)": "@/components/tm-$1/index.vue" // 匹配components目录内的vue文件
+      "^ad-(.*)": "@/components/ad-$1/index.vue" // 匹配components目录内的vue文件
     }
   },
   "tabBar": {
