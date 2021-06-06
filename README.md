@@ -16,7 +16,7 @@ uni-app，Vue、SASS、Vue CLI、Webpack、miniprogram-ci等
 
 | Studio | UED |
 | :------: | :------: |
-| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lh0joc1j20zk0zktfp.jpg" width="300" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lgzrm7zj20zk0zkn4e.jpg" width="300" /> |
+| <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8lh0joc1j20zk0zktfp.jpg" width="300" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8lgzrm7zj20zk0zkn4e.jpg" width="300" /> |
 
 ### 谁在使用(部分作品)
 
@@ -26,7 +26,7 @@ uni-app，Vue、SASS、Vue CLI、Webpack、miniprogram-ci等
 
 | Miniprogram  | Home | Creative | Works | About |
 | - | - | - | - | - |
-| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gcer72tttfj20dt0okq5g.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoh2y8ej20yi483k8u.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgohuhsij20yi49cwtn.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoiyq7ij20yi38i4e4.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgojj1y7j20yi4bc7i4.jpg" width="240" /> |
+| <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gcer72tttfj20dt0okq5g.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgoh2y8ej20yi483k8u.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgohuhsij20yi49cwtn.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgoiyq7ij20yi38i4e4.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgojj1y7j20yi4bc7i4.jpg" width="240" /> |
 
 * 浅子影报：
 
@@ -36,7 +36,7 @@ AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 
 | Miniprogram | Home | About | Creator | AI日报 |
 | - | - | - | - | - |
-| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gduq4gsy60j20v91jk76k.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoklgqzj20yi5ce7wi.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgol7di1j20yi4o0dvi.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8igamk7wj20cacmbhe7.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gduq1irikwj20v91jlnph.jpg" width="240" /><br/><img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gduq1lbqmqj20v91jl4qr.jpg" width="240" /> |
+| <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gduq4gsy60j20v91jk76k.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgoklgqzj20yi5ce7wi.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgol7di1j20yi4o0dvi.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8igamk7wj20cacmbhe7.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gduq1irikwj20v91jlnph.jpg" width="240" /><br/><img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gduq1lbqmqj20v91jl4qr.jpg" width="240" /> |
 
 * 浅子居家：
 
@@ -44,7 +44,7 @@ AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 
 | Miniprogram | Home | About |
 | - | - | - |
-| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lh0c9r2j20zk0zk7bm.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/orj360/967d9727ly1gr8ig2k8opj20yi22onpi.jpg" width="240" /><br/><img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8ig5o86oj20yi22o7ws.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8ig6xcmqj20yi4sr4ea.jpg" width="240" /> | 
+| <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8lh0c9r2j20zk0zk7bm.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8ig2k8opj20yi22onpi.jpg" width="240" /><br/><img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8ig5o86oj20yi22o7ws.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8ig6xcmqj20yi4sr4ea.jpg" width="240" /> | 
 
 * Asako Design：
 
@@ -52,7 +52,7 @@ AI 精选全球视觉与摄影艺术，伴你每天好心情 🌞
 
 | Miniprogram | Home | Components | About |
 | - | - | - | - |
-| <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gr8lgzrm7zj20zk0zkn4e.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoglcm0j20yi4br4gp.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/mw2000/967d9727ly1gqzgoln2ucj20yi396qd3.jpg" width="240" /> | <img src="https://wx1.sinaimg.cn/orj360/967d9727ly1gqzgom35c3j20yi4prdvt.jpg" width="240" /> |
+| <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gr8lgzrm7zj20zk0zkn4e.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgoglcm0j20yi4br4gp.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgoln2ucj20yi396qd3.jpg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/967d9727ly1gqzgom35c3j20yi4prdvt.jpg" width="240" /> |
 
 * Keep 运动助手
 
@@ -289,9 +289,15 @@ export default {
 ### 升级日志
 1. 脚手架初始化，25+自定义组件；
 
-### 技术维护
+### 开发及产品合作交流
 
-mukuashi@icloud.com
+如果您有相关疑问和反馈，请移步Github提issue，开发者会第一时间收到通知并及时跟进问题；
+如果您有业务或技术设计合作意向，或者日常交流意向，可以联系下方开发者，备注uniapp社区，进群；
+
+| Creator | Group | Sponsor |
+| - | - | - |
+| <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/D52ABEE6-0657-4ABA-AF41-BAD4C804536A.jpeg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/0AB0EE94-93E9-4545-BBFB-5B686C62D116.jpeg" width="240" /> | <img src="https://asako-studio-1251838073.file.myqcloud.com/miniprogram/static/images/135AA8A4-BAAC-46E7-8A5D-85CECA087C99_1_101_o.jpeg" width="240" /> |
+
 
 ### License
 
