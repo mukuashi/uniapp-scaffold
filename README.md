@@ -162,30 +162,6 @@ yarn build:mp-weixin
 * [跨端图表库uCharts文档](http://doc.ucharts.cn)
 
 
-### Structure
-
-``` 
-├── src                      # main project
-│ ├── /config/               # 业务基础/全局/国际化/皮肤配置等
-│ ├── /components/           # 公共组件库: 基础 + 部分高复用业务组件
-│ ├── /pages/                # 主要业务页面（index.vue + index.scss）
-│ ├── /services/             # 服务Service，建议按照业务模块拆分
-│ ├── /styles/               # 全局样式 => core + mixin + function + theme...
-│ ├── /store/                # 数据流（globalApp、业务数据等）
-│ ├── /mixins/               # 全局或子模块混入，自动绑定在Vue实例上
-│ ├── /static/               # 项目图片、图标、字体及静态资源CDN、tabBar等
-│ ├── /utils/                # lib、request、tool等
-│ │──page.json               # 全局配置，类似app.json
-│ │──manifest.json           # app配置
-│ │──main.js                 # 全局入口js index
-│ │──App.vue                 # 全局入口vue index
-├── node_modules             # npm依赖包
-├── miniprogram_npm          # 小程序npm包（不参与实时编译）
-├── dist                     # 小程序npm包（不参与实时编译）
-│ │──dev                     # 开发环境各种产物
-│ │──build                   # 生产环境各种产物
-```
-
 ### UI 库 | 组件
 
 ``` 
